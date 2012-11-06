@@ -4,19 +4,19 @@
 .wrapper { overflow:hidden;width:100%; }
 /* Global properties ======================================================== */
 .glob{ position:absolute; overflow:hidden;width:100%; height:100%; }
-body{ position:absolute; overflow:hidden; min-width:980px; min-height:100%; width:100%; height:100%; background: url(../images/bgPart.png); color:#000; font-family:Arial, Helvetica, sans-serif; line-height:20px; }
+body{ position:absolute; overflow:hidden; min-width:980px; min-height:100%; width:100%; height:100%; background: url(../images/bgPart.png); color:#000; font-family:Segoe UI; line-height:20px; }
 .ic {float:right;overflow:hidden;margin:-220% 0 0 0;padding:0;width:50%;border:0;background:#fff;color:#f00;font-size:10px;line-height:10px;}
 /* Global Structure ========================================================= */
 .main { z-index:2;margin:0px auto 0 auto; 	width: 1080px; height:100%; }
 .page_spinner{ position:fixed; top:0; left:0; z-index:99; width:100%; height:100%; background:url(../images/loader.gif) 50% 50% no-repeat #fbf9f3;}
 #glob{position:relative; z-index:1; overflow:hidden; }
-/* ============================= main layout ===========font-family: 'Open Sans', sans-serif; */
+/* ============================= main layout ===========font-family:Segoe UI; */
 a{ outline:none; color:#fff; text-decoration:none; font-size: 10px; }
 a:hover{ text-decoration:underline;}
 h1{float:left; }
-h2{ padding-bottom: 28px; width:100%; color:#fff; text-transform:uppercase; letter-spacing: -2px; font-weight: 300; font-size:42px;font-family: 'Open Sans', sans-serif; line-height:30px;}
+h2{ padding-bottom: 28px; width:100%; color:#fff; text-transform:uppercase; letter-spacing: -2px; font-weight: 300; font-size:42px;font-family:Segoe UI; line-height:30px;}
 h3{ padding-bottom: 0px; width:100%;color: #fff; font-weight:400; font-size:15px; line-height:26px;}
-p{ padding-bottom: 0px; color: #808080; font-size: 15px;font-family:Arial, sans-serif; line-height: 26px; }
+p{ padding-bottom: 0px; color: #808080; font-size: 15px;font-family:Segoe UI ; line-height: 26px; }
 .undLineOff{text-decoration:none; }
 .textLowerCase{text-transform:lowercase;}
 .textUpperCase{text-transform:uppercase;}
@@ -26,7 +26,7 @@ p{ padding-bottom: 0px; color: #808080; font-size: 15px;font-family:Arial, sans-
 .alignRight{text-align:right; }
 /* ============================= header ===================================== */
 header{position:relative;  z-index:1; display: inline-block; }
-#logo{ display:inline-block; width: 210px; height: 100px; background: url(../images/logo.png) 0 0 no-repeat;text-indent:-9999px; }
+#logo{ display:inline-block; width: 300px; height: 100px; background: url(../images/logo.png) 0 0 no-repeat;text-indent:-9999px; }
 #logo:hover{text-decoration:none; }
 .logoHolder{ position: relative; display:inline-block; }
 .headerHolder{position: relative; z-index: 10; margin: 0 auto; width: 1080px; height: 135px; }
@@ -35,12 +35,12 @@ header{position:relative;  z-index:1; display: inline-block; }
 .menuHolder{ float: left; z-index: 2; position: relative; display:inline-block; width: 220px; height: 540px;}
 #menu { position:relative;z-index:3; }
 #menu > li{ position:relative; display:inline-block;float:left; margin: 0 1px; }
-#menu > li > a{   position:relative; display: inline-block; text-transform:uppercase; font-family: 'Open Sans', sans-serif;  }
+#menu > li > a{   position:relative; display: inline-block; text-transform:uppercase; font-family:Segoe UI;  }
 #menu > li > a:hover{text-decoration:none; }
 #menu > li.active > a{text-decoration:none; }
 .submenu_1{position: relative;  left: 0; z-index:2;  width: 100%; }
 .submenu_1 li{position:relative; display:inline-block; margin: 4px 15px; }
-.submenu_1 a{  display:inline-block; color:#313131; text-align:left; text-transform:uppercase; font-weight: 300; font-size: 26px;font-family: 'Open Sans', sans-serif; line-height: 26px;}
+.submenu_1 a{  display:inline-block; color:#313131; text-align:left; text-transform:uppercase; font-weight: 300; font-size: 26px;font-family:Segoe UI; line-height: 26px;}
 .submenu_1 li:hover > a, .submenu_1 li.sfHover > a{text-decoration:none;  }
 #menu .magTop1{margin-top: 15px; }
 #menu .magBot1{margin-bottom:15px; }
@@ -132,7 +132,7 @@ header{position:relative;  z-index:1; display: inline-block; }
 .rightPlane{ position: absolute; left: 470px; z-index: 2; width: 1300px; height: 522px;background: url(../images/blackPlane.png); }
 .picHold{ position: relative; cursor: pointer;}
 .followHolder{position: relative;display: inline-block;float: right;margin-top: 30px;width: 300px;}
-.followHolder span{ position: relative; display: inline-block;width: 100%; color: #313131;text-align: right; font-size: 21px;font-family: 'Open Sans', sans-serif; line-height: 24px;}
+.followHolder span{ position: relative; display: inline-block;width: 100%; color: #313131;text-align: right; font-size: 21px;font-family:Segoe UI; line-height: 24px;}
 .followHolder > ul{display: inline-block;float: right;margin-top: 20px;}
 .followHolder > ul > li{display: inline-block; float: left;margin-left: 6px;}
 .followHolder > ul > li > a{ }
@@ -141,7 +141,7 @@ header{position:relative;  z-index:1; display: inline-block; }
 footer{position: relative; z-index:1; display: block;float: right;  margin: 0 auto; width: 720px;height: 86px;text-align: center;}
 .mainFooter { z-index:2;display: inline-block; margin: 0 auto;  }
 .privHold{ position:relative; margin-top: 34px;}
-.textPrivacy{ position:relative; display:inline-block; color: #313131; color: #414141;font-weight: 300; font-size: 21px;font-family: 'Open Sans', sans-serif;line-height: 25px;}
+.textPrivacy{ position:relative; display:inline-block; color: #313131; color: #414141;font-weight: 300; font-size: 21px;font-family:Segoe UI;line-height: 25px;}
 /*===================================Map=====================================*/
 .google_map{
 	margin:0; 
@@ -218,7 +218,7 @@ footer{position: relative; z-index:1; display: block;float: right;  margin: 0 au
 	background: #000; 
 	color: #808080; 
 	font-size: 12px; 
-	font-family:Arial;
+	font-family:Segoe UI;
 }
 #ContactForm textarea {
 	overflow:auto; 
@@ -231,7 +231,7 @@ footer{position: relative; z-index:1; display: block;float: right;  margin: 0 au
 	background: #000; 
 	color: #808080; 
 	font-size: 15px; 
-	font-family:Arial; 
+	font-family:Segoe UI; 
 	resize:none;
 }
 #ContactForm .block { 
