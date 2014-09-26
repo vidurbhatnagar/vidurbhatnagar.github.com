@@ -493,7 +493,7 @@
 			cursor: pointer;
 			text-decoration: none;
 			outline: 0;
-			padding: 1em 3em 1em 3em;
+			padding: 1em 1.5em 1em 1.5em;
 			text-align: center;
 			border-radius: 0.1em;
 			font-weight: 400;
@@ -779,7 +779,8 @@
 		#header header
 		{
 			display: inline-block;
-			padding: 0 0 4.5em 0;
+			padding:1em;
+			background: rgba(214, 214, 214, 0.1);
 		}
 		
 			#header header h1
@@ -873,14 +874,16 @@
 			#banner header h2
 			{
 				font-weight: bolder;
-				font-size: 1.5em;
-				letter-spacing: 2px;
+				font-size: 1.3em;
+				letter-spacing: 1px;
+				text-shadow: 2px 2px 1px black;
+				line-height: 1.3em
 			}
 
 		#banner p
 		{
-			margin-left: 15%;
-			margin-right: 15%;
+			margin-left: 20%;
+			margin-right: 20%;
 			text-align: justify;
 		}
 
