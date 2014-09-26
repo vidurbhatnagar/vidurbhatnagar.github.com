@@ -528,7 +528,7 @@
 				input[type="reset"].style2:hover,
 				.button.style2:hover
 				{
-					background: rgba(255,255,255,0.1);
+					background: rgba(255,255,255,0.2);
 					color: #fff !important;
 					text-shadow: 0 0 0.5px rgba(0,0,0,0.25) !important;
 				}
@@ -856,6 +856,7 @@
 		padding: 5em 0 5em 0;
 		margin: 0;
 		background-size: 125% auto;
+		
 	}
 
 		#banner .button
@@ -871,16 +872,19 @@
 		
 			#banner header h2
 			{
-				font-weight: 400;
-				font-size: 1.75em;
-				letter-spacing: 8px;
+				font-weight: bolder;
+				font-size: 1.5em;
+				letter-spacing: 2px;
 			}
 
 		#banner p
 		{
-			margin: 0;
+			margin-left: 15%;
+			margin-right: 15%;
+			text-align: justify;
 		}
 
+		
 		#banner footer
 		{
 			margin: 2em 0 0 0;
