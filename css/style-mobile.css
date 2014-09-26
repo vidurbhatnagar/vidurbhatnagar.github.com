@@ -253,8 +253,11 @@
 
 		#banner header
 		{
-			margin: 0 0 1em 0;
-		}
+			margin-bottom: 2em;
+			margin-left: auto;
+			margin-right:auto;
+			width:52%;
+			background: rgba(0, 0, 0, 0.1);		}
 		
 			#banner header h2
 			{
