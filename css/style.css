@@ -17,14 +17,16 @@
 		background-color:		#2D7988;
 		background-image:		url('../images/bg.jpg');
 		background-repeat:		no-repeat;
-		background-size:		100%;
-		background-attachment:	scroll;
+		background-size:		cover !important;
+		background-position: center center !important;
+		background-attachment:	fixed;
+		
 	}
 
 		body.is-scroll
 		{
-			background-attachment:	scroll;
-			background-size:		100%;
+			--background-attachment:	local;
+			--background-size:		cover;
 		}
 
 		body.is-loading *
@@ -68,7 +70,7 @@
 	h2
 	{
 		font-size: 1.25em;
-		letter-spacing: 8px;
+		letter-spacing: 2px;
 	}
 	
 	h3
@@ -166,7 +168,6 @@
 		article
 		{
 			margin-bottom: 3em;
-			background: rgba(0, 0, 0, 0.3);
 		}
 		
 			section > :last-child,
@@ -782,7 +783,6 @@
 		{
 			display: inline-block;
 			padding:1em;
-			background: rgba(214, 214, 214, 0.1);
 		}
 		
 			#header header h1
@@ -855,10 +855,15 @@
 		color: #fff;
 		text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
 		text-align: center;
-		background: #2D7988 url('images/banner.svg') bottom center no-repeat;
+		background: #2D7988;
 		padding: 5em 0 5em 0;
 		margin: 0;
-		background-size: 125% auto;
+		
+		background-image:		url('images/banner.svg');
+		background-repeat:		no-repeat;
+		background-size:		cover !important;
+		background-position: center center !important;
+		background-attachment:	fixed;
 		
 	}
 
