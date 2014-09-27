@@ -11,18 +11,25 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-code {
-    font-family: monospace;
-	font-style: italic;
-	font-weight: none;
-	font-size:0.8em;
-	text-shadow: none;
-}
+	code {
+		font-family: monospace;
+		font-style: italic;
+		font-weight: none;
+		font-size:0.8em;
+		text-shadow: none;
+	}
 
-iframe{
-	width: 100%;
-	height: 100%;
-}
+	iframe{
+		width: 100%;
+		height: 100%;
+		border: 4px solid white;
+	}
+
+	header p{
+		text-align: center;
+		font-size: 0.8em;
+	}
+		
 	body
 	{
 		background-color:		#2D7988;
@@ -554,7 +561,13 @@ iframe{
 			margin-top: 9em;
 			margin-bottom: 0;
 		}
-		
+			.box.footer{
+			position: absolute;
+			bottom: 20%;
+			margin-top: 1%;
+			width: 100%;
+			}
+			
 			.box:after
 			{
 				content: '';
@@ -763,6 +776,11 @@ iframe{
 			display: none;
 		}
 
+			#dummy{
+			width:100%!important;
+			margin:auto!important;
+			}
+		
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
