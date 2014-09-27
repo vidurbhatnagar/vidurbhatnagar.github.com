@@ -11,6 +11,7 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+	
 	code {
 		font-family: monospace;
 		font-style: italic;
@@ -109,7 +110,7 @@
 	a
 	{
 		color: #35b88f;
-		text-shadow: 0 0 0.5px rgba(53,184,143,0.25);
+		--text-shadow: 0 0 0.5px rgba(255,255,255,0.5);
 		-moz-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
 		-webkit-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
 		-o-transition: border-color 0.35s ease-in-out, color 0.35s ease-in-out;
