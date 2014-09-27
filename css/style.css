@@ -800,6 +800,8 @@
 		{
 			display: inline-block;
 			padding:1% !important;
+			background: rgba(255, 255, 255, 0.08);
+			border-left: 1px dotted lightgrey;
 		}
 		
 			#header header h1
