@@ -29,8 +29,8 @@ code {
 
 		body.is-scroll
 		{
-			--background-attachment:	local;
-			--background-size:		cover;
+			background-attachment:	scroll;
+			background-size:		100%;
 		}
 
 		body.is-loading *
@@ -75,6 +75,7 @@ code {
 	{
 		font-size: 1.25em;
 		letter-spacing: 2px;
+		text-align: center;
 	}
 	
 	h3
@@ -612,7 +613,10 @@ code {
 					.box.style1 .inner > :last-child
 					{
 						margin-top: 1%;
-						margin-bottom: -7%;
+						margin-bottom: 0%;
+						text-align: justify;
+						line-height: 1.5em;
+						font-size: 0.9em;
 					}
 				
 				.box.style1.right
