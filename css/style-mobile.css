@@ -350,7 +350,7 @@
 		padding: 0 !important;
 		padding-left: 10% !important;
 		padding-right: 10% !important;
-		margin-top:2%;
+		margin-top: 15%;
 	}
 
 		#banner header
@@ -359,7 +359,9 @@
 			margin: auto;
 			margin-top: 15%;
 			width: 100%;
-			background: rgba(0, 0, 0, 0.1);		
+			background: rgba(0, 0, 0, 0.1);
+			margin-top: 15%;
+			
 		}
 		
 			#banner header h2
