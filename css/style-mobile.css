@@ -292,7 +292,7 @@
 
 	#header
 	{
-		padding: 1em !important;
+		padding: 1em 1em 0em 1em !important;
 		margin-bottom: 2% !important;
 	}
 		#header header
@@ -350,6 +350,7 @@
 		padding: 0 !important;
 		padding-left: 10% !important;
 		padding-right: 10% !important;
+		margin-top:2%;
 	}
 
 		#banner header
