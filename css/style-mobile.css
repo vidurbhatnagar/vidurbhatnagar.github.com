@@ -296,24 +296,49 @@
 
 	#banner
 	{
-		padding: 3em 2em 3em 2em;
 		background-size: auto 150%;
+		width: 100%;
+		margin: auto;
+		padding: 0 !important;
+		padding-left: 10% !important;
+		padding-right: 10% !important;
 	}
 
 		#banner header
 		{
 			margin-bottom: 2em;
-			margin-left: auto;
-			margin-right:auto;
-			width:52%;
-			background: rgba(0, 0, 0, 0.1);		}
+			margin: auto;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.1);		
+		}
 		
 			#banner header h2
 			{
-				font-size: 1.5em;
-				letter-spacing: 6px;
+				font-size: 0.7em;
+				letter-spacing: 1px !important;
+				line-height: 1.2em !important;
 			}
-
+		#banner p{
+			margin: auto;
+			text-align: justify;
+			font-size: 0.5em;
+			letter-spacing: 1px;
+			text-shadow: 2px 2px 1px black;
+			line-height: 1.2em;
+			letter-spacing: 1px;
+			width: 90%;
+		}
+		
+		#banner footer{
+			margin: auto;
+			width: 100%;
+		}
+		
+		#banner .button{
+			width: 50% !important;
+			margin: auto;
+			margin-bottom: 10% !important;
+		}
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
