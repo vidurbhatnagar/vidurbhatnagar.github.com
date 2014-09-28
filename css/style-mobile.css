@@ -244,11 +244,13 @@
 	#header
 	{
 		padding: 1em !important;
+		margin-bottom: 20% !important;
 	}
 		#header header
 		{
 			padding-left: 2em;
 			padding-right: 2em;
+			margin-right: 65% !important;
 		}
 			#header header p{
 			border-top: solid 3px rgba(255,255,255,0.5);
