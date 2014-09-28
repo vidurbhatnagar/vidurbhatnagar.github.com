@@ -12,7 +12,10 @@
 	{
 		text-shadow: none !important;
 	}
-
+    
+	a:hover{
+	border-bottom: dotted 1px rgba(53,184,143,0.5);
+	}
 	code {
 		font-family: monospace;
 		font-style: italic;
@@ -32,7 +35,7 @@
 		font-size: 0.4em;
 		margin: auto;
 		margin-bottom: -1.5em !important;
-		margin-top: -0.5em !important;
+		margin-top: -0.8em !important;
 		width: 100%;
 }
 		
