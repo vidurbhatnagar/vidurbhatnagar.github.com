@@ -97,7 +97,7 @@
 		--letter-spacing: 1px;
 		color: #3a3939;
 		text-shadow: 0 0 0.5px rgba(58,57,57,0.25);
-		-webkit-text-stroke: 0.25px;
+		-webkit-text-stroke: 0.02em;
 	}
 
 	h1,h2,h3,h4,h5,h6
@@ -555,7 +555,7 @@
 			input[type="reset"]:hover,
 			.button:hover
 			{
-				background: #45c89f;
+				--background: #45c89f;
 			}
 		
 			input[type="button"].style2,
