@@ -348,8 +348,8 @@
 		width: 100%;
 		margin: auto;
 		padding: 0 !important;
-		padding-left: 10% !important;
-		padding-right: 10% !important;
+		padding-left: 2%% !important;
+		padding-right: 2% !important;
 		margin-top: 15%;
 	}
 
@@ -378,7 +378,7 @@
 			letter-spacing: 1px;
 			text-shadow: 2px 2px 1px black;
 			letter-spacing: 1px;
-			width: 90%;
+			width: 95%;
 		}
 		
 		#banner footer{
