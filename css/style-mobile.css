@@ -359,12 +359,11 @@
 
 		#banner header
 		{
+			margin: 0;
 			margin-bottom: 2em;
-			margin: auto;
+			margin-top: 0.8em;
 			width: 100%;
 			background: rgba(0, 0, 0, 0.1);
-			margin-top: 0.8em;
-			
 		}
 		
 			#banner header h2
