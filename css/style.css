@@ -11,6 +11,10 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+	.container{
+	width:60%;
+	}
+	
 	.\33 u{
 	width:50%;
 	}
@@ -572,10 +576,11 @@
 			transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 		}
 
+			
 			input[type="button"]:hover,
 			input[type="submit"]:hover,
 			input[type="reset"]:hover,
-			.button:hover
+			.no-touch .button:hover
 			{
 				--background: #45c89f;
 			}
@@ -594,7 +599,7 @@
 				input[type="button"].style2:hover,
 				input[type="submit"].style2:hover,
 				input[type="reset"].style2:hover,
-				.button.style2:hover
+				.no-touch .button.style2:hover
 				{
 					background: rgba(255,255,255,0.2);
 					color: #fff !important;
@@ -614,7 +619,7 @@
 				input[type="button"].style3:hover,
 				input[type="submit"].style3:hover,
 				input[type="reset"].style3:hover,
-				.button.style3:hover
+				.no-touch .button.style3:hover
 				{
 					background: rgba(58,57,57,0.025);
 				}
@@ -904,7 +909,7 @@
 		color: #2D7988;
 		font-weight:bolder;
 		}
-		.icon-text:hover{
+		.no-touch .icon-text:hover{
 		color: #fff;
 		}
 		.fa-stack{
@@ -1044,17 +1049,16 @@
 
 		#banner header
 		{
-			margin-bottom: 2em;
-			margin-left: auto;
-			margin-right:auto;
-			width:55%;
+			margin: auto;
+			margin-bottom: 0.5em;
+			width:60%;
 			background: rgba(0, 0, 0, 0.1);
 		}
 		
 			#banner header h2
 			{
 				font-weight: bolder;
-				font-size: 1.3em;
+				font-size: 1em;
 				letter-spacing: 1px;
 				text-shadow: 2px 2px 1px black;
 				line-height: 1.5em;
@@ -1071,7 +1075,7 @@
 			text-shadow: 1px 1px 1px black;
 			line-height: 1.5em;
 			letter-spacing:0.5px;
-			width:50%
+			width:55%
 		}
 
 		
