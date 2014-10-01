@@ -83,9 +83,10 @@
 	{
 		background-color:		#2D7988;
 		background-image:		url('../images/bg.jpg');
-		background-repeat:		no-repeat;
-		background-size:		100%;
-		background-attachment:	scroll;
+		background-repeat: no-repeat;
+		background-size: 100%, cover;
+		background-position: top left, center 0!important;
+		background-attachment: scroll, scroll;
 	}
 
 		body.is-scroll
@@ -996,9 +997,9 @@
 				content: '';
 				display: block;
 				position: absolute;
-				--bottom: -4.5em;
+				bottom: -9.5em;
 				left: 50%;
-				height: 4.5em;
+				height: 9.5em;
 				border-left: solid 1px #fff;
 			}
 		
