@@ -11,6 +11,26 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+	.\33 u{
+	width:50%;
+	}
+	
+	.noLine:before{
+	border:none!important;
+	}
+	
+	.imageTitleDesktop{
+	font-size:0.9em!important;
+	line-height: normal!important;
+	background: #2D7988!important;
+	color:white!important;
+	display:inherit;
+	margin-bottom: 2%!important;
+	}
+	
+	.imageTitleMobile{
+	display:none;
+	}
 	#coffee footer
 		{
 			bottom: 20%;
@@ -237,7 +257,8 @@
 			{
 				display: block;
 				width: 100%;
-				height: 150px;
+				height: 250px;
+				border: 4px solid white;
 			}
 
 			.image.featured
@@ -253,10 +274,10 @@
 				width: 100%;
 			}
 			
-			.image.video
+			.video
 			{
 				display: block;
-				width: 200%;
+				width: 100%;
 				height: 350px;
 			}
 			
@@ -602,7 +623,7 @@
 		.box
 		{
 			position: relative;
-			margin-top: 9em;
+			margin-top: 4.5em;
 			margin-bottom: 0;
 		}
 			.box.footer{
@@ -617,9 +638,9 @@
 				content: '';
 				display: block;
 				position: absolute;
-				top: -9em;
+				top: -4.5em;
 				left: 50%;
-				height: 9em;
+				height: 4.5em;
 				border-left: solid 1px #fff;
 			}
 		
@@ -631,7 +652,7 @@
 				height: 66px;
 				position: absolute;
 				left: 50%;
-				top: -4.5em;
+				top: -2.25em;
 				margin-left: -45px;
 				margin-top: -33px;
 				background: url('images/arrow.svg') no-repeat;
@@ -975,9 +996,9 @@
 				content: '';
 				display: block;
 				position: absolute;
-				--bottom: -9em;
+				--bottom: -4.5em;
 				left: 50%;
-				height: 9em;
+				height: 4.5em;
 				border-left: solid 1px #fff;
 			}
 		
@@ -1100,7 +1121,7 @@
 			height: 66px;
 			position: absolute;
 			left: 50%;
-			bottom: -4.5em;
+			bottom: -2.25em;
 			top: -5.5em;
 			margin-left: -45px;
 			margin-bottom: -33px;

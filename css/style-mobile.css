@@ -7,7 +7,26 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-
+	.lastVideoElement{
+	margin: 15%;
+	}
+	
+	.noLine:before{
+	border:none!important;
+	}
+	
+	.imageTitleMobile{
+	font-size:0.5em;
+	line-height: normal;
+	background: #2D7988;
+	color:white;
+	display:inherit;
+	}
+	
+	.imageTitleDesktop{
+	display:none;
+	}
+	
 	*
 	{
 		text-shadow: none !important;
@@ -178,20 +197,20 @@
 
 		.box
 		{
-			margin-top: 4.5em;
+			margin-top: 2.25em;
 		}
 
 			.box:after
 			{
-				top: -4.5em;
-				height: 4.6em;
+				top: -2.25em;
+				height: 2.3em;
 			}
 		
 			.box:before
 			{
 				width: 45px;
 				height: 33px;
-				top: -2.25em;
+				top: -1.125em;
 				margin-left: -22.5px;
 				margin-top: -16.5px;
 				background-size: 45px 33px;
@@ -316,28 +335,6 @@
 				line-height: 1.2em !important;
 			}
 
-		#header footer
-		{
-			display:none;
-		}
-
-			#header footer:after
-			{
-				bottom: -4.5em;
-				left: 50%;
-				height: 4.5em;
-			}
-		
-			#header footer:before
-			{
-				width: 45px;
-				height: 33px;
-				bottom: -2.25em;
-				margin-left: -22.5px;
-				margin-bottom: -16.5px;
-				background-size: 45px 33px;
-			}
-
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
@@ -402,6 +399,7 @@
 	
 	#footer
 	{
+	margin: 4.5em 0 0 0;
 	}
 
 		#footer .icons
@@ -418,11 +416,21 @@
 		#footer:before{
 			width: 45px;
 			height: 33px;
-			bottom: -2.25em;
+			bottom: -1.125em;
 			margin-left: -22.5px;
 			margin-bottom: -16.5px;
 			background-size: 45px 33px;
+			margin-top: 20%;
 		}
+		
+		#footer:after
+			{
+				top: -4.5em;
+				left: 50%;
+				height: 4.5em;
+				border-left: solid 1px #fff;
+			}
+	}
 
 /*********************************************************************************/
 /* Poptrox                                                                       */
