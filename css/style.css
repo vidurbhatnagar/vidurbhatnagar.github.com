@@ -11,9 +11,7 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-	.container{
-	width:60%;
-	}
+
 	
 	.\33 u{
 	width:50%;
@@ -688,7 +686,7 @@
 			.box.style1
 			{
 				background: #fff;
-				padding: 3em;
+				padding: 3em 1em 3em 1em;
 			}
 			
 				.box.style1 .image
@@ -741,7 +739,7 @@
 					
 					.box.style1.right .inner
 					{
-						padding-left: 56%;
+						padding-left: 53%;
 						margin-top: -5%;
 						margin-bottom: -5%;
 					}
@@ -764,7 +762,7 @@
 					
 					.box.style1.left .inner
 					{
-						padding-right: 56%;
+						padding-right: 53%;
 						margin-top: -5%;
 						margin-bottom: -5%;
 					}
@@ -1109,7 +1107,7 @@
 		
 		#banner footer
 		{
-			margin: 2em 0 0 0;
+			margin: 2em 0 2em 0;
 		}
 		
 		#banner a

@@ -8,28 +8,3 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-.container {
-margin-left: auto;
-margin-right: auto;
-width: 95%;
-}
-
-#banner header {
-width: 95%;
-}
-
-#banner p{
-width: 90%;
-}
-
-.box.style3 {
-width: 95%;
-}
-
-#header footer:before {
-bottom: -2.5em;
-}
-
-#header footer {
-bottom: 23%;
-}
