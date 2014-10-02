@@ -57,7 +57,8 @@
 	.image.video{
 		display: block;
 		width: 100%;
-		height: 230px !important;
+		height: auto !important;
+		background-color: #2D7988;
 	}
 			
 	header p{
@@ -206,8 +207,8 @@
 
 			.box:after
 			{
-				top: -2.25em;
-				height: 2.3em;
+				top: -3.25em;
+				height: 3.3em;
 			}
 		
 			.box:before
@@ -273,7 +274,7 @@
 					.box.style2 .inner .image
 					{
 						padding: 0;
-						max-width: 250px;
+						width: auto;
 						margin: 0 auto 20px auto;
 					}
 
