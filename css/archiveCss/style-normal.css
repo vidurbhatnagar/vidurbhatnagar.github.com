@@ -5,23 +5,11 @@
 */
 
 /*********************************************************************************/
-/* Basic                                                                         */
+/* Banner                                                                        */
 /*********************************************************************************/
 
-.container {
-margin-left: auto;
-margin-right: auto;
-width: 95%;
-}
-
-#banner header {
-width: 95%;
-}
-
-#banner p{
-width: 90%;
-}
-
-.box.style3 {
-width: 95%;
-}
+	#banner
+	{
+		padding: 4em 0 4em 0;
+		background-size:		auto,								175% auto;
+	}

@@ -343,7 +343,7 @@
 	#header
 	{
 		padding: 1em 1em 0em 1em !important;
-		margin-bottom: 30% !important;
+		margin-bottom: 2% !important;
 	}
 		#header header
 		{
@@ -354,14 +354,14 @@
 		}
 			#header header p{
 			border-top: solid 3px rgba(255,255,255,0.5);
-			font-size: 1.5em !important;
+			font-size: 0.5em !important;
 			line-height: 1.1em !important;
 			text-align: left;
 			}
 		
 			#header header h1
 			{
-				font-size: 2em !important;
+				font-size: 1em !important;
 				letter-spacing: 0.15em !important;
 				line-height: 1.2em !important;
 			}
