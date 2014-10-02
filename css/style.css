@@ -982,7 +982,6 @@
 			padding:1% !important;
 			background: rgba(255, 255, 255, 0.08);
 			border-left: 1px dotted lightgrey;
-			-webkit-text-stroke: 0;
 		}
 		
 			#header header h1
@@ -990,6 +989,7 @@
 				font-weight: 600;
 				font-size: 2em;
 				letter-spacing: 0.2em;
+				-webkit-text-stroke: 0;
 			}
 
 			#header header p
