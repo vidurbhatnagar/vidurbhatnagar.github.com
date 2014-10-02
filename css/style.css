@@ -974,7 +974,6 @@
 		margin: auto;
 		width: 100%;
 		cursor: default;
-		-webkit-text-stroke: 0;
 	}
 	
 		#header header
@@ -983,6 +982,7 @@
 			padding:1% !important;
 			background: rgba(255, 255, 255, 0.08);
 			border-left: 1px dotted lightgrey;
+			-webkit-text-stroke: 0;
 		}
 		
 			#header header h1
