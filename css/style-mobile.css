@@ -7,7 +7,32 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-	.image img{
+	.box.style1 .image:after
+	{
+    padding-top: 56.25%; // 16:9 ratio
+    display: block;
+    content: '';
+	}
+   
+   ul.default {
+		list-style: disc;
+		padding-left: 1em;
+		line-height: 1.5em;
+		font-size: 0.4em;
+	}
+
+	.box.style3
+		{
+			padding: 0.5em 1em 0.5em 1em;
+			background-size: 270%;
+		}
+			
+		.poptrox-popup .caption
+		{
+			font-size: 0.4em;
+			letter-spacing: 1px;
+		}
+		.image img{
 	height: auto!important;
 	}
 	
@@ -276,6 +301,7 @@
 						padding: 0;
 						width: auto;
 						margin: 0 auto 20px auto;
+						z-index: 100;
 					}
 
 			.box.style3
@@ -357,6 +383,7 @@
 		padding-left: 2%% !important;
 		padding-right: 2% !important;
 		padding-top: 2% !important;
+		z-index: 10;
 	}
 
 		#banner header

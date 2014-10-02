@@ -156,6 +156,15 @@
 		text-decoration:none;
 	}
 	
+	h8{
+		color: #00D5FF!important;
+		font-family: monospace!important;
+		font-size:0.7em;
+		text-align:center;
+		font-weight: normal;
+		--text-decoration:none;
+	}
+	
 	strong, b
 	{
 		font-weight: 400;
@@ -314,12 +323,14 @@
 			{
 				list-style: disc;
 				padding-left: 1em;
+				line-height: 1.5em;
+				font-size: 0.8em;	
 			}
 			
 				ul.default li
 				{
 					padding-left: 1.5em;
-					margin-top: 1.5em;
+					margin-top: 0.5em;
 				}		
 				
 				ul.default li:first-child
@@ -574,6 +585,7 @@
 			-o-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 			-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 			transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
+			z-index: 1;
 		}
 
 			
@@ -583,6 +595,7 @@
 			.no-touch .button:hover
 			{
 				--background: #45c89f;
+				z-index: 1;
 			}
 		
 			input[type="button"].style2,
@@ -594,6 +607,7 @@
 				background: #fff;
 				box-shadow: 2px 2px 10px #000;
 				font-weight: bold;
+				z-index: 1;
 			}
 
 				input[type="button"].style2:hover,
@@ -601,9 +615,9 @@
 				input[type="reset"].style2:hover,
 				.no-touch .button.style2:hover
 				{
-					background: rgba(255,255,255,0.2);
+					background: #2D7988;
 					color: #fff !important;
-					text-shadow: 0 0 0.5px rgba(0,0,0,0.25) !important;
+					--text-shadow: 0 0 0.5px rgba(0,0,0,0.25) !important;
 				}
 				
 			input[type="button"].style3,
@@ -621,7 +635,9 @@
 				input[type="reset"].style3:hover,
 				.no-touch .button.style3:hover
 				{
-					background: rgba(58,57,57,0.025);
+					background: #2D7988;
+					color: #fff !important;
+					z-index:1;
 				}
 
 	/* Box */
@@ -819,8 +835,19 @@
 
 			.box.style3
 			{
-				background: #fff;
-				padding: 3em;
+				padding: 1em 2em 1em 2em;
+				width: 60%;
+				margin: auto;
+				position: relative;
+				color: #fff;
+				text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
+				text-align: justify;
+				background: #2F7583;
+				z-index:1;
+			}
+			
+			.box.style3:before{
+			display:none;
 			}
 			
 				.box.style3 header
@@ -1045,6 +1072,7 @@
 		{
 			color: #2D7988;
 			text-shadow: 0 0 0.5px rgba(53,184,130,0.25);
+			z-index: 1;
 		}
 
 		#banner header
@@ -1165,7 +1193,9 @@
 /*********************************************************************************/
 /* Poptrox                                                                       */
 /*********************************************************************************/
-
+	.captionCenter{
+	text-align:center;
+	}
 	.poptrox-popup
 	{
 		background: #fff;
@@ -1175,6 +1205,7 @@
 		-ms-box-sizing: content-box;
 		box-sizing: content-box;
 		padding-bottom: 3em;
+		background: transparent;
 	}
 	
 		.poptrox-popup .loader
@@ -1191,18 +1222,19 @@
 		.poptrox-popup .caption
 		{
 			position: absolute;
-			bottom: 0;
 			left: 0;
 			background: #fff;
 			width: 100%;
-			height: 3em;
-			line-height: 3em;
-			text-align: center;
+			height: auto;
+			line-height: normal;
+			text-align: justify;
 			cursor: default;
 			z-index: 1;
-			color:black;
-			text-shadow: 1px 1px 1px black;		
+			color: black;
 			border: 1px dotted black;
+			font-size: 0.8em;
+			margin-top: 0.3em;
+			padding: 0.5em;
 		}
 		
 		.poptrox-popup .nav-next,
