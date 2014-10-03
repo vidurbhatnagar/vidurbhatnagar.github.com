@@ -84,6 +84,7 @@
 	header p{
 		text-align: center;
 		font-size: 0.8em;
+		line-height:normal;
 	}
 		
 	body
@@ -161,11 +162,7 @@
 	
 	h8{
 		color: #00D5FF!important;
-		font-family: monospace!important;
-		font-size:0.7em;
-		text-align:center;
-		font-weight: normal;
-		--text-decoration:none;
+		font-weight:bolder;
 	}
 	
 	strong, b
