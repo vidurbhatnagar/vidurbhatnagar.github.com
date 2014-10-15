@@ -47,12 +47,27 @@
 	.imageTitleMobile{
 	font-size:0.5em;
 	line-height: normal;
-	background: #2D7988;
 	color:white;
 	display:inherit;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 3px 0 3px 0;
+	}
+	
+	.videoTitleMobile{
+	font-size:0.5em;
+	line-height: normal;
+	color:white;
+	display:inherit;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 3px 0 3px 0;
+	margin-top: -12px;
 	}
 	
 	.imageTitleDesktop{
+	display:none;
+	}
+	
+	.videoTitleDesktop{
 	display:none;
 	}
 	

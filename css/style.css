@@ -42,6 +42,10 @@
 	.imageTitleMobile{
 	display:none;
 	}
+	.videoTitleMobile{
+	display:none;
+	}
+	
 	#coffee footer
 		{
 			bottom: 20%;
