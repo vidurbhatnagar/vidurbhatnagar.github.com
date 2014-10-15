@@ -71,7 +71,7 @@
 			}
 			
 		// Scrolly links.
-			$('.scrolly').scrolly(1000, function() { return (skel.isActive('mobile') ? 70 : 190); });
+			$('.scrolly').scrolly(1000, function() { return (skel.isActive('mobile') ? 20 : 20); });
 	
 		// Full screen header.
 			if (settings.fullScreenHeader) {

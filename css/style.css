@@ -957,7 +957,6 @@
 		line-height: inherit; 
 		vertical-align: middle;
 		}
-		
 		.icon:before {
 			display: inline-block;
 			font-family: FontAwesome;
@@ -1179,7 +1178,7 @@
 			border-bottom-color: rgba(255,255,255,0.5);
 		}	
 		
-			 #footer .no-touch  a:hover
+			.no-touch  #footer  a:hover
 			{
 				color: #00D5FF;
 				text-shadow: 0 0 1px black;
