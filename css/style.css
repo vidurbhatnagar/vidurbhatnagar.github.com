@@ -25,6 +25,13 @@
 		border: 1px dotted rgba(0, 0, 0, 0.5)!important;
 	}
 	
+	.expandOther:hover{
+		box-shadow:none!important;
+	}
+	
+	.expand:hover{
+		box-shadow:none!important;
+	}
 	.expand{
 		width: 25px!important;
 		height: 25px!important;
