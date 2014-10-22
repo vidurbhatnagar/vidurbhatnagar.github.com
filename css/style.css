@@ -1258,13 +1258,13 @@
 	
 		.poptrox-popup .loader
 		{
-			width: auto;
-			height: auto;
+			width: 48px;
+			height: 48px;
 			background: url('images/loader.gif');
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			--margin: -24px 0 0 -24px;
+			margin: -24px 0 0 -24px;
 		}
 	
 		.poptrox-popup .caption
