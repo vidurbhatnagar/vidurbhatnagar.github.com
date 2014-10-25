@@ -11,27 +11,32 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+	.no-touch .image img:hover  ~ .expand, .expand:hover {
+		background: white!important;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 1)!important;
+	}
+	
+	.no-touch .image img:hover  + .expandOther, .expandOther:hover{
+		background: white!important;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 1)!important;
+	}
+	
 	.expandOther{
 		width: 25px!important;
 		height: 25px!important;
 		border: none!important;
-		margin: 5px!important;
-		margin-right:25px!important;
 		position: absolute!important;
 		background: rgba(255, 255, 255, 0.5)!important;
 		padding: 2px;
-		right:0!important;
-		opacity:0.8;
+		right: 0!important;
+		top: 0px!important;
+		opacity: 0.8;
 		border: 1px dotted rgba(0, 0, 0, 0.5)!important;
+		margin: 5px!important;
+		margin-right: 25px!important;
+		margin-top: 25px!important;
 	}
 	
-	.expandOther:hover{
-		box-shadow:none!important;
-	}
-	
-	.expand:hover{
-		box-shadow:none!important;
-	}
 	.expand{
 		width: 25px!important;
 		height: 25px!important;
