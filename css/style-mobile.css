@@ -26,6 +26,13 @@
 		font-size: 0.4em;
 	}
 
+	ol.default {
+		list-style: decimal;
+		padding-left: 1em;
+		line-height: 1.5em;
+		font-size: 0.4em;
+	}
+	
 	.box.style3
 		{
 			padding: 0.5em 1em 0.5em 1em;
@@ -218,10 +225,57 @@
 			ol.default
 			{
 			}
-
+			
 				ol.default li
 				{
-					padding-left: 0.25em;
+					padding-left: 0.5em;
+				}		
+
+			ol.icons
+			{
+			}	
+			
+				ol.icons li
+				{
+				}
+				
+					ol.icons a
+					{
+						width: 2em;
+						height: 2em;
+						line-height: 2em;
+					}
+
+			ol.menu
+			{
+			}
+			
+				ol.menu li
+				{
+					display: block;
+					padding: 0;
+					border: 0;
+					margin: 1em 0 0 0;
+				}
+				
+				ol.menu li:first-child
+				{
+					margin-top: 0;
+				}
+
+			ol.actions
+			{
+			}
+			
+				ol.actions li
+				{
+					display: block;
+					margin: 1em 0 0 0;
+				}
+				
+				ol.actions li:first-child
+				{
+					margin-top: 0;
 				}
 
 	/* Button */
