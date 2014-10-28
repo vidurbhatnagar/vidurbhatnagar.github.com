@@ -955,10 +955,13 @@
 				background: #2F7583;
 				z-index:1;
 				box-shadow: 1px 1px 10px black;
+				margin-top: 4em;
 			}
 			
-			.box.style3:before{
-			display:none;
+			.box.style3:after{
+			--display:none;
+			top: -4.5em;
+			height: 4.5em;
 			}
 			
 				.box.style3 header
