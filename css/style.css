@@ -63,6 +63,7 @@
 	
 	.\33 u{
 	width:50%;
+	font-weight: bolder;
 	}
 	
 	.noLine:before{
@@ -120,6 +121,7 @@
 		font-weight: none;
 		font-size:0.8em;
 		text-shadow: none;
+		-webkit-text-stroke: 0;
 	}
 
 	iframe{
@@ -172,8 +174,8 @@
 		font-weight: 300;
 		--letter-spacing: 1px;
 		color: #3a3939;
-		text-shadow: 0 0 0.5px rgba(58,57,57,0.25);
-		-webkit-text-stroke: 0.01em;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+		-webkit-text-stroke: 0em;
 	}
 
 	h1,h2,h3,h4,h5,h6
@@ -698,6 +700,7 @@
 			-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 			transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 			z-index: 1;
+			-webkit-text-stroke: 0;
 		}
 
 			
@@ -835,6 +838,7 @@
 						text-align: justify;
 						line-height: 1.5em;
 						font-size: 0.8em;
+						text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.6);!important
 					}
 				
 				.box.style1.right
@@ -950,7 +954,6 @@
 				margin: auto;
 				position: relative;
 				color: #fff;
-				text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
 				text-align: justify;
 				background: #2F7583;
 				z-index:1;
@@ -1111,7 +1114,7 @@
 			#header header p
 			{
 				border-top: solid 10px rgba(255,255,255,0.5);
-				color: rgba(255,255,255,0.85);
+				color: white;
 				text-shadow: 2px 2px 1px black;
 				font-size: 1em;
 				text-transform: uppercase;
@@ -1171,7 +1174,6 @@
 	{
 		position: relative;
 		color: #fff;
-		text-shadow: 0 0 0.5px rgba(255,255,255,0.25);
 		text-align: center;
 		background: #2D7988;
 		padding: 1% 0 2% 0;
@@ -1214,7 +1216,6 @@
 			text-align: justify;
 			font-size: 0.8em;
 			letter-spacing: 1px;
-			text-shadow: 1px 1px 1px black;
 			line-height: 1.5em;
 			letter-spacing:0.5px;
 			width:55%
