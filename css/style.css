@@ -783,6 +783,7 @@
 				left: 50%;
 				height: 4.5em;
 				border-left: solid 1px #fff;
+				z-index: -100!important;
 			}
 		
 			.box:before
