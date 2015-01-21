@@ -8,10 +8,6 @@
 width: 95%;
 }
 
-#banner p{
-width: 90%;
-}
-
 #header footer:before {
 bottom: -2.5em;
 }
@@ -71,6 +67,7 @@ font-size: 0.8em;
 
 #banner p {
 font-size: 0.6em;
+width: 100%;
 }
 
 .button {
