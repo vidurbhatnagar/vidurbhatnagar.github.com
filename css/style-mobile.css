@@ -7,6 +7,15 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
+	#footer .icons{
+	font-size: 0.4em!important;
+	}
+	
+	*, :not header
+	{
+		text-shadow: none !important;
+	}
+
 	.expandOther{
 	margin-right:5px!important;
 	margin-top: 5px!important;
@@ -82,11 +91,6 @@
 	
 	.videoTitleDesktop{
 	display:none;
-	}
-	
-	*
-	{
-		text-shadow: none !important;
 	}
     
 	a:hover{
@@ -509,10 +513,6 @@
 	margin: 4.5em 0 0 0;
 	}
 
-		#footer .icons
-		{
-			padding: 0.5em 1.25em 0.5em 1.25em;
-		}
 		
 		#footer .copyright
 		{
@@ -532,7 +532,7 @@
 		
 		#footer:after
 			{
-				top: -4.5em;
+				top: -4.15em;
 				left: 50%;
 				height: 4.5em;
 				border-left: solid 1px #fff;
