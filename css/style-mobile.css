@@ -49,7 +49,6 @@
 		.poptrox-popup .caption
 		{
 			font-size: 0.4em;
-			letter-spacing: 1px;
 		}
 		.image img{
 	height: auto!important;
@@ -139,7 +138,6 @@
 		font-size: 18pt;
 		line-height: 1.75em;
 		font-weight: 300;
-		--letter-spacing: 1px;
 		color: #3a3939;
 		text-shadow: 0 0 0.5px rgba(58,57,57,0.25);
 		-webkit-text-stroke: 0.25px;
@@ -153,7 +151,6 @@
 	h2
 	{
 		font-size: 0.5em;
-		letter-spacing: 1px;
 		text-align: center;
 		font-weight: bold;
 		line-height: 1.2em;
@@ -352,7 +349,6 @@
 					margin: 1% 5%;
 					text-align: justify;
 					font-size: 0.4em;
-					letter-spacing: 1px;
 				}
 
 			.box.style2
@@ -472,7 +468,6 @@
 			#banner header h2
 			{
 				font-size: 0.5em;
-				letter-spacing: 1px !important;
 				line-height: 1.2em !important;
 			}
 		#banner p{
@@ -480,9 +475,6 @@
 			margin-top: 1%;
 			text-align: justify;
 			font-size: 0.4em;
-			letter-spacing: 1px;
-			text-shadow: 2px 2px 1px black;
-			letter-spacing: 1px;
 			width: 100%;
 		}
 		
