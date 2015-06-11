@@ -74,26 +74,6 @@
 				}
 			}
 			}
-		
-		function positionFooter(obj){
-			if ($("body").outerHeight(true) > $(window).height()) {
-				obj.css("position","relative");
-			} else {
-				obj.css("position","fixed");
-				obj.css("bottom","0px");
-				obj.css("width","300px");
-				obj.css("left","50%");
-				obj.css("margin-left","-150px");
-			}
-		 }
- 
-		$(window).load(function(){
-			positionFooter($('#footer'));
-			
-			$(window).resize(function(){
-				positionFooter($('#footer'));
-			});
-		});
 			
 	</script>
 
