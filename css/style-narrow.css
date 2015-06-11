@@ -24,8 +24,6 @@ bottom: 23%;
 	}
 		#header header
 		{
-			padding-left: 2em;
-			padding-right: 2em;
 			margin-right: 50% !important;
 			text-align: left;
 		}
@@ -61,17 +59,25 @@ h2 {
 	font-size: 0.6em;
 }
 
+#banner header {
+width: 95%!important;
+}
+
 #banner header h2 {
 font-size: 0.8em;
 }
 
 #banner p {
 font-size: 0.6em;
-width: 100%;
+width: 95%!important;
 }
 
 .button {
 font-size: 0.8em;
+}
+
+.box {
+width: 95%!important;
 }
 
 .box.style1 {

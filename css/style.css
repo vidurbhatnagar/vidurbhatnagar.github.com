@@ -18,7 +18,9 @@
 	
 	.sectionStyle{
 		padding-top: 1.5em;
-		background: #2D7988;
+		background: #557489;
+		color: rgb(50, 50, 50);
+		height: 100%;
 	}
 	
 	.buttonInvisible {
@@ -107,7 +109,6 @@
 	.imageTitleDesktop{
 	font-size:0.75em!important;
 	font-weight: bold;
-	background: #2D7988!important;
 	color: #f5f5f5!important;
 	display:inherit;
 	margin-bottom: 1em!important;
@@ -171,12 +172,10 @@
 		
 	body
 	{
-		background-color:		#2D7988;
-		background-image:		url('../images/bg.jpg');
-		background-repeat: no-repeat;
-		background-size: 100%, cover;
-		background-position: top left, center 0!important;
-		background-attachment: scroll, scroll;
+		background-color: rgb(110, 140, 160);
+		width: 80%;
+		margin: auto;
+		overflow-x: hidden;
 	}
 
 		body.is-scroll
@@ -726,7 +725,7 @@
 			input[type="reset"].style2,
 			.button.style2
 			{
-				color: #2D7988;
+				color: #557489;
 				background: #F5F5F5;;
 				box-shadow: 2px 0px 15px rgba(37, 37, 37, 0.9);
 				font-weight: bolder;
@@ -738,7 +737,7 @@
 				input[type="reset"].style2:hover,
 				.no-touch .button.style2:hover
 				{
-					background: #2D7988;
+					background: #557489;
 					color: #f5f5f5 !important;
 					--text-shadow: 0 0 0.5px rgba(0,0,0,0.25) !important;
 				}
@@ -770,6 +769,7 @@
 			position: relative;
 			--margin-top: 4.5em;
 			margin-bottom: 1em;
+			width: 80%!important;
 		}
 			.box.footer{
 			position: absolute;
@@ -960,11 +960,10 @@
 			{
 				padding: 1em 2em 1em 2em;
 				position: relative;
-				color: #f5f5f5;
 				text-align: justify;
-				background: #2F7583;
+				background: #f5f5f5;
 				z-index:1;
-				box-shadow: 1px 1px 10px black;
+				box-shadow: 1px 1px 2px black;
 				margin-top: 1em;
 				margin-bottom: 1em;
 			}
@@ -1106,14 +1105,21 @@
 		cursor: default;
 		letter-spacing: 1em!important;
 		padding:15% 0 16% 0 !important;
+		background-image:		url('../images/bg.jpg');
+		background-repeat: no-repeat;
+		background-size: 100%, cover;
+		background-position: top left, center 0!important;
+		background-attachment: scroll, scroll;
 	}
 	
 		#header header
 		{
 			display: inline-block;
-			padding:1% !important;
 			background: rgba(190, 220, 255, 0.15);
 			border-left: 1px dotted lightgrey;
+			margin-right: 30%;
+			width: 65%;
+			padding: 1%;
 		}
 		
 			#header header h1
@@ -1122,6 +1128,7 @@
 				font-size: 2.2em;
 				letter-spacing: 0.1em!important;
 				-webkit-text-stroke: 0;
+				line-height: 1.2em!important;
 			}
 
 			#header header p
@@ -1186,13 +1193,12 @@
 	#banner
 	{
 		position: relative;
-		color: #f5f5f5;
 		text-align: center;
-		background: #2D7988;
 		margin: 0;
 		background-image: url('images/banner.svg');
 		background-repeat: no-repeat;
-		background-position: center;		
+		background-position: center;
+		color: #f5f5f5;		
 	}
 
 		#banner .button
@@ -1206,7 +1212,7 @@
 		{
 			margin: auto;
 			margin-bottom: 0.5em;
-			width:60%;
+			width: 80%;
 			background: rgba(0, 0, 0, 0.15);
 		}
 		
@@ -1228,7 +1234,7 @@
 			font-size: 0.75em;
 			letter-spacing: 1px;
 			letter-spacing:0.5px;
-			width:60%;
+			width: 80%;
 			background: rgba(0, 0, 0, 0.02);
 			padding: 15px;
 		}
@@ -1322,6 +1328,7 @@
 			text-align: center;
 			margin-top: 1em;
 			font-size: 0.6em;
+			margin-bottom: 2px!important;
 		}
 		
 /*********************************************************************************/

@@ -52,16 +52,18 @@
 					if(pageYOffset > selectedSummary.parentElement.offsetTop){
 						selectedSummary.style.position = 'fixed';
 						selectedSummary.style.top = 0;
-						selectedSummary.style.borderTop = '5px solid #2D7988';
+						selectedSummary.style.borderTop = '5px solid #557489';
+						selectedSummary.style.width = $('body').width()+'px';
 					} else {
 						selectedSummary.style.position = 'relative';
 						selectedSummary.style.borderTop = 'none';
+						selectedSummary.style.width = '100%';
 					}
 				}
 				else{
 					selectedSummary.style.position = 'relative';
 					selectedSummary.style.borderTop = 'none';
-
+					selectedSummary.style.width = '100%';
 				}
 			}
 		};
@@ -132,9 +134,10 @@
       <!-- Featured Projects -->
       <details id="idFirstDetails">
 		  <summary id="idFeatured" onClick = "closeAll(this.parentElement)" class="button style2 scrolly" style="z-index:501;">Featured Projects</summary>
-		  <!-- Feature 1 -->
 		  <section class="sectionStyle">
-			  <article class="container box style1 right">
+						
+			<!-- Feature 1 -->
+		    <article class="container box style1 right">
 				 <div class="gallery">
 					<a href="images/proj1.jpg" class="image fit noShow"/>
 					<img title="SAP Game Analytics for Kolkata Knight Riders"/>
