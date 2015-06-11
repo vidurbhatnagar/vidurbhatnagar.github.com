@@ -37,6 +37,66 @@
          ga('create', 'UA-55361403-1', 'auto');
          ga('send', 'pageview');
       </script>
+	  
+	<script type='text/javascript'>
+		var startProductBarPos = -1;
+		
+		window.onscroll = function() {
+			var summaries = document.getElementsByTagName('summary');
+			var selectedSummary = null;
+			
+			for(var i=0; i<summaries.length;i++){
+				selectedSummary = summaries[i];
+				
+				if(selectedSummary.parentElement.open){
+					if(pageYOffset > selectedSummary.parentElement.offsetTop){
+						selectedSummary.style.position = 'fixed';
+						selectedSummary.style.top = 0;
+						selectedSummary.style.zIndex = 500+i;
+					} else {
+						selectedSummary.style.position = 'relative';
+						selectedSummary.style.zIndex = 500;
+					}
+				}
+				else{
+					selectedSummary.style.position = 'relative';
+					selectedSummary.style.zIndex = 500;
+				}
+			}
+		};
+		
+		function closeAll(openDetails) {
+			var details = document.getElementsByTagName("details");
+			var invisibleButtons = document.getElementsByClassName("buttonInvisible");
+			for (var i = 0; i < details.length; i++) {
+				if (details[i] == openDetails && details[i].open==false) {
+					invisibleButtons[i].click();
+				}
+			}
+			}
+		
+		function positionFooter(obj){
+			if ($("body").outerHeight(true) > $(window).height()) {
+				obj.css("position","relative");
+			} else {
+				obj.css("position","fixed");
+				obj.css("bottom","0px");
+				obj.css("width","300px");
+				obj.css("left","50%");
+				obj.css("margin-left","-150px");
+			}
+		 }
+ 
+		$(window).load(function(){
+			positionFooter($('#footer'));
+			
+			$(window).resize(function(){
+				positionFooter($('#footer'));
+			});
+		});
+			
+	</script>
+
       <!--[if lte IE 8]>
       <link rel="stylesheet" href="css/ie/v8.css" />
       <![endif]-->
@@ -53,280 +113,301 @@
             </p>
          </header>
          <footer>
-            <a href="#banner" class="button style2 scrolly">About Me</a>
+            <a href="#idBanner" class="scrolly  buttonInvisible">About Me</a>
          </footer>
       </section>
-      <!-- Banner -->
-      <section id="banner">
-         <header>
-            <h2><code>>_whoami</code> 
-               <br />Youngest Product Owner at SAP Labs India,
-               <br />Dual Degree Graduate (B.Tech. - Computer Science and MBA - Human Resources)
-            </h2>
-         </header>
-         <p>
-            Working at SAP Labs India Pvt. Ltd. for over an year, I am currently responsible for end-to-end delivery of product features in the Business Analytics and Intelligence domain. 
-            A competent software developer, I have delivered on some of the most strategic projects for the organization as a fellow 
-            in the Managing Director's office in India and Frontline Applications team in SAP Labs, Palo Alto.
-            <br><br>My dalliance with enterprise-applications began during my pre-final graduation year, when I designed an ERP module for small-scale enterprises, while working as a freelance developer.
-            A passionate advocate of design thinking, I have proficiently driven intuitive and user-centric cloud-based 
-            applications on SAP HANA - an in-memory application platform. I have also been involved with research projects to improve compression performance in SAP HANA. 
-            <br><br>Furthermore, as an avid Basketball player for the past 11 years, I have represented my state and college at national level tournaments.
-            <br><br>
-            <h7>Skills:</h7>
-            Java, Javascript, SQL, SAP HANA, Unix Scripting, Robotics (Arduino), Product Management
-            <br>			
-            <h7>Research Interests:</h7>
-            Machine Learning, Robotics
-         </p>
-         <footer>
-            <a href="#first" class="button style2 scrolly scrolly-centered">Project Portfolio</a>
-         </footer>
-      </section>
-      <!-- Feature 1 -->
-      <article id="first" class="container box style1 right">
-         <div class="gallery">
-            <a href="images/proj1.jpg" class="image fit noShow"/>
-            <img title="SAP Game Analytics for Kolkata Knight Riders"/>
-            <a href="images/proj111.jpg" class="image fit noShow" />
-            <img title="SAP Game Visualizations for Kolkata Knight Riders"/>
-            <a href="images/proj11.jpg" class="image fit">	
-            <img src="images/proj12.jpg" title="SAP Auction Analytics for Kolkata Knight Riders"/>
-            <img class="expand" src="images/expand.png"/>
-            </a>
-         </div>
-         <div class="inner">
-            <header>
-               <h2>1. SAP Sports Analytics for Kolkata Knight Riders (KKR) </h2>
-            </header>
-            <p>As a fellow in the Managing Director's office at SAP Labs India, 
-               I was implementing predictive algorithms on SAP HANA, to analyze 6 years of historical data from different leagues (IPL, BigBash, etc.), 
-               to help the cricket franchisee (KKR) in analyzing strengths and weaknesses of different teams and individual players.
-			   <br><br>The entire portoflio consisted of 3 solutions viz. SAP Auction Analytics - which helped KKR choose one of the best teams for the season, 
-               SAP Game Analytics - to define on-field strategy for every game, and SAP Game Visualizations -a fan-engagement solution.
-            </p>
-         </div>
-      </article>
-      <!-- Feature 2 -->
-      <article class="container box style1 left">
-         <div class="gallery">
-            <a href="images/proj6.jpg" class="image fit">
-            <img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
-            <img class="expand" src="images/expand.png"/>
-            </a>
-         </div>
-         <div class="inner">
-            <header>
-               <h2>2. SAP Social Flex Seating (SFS) for Stanford University</h2>
-            </header>
-            <p>SFS is a ticketing solution to alleviate the pain-points of group ticketing. As a part of the product management team at SAP Labs, Palo Alto, I was responsible for furthering fan engagement portfolio, gaining business acceptance for social flex concept amongst different stakeholders, defining product roadmaps, etc.
-            </p>
-         </div>
-      </article>
-      <!-- Feature 3 -->
-      <article class="container box style1 right">
-         <div class="gallery">
-            <a href="images/proj2.jpg" class="image fit">
-            <img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
-            <img class="expand" src="images/expand.png"/>
-            </a>
-         </div>
-         <div class="inner">
-            <header>
-               <h2>3. SAP HANA Optimization Using Statistical Estimation (HOUSE)</h2>
-               <p>
-                  <h8>Patent Applications: </h8>
-                  US 14/098,706; US 14/314,032
-               </p>
-            </header>
-            <p>
-               Research project to optimize dictionary compression in SAP 
-               HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
-               based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
-               the research claims. The paper for this research is aimed for submission in SIGMOD 2015 (under corporate track).
-            </p>
-         </div>
-      </article>
-      <!-- Feature 4 -->
-      <article class="container box style1 left">
-         <a class="image video">
-            <!--
-               <img src="images/proj3.jpg" alt="SpeakUp" />
-               -->
-            <iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
-         </a>
-         <div class="inner">
-            <header>
-               <h2>4. SpeakUp</h2>
-               <p>
-                  <h8><a target="_blank" href="pdfs/SpeakUp_Whitepaper.pdf">Whitepaper</a></h8>
-               </p>
-            </header>
-            <p>
-               A sign-language to speech conversion system, SpeakUp is a cost-effective glove-based 
-               system to convert the static subset of a sign language to voice.
-               To record the different hand gestures, special cost effective gloves were fabricated with self-developed uni-directional flex (bend) 
-               sensors. 'Statistical Template Matching' technique was employed for processing and then recognizing these gestures. 
-            </p>
-         </div>
-      </article>
-      <!-- Feature 5 -->
-      <article class="container box style1 right">
-         <a class="image video">
-            <!--
-               <img src="images/proj3.jpg" alt="SpeakUp" />
-               -->
-            <iframe width="900" height="250" src="http://www.youtube.com/embed/dj7jl7zTTZA" frameborder="0" allowfullscreen></iframe>
-         </a>
-         <div class="inner">
-            <header>
-               <h2>5. Qubo - Quadruped Robot</h2>
-            </header>
-            <p>
-               QUBO is a 4-legged voice controlled robot for entertainment and basic security purposes. Built on the open-source Arduino platform and equipped with on-board sensors 
-               such as a micro-camera, microphone and touch sensor, QUBO can interact with humans through voice and images. It also exhibit a large variety of behavioral patterns 
-               and has various features like the ability to recognize its master's voice, marker detection, collision intelligence, etc. 
-            </p>
-         </div>
-      </article>
+      
+	  <!-- Banner -->
+	  <details>
+		  <summary id="idBanner" onClick = "closeAll(this.parentElement)" class="button style2 scrolly "><code>>_whoami</code></summary>
+		  <section id="banner" class="sectionStyle">
+			 <header>
+				<h2> 
+				   Youngest Product Owner at SAP Labs India,
+				   <br />Dual Degree Graduate (B.Tech. - Computer Science and MBA - Human Resources)
+				</h2>
+			 </header>
+			 <p>
+				Working at SAP Labs India Pvt. Ltd. for over an year, I am currently responsible for end-to-end delivery of product features in the Business Analytics and Intelligence domain. 
+				A competent software developer, I have delivered on some of the most strategic projects for the organization as a fellow 
+				in the Managing Director's office in India and Frontline Applications team in SAP Labs, Palo Alto.
+				<br><br>My dalliance with enterprise-applications began during my pre-final graduation year, when I designed an ERP module for small-scale enterprises, while working as a freelance developer.
+				A passionate advocate of design thinking, I have proficiently driven intuitive and user-centric cloud-based 
+				applications on SAP HANA - an in-memory application platform. I have also been involved with research projects to improve compression performance in SAP HANA. 
+				<br><br>Furthermore, as an avid Basketball player for the past 11 years, I have represented my state and college at national level tournaments.
+				<br><br>
+				<h7>Skills:</h7>
+				Java, Javascript, SQL, SAP HANA, Unix Scripting, Robotics (Arduino), Product Management
+				<br>			
+				<h7>Research Interests:</h7>
+				Machine Learning, Robotics
+			 </p>
+			 <footer>
+				<a href="#idFeatured" class="scrolly scrolly-top buttonInvisible">Featured Projects</a>
+			 </footer>
+		  </section>
+	  </details>
+	  
+      <!-- Featured Projects -->
+      <details id="idFirstDetails">
+		  <summary id="idFeatured" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Featured Projects</summary>
+		  <!-- Feature 1 -->
+		  <section class="sectionStyle">
+			  <article class="container box style1 right">
+				 <div class="gallery">
+					<a href="images/proj1.jpg" class="image fit noShow"/>
+					<img title="SAP Game Analytics for Kolkata Knight Riders"/>
+					<a href="images/proj111.jpg" class="image fit noShow" />
+					<img title="SAP Game Visualizations for Kolkata Knight Riders"/>
+					<a href="images/proj11.jpg" class="image fit">	
+					<img src="images/proj12.jpg" title="SAP Auction Analytics for Kolkata Knight Riders"/>
+					<img class="expand" src="images/expand.png"/>
+					</a>
+				 </div>
+				 <div class="inner">
+					<header>
+					   <h2>1. SAP Sports Analytics for Kolkata Knight Riders (KKR) </h2>
+					</header>
+					<p>As a fellow in the Managing Director's office at SAP Labs India, 
+					   I was implementing predictive algorithms on SAP HANA, to analyze 6 years of historical data from different leagues (IPL, BigBash, etc.), 
+					   to help the cricket franchisee (KKR) in analyzing strengths and weaknesses of different teams and individual players.
+					   <br><br>The entire portoflio consisted of 3 solutions viz. SAP Auction Analytics - which helped KKR choose one of the best teams for the season, 
+					   SAP Game Analytics - to define on-field strategy for every game, and SAP Game Visualizations -a fan-engagement solution.
+					</p>
+				 </div>
+			  </article>
+			  <!-- Feature 2 -->
+			  <article class="container box style1 left">
+				 <div class="gallery">
+					<a href="images/proj6.jpg" class="image fit">
+					<img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
+					<img class="expand" src="images/expand.png"/>
+					</a>
+				 </div>
+				 <div class="inner">
+					<header>
+					   <h2>2. SAP Social Flex Seating (SFS) for Stanford University</h2>
+					</header>
+					<p>SFS is a ticketing solution to alleviate the pain-points of group ticketing. As a part of the product management team at SAP Labs, Palo Alto, I was responsible for furthering fan engagement portfolio, gaining business acceptance for social flex concept amongst different stakeholders, defining product roadmaps, etc.
+					</p>
+				 </div>
+			  </article>
+			  <!-- Feature 3 -->
+			  <article class="container box style1 right">
+				 <div class="gallery">
+					<a href="images/proj2.jpg" class="image fit">
+					<img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
+					<img class="expand" src="images/expand.png"/>
+					</a>
+				 </div>
+				 <div class="inner">
+					<header>
+					   <h2>3. SAP HANA Optimization Using Statistical Estimation (HOUSE)</h2>
+					   <p>
+						  <h8>Patent Applications: </h8>
+						  US 14/098,706; US 14/314,032
+					   </p>
+					</header>
+					<p>
+					   Research project to optimize dictionary compression in SAP 
+					   HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
+					   based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
+					   the research claims. The paper for this research is aimed for submission in SIGMOD 2015 (under corporate track).
+					</p>
+				 </div>
+			  </article>
+			  <!-- Feature 4 -->
+			  <article class="container box style1 left">
+				 <a class="image video">
+					<!--
+					   <img src="images/proj3.jpg" alt="SpeakUp" />
+					   -->
+					<iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
+				 </a>
+				 <div class="inner">
+					<header>
+					   <h2>4. SpeakUp</h2>
+					   <p>
+						  <h8><a target="_blank" href="pdfs/SpeakUp_Whitepaper.pdf">Whitepaper</a></h8>
+					   </p>
+					</header>
+					<p>
+					   A sign-language to speech conversion system, SpeakUp is a cost-effective glove-based 
+					   system to convert the static subset of a sign language to voice.
+					   To record the different hand gestures, special cost effective gloves were fabricated with self-developed uni-directional flex (bend) 
+					   sensors. 'Statistical Template Matching' technique was employed for processing and then recognizing these gestures. 
+					</p>
+				 </div>
+			  </article>
+			  <!-- Feature 5 -->
+			  <article class="container box style1 right">
+				 <a class="image video">
+					<!--
+					   <img src="images/proj3.jpg" alt="SpeakUp" />
+					   -->
+					<iframe width="900" height="250" src="http://www.youtube.com/embed/dj7jl7zTTZA" frameborder="0" allowfullscreen></iframe>
+				 </a>
+				 <div class="inner">
+					<header>
+					   <h2>5. Qubo - Quadruped Robot</h2>
+					</header>
+					<p>
+					   QUBO is a 4-legged voice controlled robot for entertainment and basic security purposes. Built on the open-source Arduino platform and equipped with on-board sensors 
+					   such as a micro-camera, microphone and touch sensor, QUBO can interact with humans through voice and images. It also exhibit a large variety of behavioral patterns 
+					   and has various features like the ability to recognize its master's voice, marker detection, collision intelligence, etc. 
+					</p>
+				 </div>
+			  </article>
+			  <footer>
+					<a href="#idPortfolio" class="scrolly scrolly-top buttonInvisible">Portfolio</a>
+			  </footer>
+		  </section>
+	  </details>
+	  
       <!-- Portfolio -->
-      <section id="portfolio">
-         <article class="container box style2">
-            <div class="inner gallery">
-               <div class="row flush">
-                  <div class="3u">
-                     <a href="images/proj7.jpg" class="image fit">
-                     <img src="images/proj7.jpg" alt="SAP Third Eye" title="Independently developed SAP Third Eye - a geo-location based Augmented Reality (AR) Android platform in just under 4 months as an interns at SAP Labs. 
-                        It can be used as a standalone platform or can be connected to existing SAP back-end services to render nearby locations as augmented pins on the screen."/>
-                     <img class="expandOther" src="images/expand.png"/>
-                     <span class="imageTitleMobile">6. SAP Third Eye - Augmented Reality Platform</span>
-                     </a>
-                  </div>
-                  <div class="3u">
-                     <a href="images/proj10.jpg" class="image fit">
-                     <img src="images/proj10.jpg" alt="WebEngage Email Reader" title="Working as a freelance developer, I resolved the infinite e-mail loop issue caused due to auto-email responders by fixing the IMAP Server bug. 
-                        I also modified existing code to prevent hard wiring of certain RegEx definitions."/>
-                     <img class="expandOther" src="images/expand.png"/>
-                     <span class="imageTitleMobile">7. WebEngage E-mail Reader Project</span>
-                     </a>
-                  </div>
-               </div>
-               <div class="row flush noLine imageTitleDesktop">
-                  <div class="3u">6. SAP Third Eye - Augmented Reality Platform</div>
-                  <div class="3u">7. WebEngage E-mail Reader Project</div>
-               </div>
-               <div class="row flush">
-                  <div class="3u">
-                     <a href="images/proj41.jpg" class="image fit">
-                     <img src="images/proj41.jpg" alt="ROA" title="Rohits' Office Automation is an ERP module for automation of revenue cycle for SMEs. With features like 
-                        master data management, printing of various bills on pre-printed stationary and 
-                        automated report generation viz. sales, sales tax, performance, etc., it aims to ease the manual workload of such tasks."/>
-                     <img class="expandOther" src="images/expand.png"/>
-                     <span class="imageTitleMobile">8. Rohits' Office Automation - ERP Module</span>
-                     </a>
-                  </div>
-                  <div class="3u">
-                     <a href="images/proj51.jpg" class="image fit">
-                     <img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger is a two-way client-side interface for 8-bit 8-channel temperature data logger devices. 
-                        It can display real-time values of the 8-channels in real-time and store the same on disk, as well as, lets the user program the devices as per requirements."/>
-                     <img class="expandOther" src="images/expand.png"/>
-                     <span class="imageTitleMobile">9. Rohits' Data Logger</span>
-                     </a>
-                  </div>
-               </div>
-               <div class="row flush noLine imageTitleDesktop">
-                  <div class="3u">8. Rohits' Office Automation - ERP Module</div>
-                  <div class="3u">9. Rohits' Data Logger</div>
-               </div>
-            </div>
-         </article>
-      </section>
-      <article class="container box style3">
-         <section>
-            <ol class="default" start="10">
-               <li>Drove 2 internal projects for SAP Labs India, viz. 'SAP Reva Car Booking Portal' and 'SAP Paperless' as a fellow in the Managing Director's office
-               <li>'UMessenger' - A LAN messenger for Unix, based on shell scripting and C, which uses sockets as its communication gateway
-               <li>Sun Tracking Solar Cells - Embedded system using MCS51 to optimize power generation by rotating the shaft containing the photo sensors according to the 
-                  position of the light rays.
-               <li>'Bloom' - Advanced Bluetooth messenger for Symbian phones with features like text-chat, file-transfer, remote-calling, remote-desktop access, etc.
-               <li>White box testing tool for websites, scripted in Unix Shell
-               <li>'Word Scram' - A Word formation game in C++, wherein the player has to form maximum possible words through keyboard input from a random selection of 6 English letters. 
-                  “Dynamic Programming” was implemented to achieve a linear time complexity.
-            </ol>
-         </section>
-      </article>
-      <article class="container box style4">
-         <footer>
-            <a href="#achievements" class="button style2 scrolly scrolly-top">Achievements</a>
-         </footer>
-      </article>
-      <section id="achievements">
-         <article class="container box style2">
-            <div class="inner gallery">
-               <div class="row flush">
-                  <div class="3u">
-                     <a class="image video">
-                     <iframe width="854" height="250" src="http://www.youtube.com/embed/REKbxkTHH2Y" frameborder="0" allowfullscreen>
-                     </iframe>
-                     <span class="videoTitleMobile">Employee of the Year, SAP Labs India, 2013</span>
-                     </a>
-                  </div>
-                  <div class="3u lastVideoElement">
-                     <a class="image video">
-                     <iframe width="854" height="250" src="http://www.youtube.com/embed/6dHwWoKXYMg" frameborder="0" allowfullscreen>
-                     </iframe>
-                     <span class="videoTitleMobile">Featured in Life @ SAP, 2014</span>
-                     </a>
-                  </div>
-               </div>
-               <div class="row flush noLine imageTitleDesktop">
-                  <div class="3u">Employee of the Year, SAP Labs India, 2013</div>
-                  <div class="3u">Featured in Life @ SAP, 2014</div>
-               </div>
-            </div>
-         </article>
-      </section>
-      <article class="container box style3">
-         <section>
-            <ul class="default">
-               <li>Awarded ‘Employee of the Year, 2013’ in SAP Labs India in Spirit Of Innovation Category, within 3
-                  months of joining as a full time employee
-               <li>Recognized as ‘Star Employee of the Managing Director's Office’ in Feb, 2014 and for the 'Peer Award' in Quarter 3, 2014 at SAP Labs India
-               <li>Selected as an expert speaker for SAP Labs India for ‘Product Innovation Day’ (Meet the Expert
-                  Pod) 2013, ISEC 2014 (IIT Chennai), Technology Booths at IPL in Dubai and Kolkata and other
-                  internal events like OxD Conference 2014, Fresher’s Day 2014, Faculty Day 2014 etc.
-               <li>Completed ‘Introduction to Mobile Solution Development for Enterprise’ and ‘Introduction to Software Development on SAP HANA’ courses on openSAP in 2013
-               <li>Recipient of Government of India C.B.S.E Scholarship (CSS) for 5 years duration from 2008 – 2013
-               <li>Winner of the 'Franklin Templeton India - Invest for Tomorrow Online Idea Entries', January 2013
-               <li>Successfully completed 'Advanced Problem Solving in C' course under the aegis of IEEE in December, 2008
-               <li>Involved with child-care centers (orphanages) in Roorkee - 'Vatsalya Vatika' and Bangalore - 'Hope Foundation'
-            </ul>
-         </section>
-      </article>
-      <article class="container box style4">
-         <footer>
-            <a href="#footer" class="button style2 scrolly scrolly-top">Catch up over a Java?</a>
-         </footer>
-      </article>
-      <section id="footer" >
-         <ul class="icons">
-            <li><a href="tel:+919632566611" class="icon fa-mobile"><span class="label">Mobile</span></a></li>
-            <li><a href="mailto:mail@vidurbhatnagar.com" class="icon fa-envelope-o"><span class="label">Mail</span></a></li>
-            <li><a target="_blank" href="http://in.linkedin.com/in/vidurbhatnagar" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            <li>
-               <span class="fa-stack">
-               <a target="_blank" href="pdfs/Vidur_S_Bhatnagar_Resume.pdf" class="icon fa-file">
-               <span class="fa-stack-1x icon-text">CV</span>
-               </a>
-               </span>
-            </li>
-         </ul>
-         <div class="copyright">
-            <ul class="menu">
-               <li>&copy; Vidur S. Bhatnagar. 2012-2014. All rights reserved.</li>
-               <li>Design: <h8><a target="_blank" href="http://html5up.net">HTML5 UP</a></h8></li>
-            </ul>
-         </div>
-      </section>
+	  <details>
+		  <summary id="idPortfolio" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Other Projects</summary>
+		  <section class="sectionStyle">
+			 <article class="container box style2">
+				<div class="inner gallery">
+				   <div class="row flush">
+					  <div class="3u">
+						 <a href="images/proj7.jpg" class="image fit">
+						 <img src="images/proj7.jpg" alt="SAP Third Eye" title="Independently developed SAP Third Eye - a geo-location based Augmented Reality (AR) Android platform in just under 4 months as an interns at SAP Labs. 
+							It can be used as a standalone platform or can be connected to existing SAP back-end services to render nearby locations as augmented pins on the screen."/>
+						 <img class="expandOther" src="images/expand.png"/>
+						 <span class="imageTitleMobile">6. SAP Third Eye - Augmented Reality Platform</span>
+						 </a>
+					  </div>
+					  <div class="3u">
+						 <a href="images/proj10.jpg" class="image fit">
+						 <img src="images/proj10.jpg" alt="WebEngage Email Reader" title="Working as a freelance developer, I resolved the infinite e-mail loop issue caused due to auto-email responders by fixing the IMAP Server bug. 
+							I also modified existing code to prevent hard wiring of certain RegEx definitions."/>
+						 <img class="expandOther" src="images/expand.png"/>
+						 <span class="imageTitleMobile">7. WebEngage E-mail Reader Project</span>
+						 </a>
+					  </div>
+				   </div>
+				   <div class="row flush noLine imageTitleDesktop">
+					  <div class="3u">6. SAP Third Eye - Augmented Reality Platform</div>
+					  <div class="3u">7. WebEngage E-mail Reader Project</div>
+				   </div>
+				   <div class="row flush">
+					  <div class="3u">
+						 <a href="images/proj41.jpg" class="image fit">
+						 <img src="images/proj41.jpg" alt="ROA" title="Rohits' Office Automation is an ERP module for automation of revenue cycle for SMEs. With features like 
+							master data management, printing of various bills on pre-printed stationary and 
+							automated report generation viz. sales, sales tax, performance, etc., it aims to ease the manual workload of such tasks."/>
+						 <img class="expandOther" src="images/expand.png"/>
+						 <span class="imageTitleMobile">8. Rohits' Office Automation - ERP Module</span>
+						 </a>
+					  </div>
+					  <div class="3u">
+						 <a href="images/proj51.jpg" class="image fit">
+						 <img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger is a two-way client-side interface for 8-bit 8-channel temperature data logger devices. 
+							It can display real-time values of the 8-channels in real-time and store the same on disk, as well as, lets the user program the devices as per requirements."/>
+						 <img class="expandOther" src="images/expand.png"/>
+						 <span class="imageTitleMobile">9. Rohits' Data Logger</span>
+						 </a>
+					  </div>
+				   </div>
+				   <div class="row flush noLine imageTitleDesktop">
+					  <div class="3u">8. Rohits' Office Automation - ERP Module</div>
+					  <div class="3u">9. Rohits' Data Logger</div>
+				   </div>
+				</div>
+			 </article>
+			 <article class="container box style3">
+			 <section>
+				<ol class="default" start="10">
+				   <li>Drove 2 internal projects for SAP Labs India, viz. 'SAP Reva Car Booking Portal' and 'SAP Paperless' as a fellow in the Managing Director's office
+				   <li>'UMessenger' - A LAN messenger for Unix, based on shell scripting and C, which uses sockets as its communication gateway
+				   <li>Sun Tracking Solar Cells - Embedded system using MCS51 to optimize power generation by rotating the shaft containing the photo sensors according to the 
+					  position of the light rays.
+				   <li>'Bloom' - Advanced Bluetooth messenger for Symbian phones with features like text-chat, file-transfer, remote-calling, remote-desktop access, etc.
+				   <li>White box testing tool for websites, scripted in Unix Shell
+				   <li>'Word Scram' - A Word formation game in C++, wherein the player has to form maximum possible words through keyboard input from a random selection of 6 English letters. 
+					  “Dynamic Programming” was implemented to achieve a linear time complexity.
+				</ol>
+			 </section>
+		  </article>
+			 <footer>
+				<a href="#idAchievements" class="scrolly scrolly-top buttonInvisible">Achievements</a>
+			 </footer>
+		  </section>
+	  </details>
+	  
+	  <!--Achivements-->
+	  <details>
+		  <summary id="idAchievements" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Achievements</summary>
+		  <section class="sectionStyle">
+			 <article class="container box style2">
+				<div class="inner gallery">
+				   <div class="row flush">
+					  <div class="3u">
+						 <a class="image video">
+						 <iframe width="854" height="250" src="http://www.youtube.com/embed/REKbxkTHH2Y" frameborder="0" allowfullscreen>
+						 </iframe>
+						 <span class="videoTitleMobile">Employee of the Year, SAP Labs India, 2013</span>
+						 </a>
+					  </div>
+					  <div class="3u lastVideoElement">
+						 <a class="image video">
+						 <iframe width="854" height="250" src="http://www.youtube.com/embed/6dHwWoKXYMg" frameborder="0" allowfullscreen>
+						 </iframe>
+						 <span class="videoTitleMobile">Featured in Life @ SAP, 2014</span>
+						 </a>
+					  </div>
+				   </div>
+				   <div class="row flush noLine imageTitleDesktop">
+					  <div class="3u">Employee of the Year, SAP Labs India, 2013</div>
+					  <div class="3u">Featured in Life @ SAP, 2014</div>
+				   </div>
+				</div>
+			 </article>
+			 <article class="container box style3">
+				<ul class="default">
+				   <li>Awarded ‘Employee of the Year, 2013’ in SAP Labs India in Spirit Of Innovation Category, within 3
+					  months of joining as a full time employee
+				   <li>Recognized as ‘Star Employee of the Managing Director's Office’ in Feb, 2014 and for the 'Peer Award' in Quarter 3, 2014 at SAP Labs India
+				   <li>Selected as an expert speaker for SAP Labs India for ‘Product Innovation Day’ (Meet the Expert
+					  Pod) 2013, ISEC 2014 (IIT Chennai), Technology Booths at IPL in Dubai and Kolkata and other
+					  internal events like OxD Conference 2014, Fresher’s Day 2014, Faculty Day 2014 etc.
+				   <li>Completed ‘Introduction to Mobile Solution Development for Enterprise’ and ‘Introduction to Software Development on SAP HANA’ courses on openSAP in 2013
+				   <li>Recipient of Government of India C.B.S.E Scholarship (CSS) for 5 years duration from 2008 – 2013
+				   <li>Winner of the 'Franklin Templeton India - Invest for Tomorrow Online Idea Entries', January 2013
+				   <li>Successfully completed 'Advanced Problem Solving in C' course under the aegis of IEEE in December, 2008
+				   <li>Involved with child-care centers (orphanages) in Roorkee - 'Vatsalya Vatika' and Bangalore - 'Hope Foundation'
+				</ul>
+		  </article>
+		  </section>
+	  </details>
+	  
+	  <!--Footer-->
+	  <section id="footer" class="sectionStyle">
+	  <footer>
+				<a href="#header" class="scrolly scrolly-top buttonInvisible">Go to Top</a>
+		</footer>
+	  <p>Fancy a Java?</p>
+			 <ul class="icons">
+				<li><a href="tel:+919632566611" class="icon fa-mobile"><span class="label">Mobile</span></a></li>
+				<li><a href="mailto:mail@vidurbhatnagar.com" class="icon fa-envelope-o"><span class="label">Mail</span></a></li>
+				<li><a target="_blank" href="http://in.linkedin.com/in/vidurbhatnagar" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li>
+				   <span class="fa-stack">
+				   <a target="_blank" href="pdfs/Vidur_S_Bhatnagar_Resume.pdf" class="icon fa-file">
+				   <span class="fa-stack-1x icon-text">CV</span>
+				   </a>
+				   </span>
+				</li>
+			 </ul>
+			 
+			 <div class="copyright">
+			<ul class="menu">
+				   <li>&copy; Vidur S. Bhatnagar. 2012-2015. All rights reserved.</li>
+				   <li>Design: <h8><a target="_blank" href="http://html5up.net">HTML5 UP</a></h8></li>
+				</ul>
+		</div>	
+		  </section>	  
    </body>
 </html>

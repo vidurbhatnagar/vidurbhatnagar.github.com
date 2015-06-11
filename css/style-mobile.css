@@ -12,7 +12,14 @@
 	{
 		text-shadow: none !important;
 	}
-
+	.sectionStyle{
+		padding-top: 1em;
+	}
+	
+	details{
+		line-height: 0!important;
+	}
+	
 	.expandOther{
 	margin-right:5px!important;
 	margin-top: 5px!important;
@@ -43,7 +50,7 @@
 		{
 			padding: 0.5em 1em 0.5em 1em;
 			background-size: 270%;
-			margin: auto!important;
+			--margin: auto!important;
 		}
 			
 		.poptrox-popup .caption
@@ -292,15 +299,16 @@
 			width: auto;
 			margin: auto;
 			--margin-top: 15% !important;
-			padding: 0 5% !important;
+			--padding: 0 5% !important;
 			font-size: 0.5em !important;
+			padding-bottom: 2%!important;
 		}
 
 	/* Box */
 
 		.box
 		{
-			margin-top: 2.25em;
+			--margin-top: 2.25em;
 		}
 
 			.box:after
@@ -414,8 +422,9 @@
 
 	#header
 	{
-		padding: 1em 1em 0em 1em !important;
-		margin-bottom: 2% !important;
+		--padding: 1em 1em 0em 1em !important;
+		padding: 5% 0 10% 5%!important;
+		--margin-bottom: 2% !important;
 	}
 		#header header
 		{
@@ -451,10 +460,8 @@
 		background-size: auto 150%;
 		width: 100%;
 		margin: auto;
-		padding: 0 !important;
 		padding-left: 2%% !important;
 		padding-right: 2% !important;
-		padding-top: 2% !important;
 		z-index: 10;
 	}
 
@@ -499,13 +506,16 @@
 	
 	#footer
 	{
-	margin: 4.5em 0 0 0;
+	--margin: 4.5em 0 0 0;
 	}
 
+		#footer p{
+			font-size:0.4em;
+		}
 		
 		#footer .copyright
 		{
-			font-size: 0.5em;
+			font-size: 0.3em;
 			margin: 0 0 4em 0;
 		}
 		

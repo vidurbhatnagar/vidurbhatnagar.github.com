@@ -18,9 +18,9 @@ bottom: 23%;
 
 #header
 	{
-		padding: 1em 1em 0em 1em !important;
-		margin-bottom: 10% !important;
-		margin-top: 5%;
+		--padding: 1em 1em 0em 1em !important;
+		--margin-bottom: 10% !important;
+		--margin-top: 5%;
 	}
 		#header header
 		{
