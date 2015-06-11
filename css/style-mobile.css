@@ -32,6 +32,10 @@
     content: '';
 	}
    
+   ul.icons{
+	font-size: 0.6em;
+   }
+   
    ul.default {
 		list-style: disc;
 		padding-left: 1em;
@@ -188,9 +192,9 @@
 				
 					ul.icons a
 					{
-						width: 2em;
-						height: 2em;
-						line-height: 2em;
+						--width: 2em;
+						--height: 2em;
+						--line-height: 2em;
 					}
 
 			ul.menu
