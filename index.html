@@ -52,17 +52,14 @@
 					if(pageYOffset > selectedSummary.parentElement.offsetTop){
 						selectedSummary.style.position = 'fixed';
 						selectedSummary.style.top = 0;
-						selectedSummary.style.zIndex = 500+i;
 						selectedSummary.style.borderTop = '5px solid #2D7988';
 					} else {
 						selectedSummary.style.position = 'relative';
-						selectedSummary.style.zIndex = 500;
 						selectedSummary.style.borderTop = 'none';
 					}
 				}
 				else{
 					selectedSummary.style.position = 'relative';
-					selectedSummary.style.zIndex = 500;
 					selectedSummary.style.borderTop = 'none';
 
 				}
@@ -103,7 +100,7 @@
       
 	  <!-- Banner -->
 	  <details>
-		  <summary id="idBanner" onClick = "closeAll(this.parentElement)" class="button style2 scrolly "><code>>_whoami</code></summary>
+		  <summary id="idBanner" onClick = "closeAll(this.parentElement)" class="button style2 scrolly" style="z-index:500;"><code>>_whoami</code></summary>
 		  <section id="banner" class="sectionStyle">
 			 <header>
 				<h2> 
@@ -134,7 +131,7 @@
 	  
       <!-- Featured Projects -->
       <details id="idFirstDetails">
-		  <summary id="idFeatured" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Featured Projects</summary>
+		  <summary id="idFeatured" onClick = "closeAll(this.parentElement)" class="button style2 scrolly" style="z-index:501;">Featured Projects</summary>
 		  <!-- Feature 1 -->
 		  <section class="sectionStyle">
 			  <article class="container box style1 right">
@@ -250,7 +247,7 @@
 	  
       <!-- Portfolio -->
 	  <details>
-		  <summary id="idPortfolio" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Other Projects</summary>
+		  <summary id="idPortfolio" onClick = "closeAll(this.parentElement)" class="button style2 scrolly" style="z-index:502;">Other Projects</summary>
 		  <section class="sectionStyle">
 			 <article class="container box style2">
 				<div class="inner gallery">
@@ -323,7 +320,7 @@
 	  
 	  <!--Achivements-->
 	  <details>
-		  <summary id="idAchievements" onClick = "closeAll(this.parentElement)" class="button style2 scrolly">Achievements</summary>
+		  <summary id="idAchievements" onClick = "closeAll(this.parentElement)" class="button style2 scrolly" style="z-index:503;">Achievements</summary>
 		  <section class="sectionStyle">
 			 <article class="container box style2">
 				<div class="inner gallery">
