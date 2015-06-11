@@ -53,14 +53,18 @@
 						selectedSummary.style.position = 'fixed';
 						selectedSummary.style.top = 0;
 						selectedSummary.style.zIndex = 500+i;
+						selectedSummary.style.borderTop = '5px solid #2D7988';
 					} else {
 						selectedSummary.style.position = 'relative';
 						selectedSummary.style.zIndex = 500;
+						selectedSummary.style.borderTop = 'none';
 					}
 				}
 				else{
 					selectedSummary.style.position = 'relative';
 					selectedSummary.style.zIndex = 500;
+					selectedSummary.style.borderTop = 'none';
+
 				}
 			}
 		};
