@@ -13,6 +13,9 @@ h2 {
 h3 {
     font-size: 12px;
 }
+body{
+  background-size: 100%, cover;
+}
 .topMenu {
   display: none;
 }
@@ -31,7 +34,7 @@ h3 {
   margin-left: 5%;
 }
 #header header h1 {
-  font-size: 22px;
+  font-size: 28px;
   padding-bottom: 15px;
 }
 #header header p {

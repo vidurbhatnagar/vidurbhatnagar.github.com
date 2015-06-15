@@ -7,6 +7,25 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.bodyShow {
+    display: block;
+}
+.loadScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fdfdfd;
+    z-index: 10000;
+    background-image: url('../images/loader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
 /* ===================================================== */
 /* Hexes 											 	 */
 /* ===================================================== */
@@ -108,7 +127,7 @@ h3 {
 	padding-left: 10px;
 }
 .fa:before{
-  background-color: white;
+  background-color: #fdfdfd;
   padding: 0 10px;
 }
 .fa:after{
@@ -213,24 +232,6 @@ h3 {
 .whoamiSections{
 	text-align: justify;
 }
-.bodyShow {
-    display: none;
-}
-.loadScreen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fdfdfd;
-    z-index: 10000;
-    background-image: url('../images/loader.gif');
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: block;
-}
 .topMenuWhite {
     background: #fdfdfd;
     border-bottom: 3px solid #444;
@@ -284,7 +285,6 @@ h3 {
     padding-bottom: 10%;
 }
 .sectionStyle {
-    padding-top: 1em;
     color: #444;
     height: 100%;
     background: #fdfdfd;
@@ -411,10 +411,6 @@ body {
     background-color: #fdfdfd;
     width: 100%;
     margin: auto;
-    background-image: url('../images/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%, cover;
-    background-attachment: fixed;
 }
 body.is-scroll {
 }
@@ -1035,6 +1031,11 @@ input[type="reset"].style3:hover,
 
 #header {
     background-color: rgba(0, 0, 0, 0.6);
+	background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+	background-position: center right;
 }
 #header footer{
     background-color: transparent;
@@ -1047,8 +1048,8 @@ input[type="reset"].style3:hover,
     text-align: left;
     color: #fff;
     margin-left: 15%;
-    margin-right: 35%;
     padding-left: 1%;
+	width: 50%;
 }
 #header header h1 {
     font-weight: 600;
@@ -1099,6 +1100,7 @@ input[type="reset"].style3:hover,
     text-align: center;
     --margin-top: 2em;
     background: url('../images/footer.png');
+	background-size: contain;
 }
 #contact h2 {
     color: #fdfdfd;
