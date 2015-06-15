@@ -212,7 +212,7 @@ h3 {
 	text-align: justify;
 }
 .bodyShow {
-    display: block;
+    display: none;
 }
 .loadScreen {
     position: absolute;
@@ -227,7 +227,7 @@ h3 {
     left: 0;
     bottom: 0;
     right: 0;
-    display: none;
+    display: block;
 }
 .topMenuWhite {
     background: #fdfdfd;
