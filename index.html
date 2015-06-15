@@ -24,7 +24,6 @@
         <script src="js/skel.min.js"></script>
         <script src="js/init.js"></script>
         <script src="js/modernizr.custom.78693.js"></script>
-       <script src="js/assets.js"></script>
         <noscript>
             <link rel="stylesheet" href="css/skel.css" />
             <link rel="stylesheet" href="css/style.css" />
@@ -55,7 +54,7 @@
             	}
             };
             
-			function summariesOpen(openDetails) {
+			/*function summariesOpen(openDetails) {
 				var details = document.getElementsByTagName("details");
 				var summariesContainer = document.getElementsByClassName("style1");
 				for (var i = 0; i < details.length; i++) {
@@ -66,10 +65,11 @@
 				}
 				$($('details[open] .style1')[0]).css('margin-top','40px');
 			}
+			*/
 			
             $(window).load(function() {
             	$(".loadScreen").fadeOut("fast");
-              $(".bodyShow").css("display","block");
+				$(".bodyShow").css("display","block");
             	
 				headerHeight = $('#header').height();
             	bannerHeight = $('#banner').height();
@@ -103,6 +103,32 @@
 				if($('body').height() > headerHeight){
 					$('.hexes-img').css('opacity', 1);
 				}
+				
+				/*
+				var images = $('.style1 .image');
+				var texts = $('.style1 h3');
+				var details = $('details');
+				
+				var text, textHeight;
+				var image, imageHeight;
+				
+				for(var i=0;i<images.length;i++)
+				{
+					text = $(texts[i]);
+					textHeight = text.height();
+					
+					image = $(images[i]);
+					imageHeight = image.height();
+					console.log((imageHeight));
+					console.log((imageHeight-textHeight));
+					if(textHeight < imageHeight){
+						text.css("padding-top",(imageHeight - textHeight)/2);
+					}
+					else{
+						image.css("padding-top",(textHeight - imageHeight)/2);					
+					}
+					
+				}*/
               });
             
             
@@ -149,7 +175,7 @@
 						</h3>
 					</header>
                 <div class="hexes-img">
-                    <img class="create-svg" src="images/profile2.jpg" alt="hex" data-clip="#hex_mask">
+                    <img class="create-svg" src="images/profile3.jpg" alt="hex" data-clip="#hex_mask">
                 </div>
                 <!-- End .hexes-img -->
                 <div class="whoamiSections">
@@ -237,7 +263,7 @@
 								<div class="gallery">
 									<a href="images/KKR.png" class="image fit">	
 									<img src="images/KKR.png" title="SAP Sports Analytics for Kolkata Knight Riders"/>
-									<img class="expand" src="images/expand.png"/>
+									
 									</a>
 								</div>
 								<div class="inner">
@@ -252,13 +278,13 @@
 						</details>
 						
 						 <!-- Feature 2 -->
-                    <details>
+                    <details >
 						<summary> SAP Social Flex Seating for Stanford University</summary>
 						<article class="container box style1 left">
                         <div class="gallery">
                             <a href="images/proj6.jpg" class="image fit">
                             <img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
-                            <img class="expand" src="images/expand.png"/>
+                            
                             </a>
                         </div>
                         <div class="inner">
@@ -270,13 +296,13 @@
 						</details>
 					
 					<!-- Feature 3 -->
-                    <details>
+                    <details >
 						<summary> SAP HANA Optimization Using Statistical Estimation</summary>
 						<article class="container box style1 left">
                         <div class="gallery">
                             <a href="images/proj2.jpg" class="image fit">
                             <img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
-                            <img class="expand" src="images/expand.png"/>
+                            
                             </a>
                         </div>
                         <div class="inner">
@@ -298,13 +324,13 @@
                    
 				   
 					<!-- Feature 3 -->
-                    <details>
+                    <details >
 						<summary> SAP Third Eye - Augmented Reality Platform for Android</summary>
 						<article class="container box style1 left">
                         <div class="gallery">
                             <a href="images/proj7.jpg" class="image fit">
                             <img src="images/proj7.jpg" alt="Third Eye" title="SAP Third Eye - Augmented Reality Platform"/>
-                            <img class="expand" src="images/expand.png"/>
+                            
                             </a>
                         </div>
                         <div class="inner">
@@ -318,13 +344,13 @@
                     </article>
 						</details>
 					
-<details>
+					<details >
 						<summary> Rohits' Office Automation - ERP Module</summary>
 						<article class="container box style1 left">
                         <div class="gallery">
                             <a href="images/proj41.jpg" class="image fit">
                             <img src="images/proj41.jpg" alt="Rohits' Offie Automation" title="Rohits' Office Automation - ERP Module"/>
-                            <img class="expand" src="images/expand.png"/>
+                            
                             </a>
                         </div>
                         <div class="inner">
@@ -337,13 +363,13 @@
                     </article>
 						</details>						
 					
-					<details>	
+					<details >	
 							<summary> Rohits' Data Logger</summary>
 						<article class="container box style1 left">
                         <div class="gallery">
                             <a href="images/proj51.jpg" class="image fit">
                             <img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger"/>
-                            <img class="expand" src="images/expand.png"/>
+                            
                             </a>
                         </div>
                         <div class="inner">
@@ -355,16 +381,18 @@
                     </article>
 						</details>	
 <!-- Feature 4 -->
-                    <details>
-						<summary> SpeakUp</summary>
+                    <details >
+						<summary> SpeakUp - Sign Language to Voice Conversion Gloves</summary>
 						<article class="container box style1 left">
-                        <a class="image video">
-                            <!--
-                                <img src="images/proj3.jpg" alt="SpeakUp" />
-                                -->
-                            <iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
-                        </a>
-                        <div class="inner">
+                        <div class="gallery">
+							<a class="image video">
+								<!--
+									<img src="images/proj3.jpg" alt="SpeakUp" />
+									-->
+								<iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
+							</a>
+						</div>
+						<div class="inner">
                                
                             <h3>
 							    A sign-language to speech conversion system, SpeakUp is a cost-effective glove-based 
@@ -384,13 +412,15 @@
                     <details>
 						<summary> Qubo - A Quadruped Robot</summary>
 						<article class="container box style1 left">
-                        <a class="image video">
-                            <!--
-                                <img src="images/proj3.jpg" alt="SpeakUp" />
-                                -->
-                            <iframe width="900" height="250" src="http://www.youtube.com/embed/dj7jl7zTTZA" frameborder="0" allowfullscreen></iframe>
-                        </a>
-                        <div class="inner">
+                        <div class="gallery">
+							<a class="image video">
+								<!--
+									<img src="images/proj3.jpg" alt="SpeakUp" />
+									-->
+								<iframe width="900" height="250" src="http://www.youtube.com/embed/dj7jl7zTTZA" frameborder="0" allowfullscreen></iframe>
+							</a>
+						</div>
+						<div class="inner">
                              <h3>
                                 QUBO is a 4-legged voice controlled robot for entertainment and basic security purposes. Built on the open-source Arduino platform and equipped with on-board sensors 
                                 such as a micro-camera, microphone and touch sensor, QUBO can interact with humans through voice and images. It also exhibit a large variety of behavioral patterns 
@@ -401,7 +431,7 @@
 						</details>
 					
 					<!-- Feature 5 -->
-                    <details>
+                    <details >
 						<summary> Miscellaneous Projects</summary>
 						<article class="container box style3">
                             <h3>
