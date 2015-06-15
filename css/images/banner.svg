@@ -3,13 +3,13 @@
     <style type="text/css"><![CDATA[
 		line
 		{
-			stroke: rgba(255,255,255,0.125);
+			stroke: rgba(0,0,0,0.125);
 			stroke-width: 0.85px;
 		}
 		
 		polygon
 		{
-			fill: rgba(255,255,255,0.075);
+			fill: rgba(0,0,0,0.075);
 		}
     ]]></style>
     
