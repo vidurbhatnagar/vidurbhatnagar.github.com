@@ -8,7 +8,7 @@
 */
 
 .bodyShow {
-    display: none;
+    display: block;
 }
 .loadScreen {
     position: absolute;
@@ -23,7 +23,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
+    display: none;
 }
 
 /* ===================================================== */
@@ -117,6 +117,13 @@ h3 {
     color: rgb(150, 150, 150);
 	font-weight: 400;
 	text-align: justify;
+}
+h4{
+    font-weight: bold;
+	font-size: 22px;
+	color: rgb(130, 130, 130);
+	margin-top: 20px;
+	text-align: left;
 }
 #wrap{
     display:none!important;

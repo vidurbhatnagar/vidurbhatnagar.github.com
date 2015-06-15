@@ -8,10 +8,13 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 h2 {
-	font-size: 16px;
+	font-size: 18px;
+}
+h4 {
+	font-size: 18px;
 }
 h3 {
-    font-size: 12px;
+    font-size: 14px;
 }
 body{
   background-size: 100%, cover;
@@ -38,7 +41,7 @@ body{
   padding-bottom: 15px;
 }
 #header header p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .hexes-img {
   margin-top: 25px;
@@ -62,7 +65,7 @@ body{
   min-height: 150px;
 }			
 .skillsIconLable {
-  font-size: 12px;
+  font-size: 14px;
 }
 .mobileSkillsIcon50 {
   width: 50%!important;
@@ -83,7 +86,7 @@ iframe {
     height: 250px;
 }
 summary {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
