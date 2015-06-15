@@ -39,10 +39,15 @@
     letter-spacing: normal!important;
     line-height: 1.5em!important;
     text-decoration: none!important;
+	color: inherit;
 }
 html {
     overflow-x: hidden;
     height: 100%;
+}
+footer {
+    width: 100%;
+	background: #fdfdfd;
 }
 details{
 	margin-bottom: 1em;
@@ -73,6 +78,9 @@ summary:before {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
+summary:focus {
+	outline: none;
+}
 details[open] summary:before {
   content: '\f068'
 }
@@ -99,8 +107,22 @@ h3 {
 .\33 u:nth-child(2){
 	padding-left: 10px;
 }
+.fa:before{
+  background-color: white;
+  padding: 0 10px;
+}
+.fa:after{
+  content: '';
+  background-color: rgb(150, 150, 150);
+  width: 100px;
+  height: 1px;
+  display: block;
+  margin-top: -30px;
+}
+
 #achievements h2{
 	text-align: center!important;
+	margin-top: 0px;
 }
 .achievementsBackground {
 	background-image: url('../images/achievements.jpg');
@@ -148,6 +170,7 @@ h3 {
 	font-weight: bold;
 	margin-bottom: 20px;
 	padding-bottom: 5px;
+	text-align: center;
 }
 .sectionHeaderLight{
 	color: #fdfdfd;	
@@ -157,8 +180,7 @@ h3 {
 	color: #444;
 	border-bottom: 3px solid rgb(230, 230, 230);
 }
-.sectionHeaderCenter{
-	text-align: center;
+.sectionHeaderNoBorder{
 	border-bottom: none!important;
 }
 
@@ -190,7 +212,7 @@ h3 {
 	text-align: justify;
 }
 .bodyShow {
-    display: none;
+    display: block;
 }
 .loadScreen {
     position: absolute;
@@ -205,7 +227,7 @@ h3 {
     left: 0;
     bottom: 0;
     right: 0;
-    display: block;
+    display: none;
 }
 .topMenuWhite {
     background: #fdfdfd;
@@ -265,6 +287,7 @@ h3 {
     height: 100%;
     background: #fdfdfd;
 	padding-top: 2em;
+	min-height: 190px;
 }
 .buttonInvisible {
     visibility: hidden;
@@ -345,13 +368,6 @@ select {
 .noLine:before {
     border: none!important;
 }
-.imageTitleDesktop {
-    font-size: 0.75em!important;
-    font-weight: bold;
-    color: #f5f5f5!important;
-    display: inherit;
-    margin-bottom: 1em!important;
-}
 .imageTitleMobile {
     display: none;
 }
@@ -366,7 +382,6 @@ select {
 #coffee {
     position: relative;
     color: #f5f5f5;
-    text-shadow: 2px 2px 10px black;
     text-align: center;
     margin: auto;
     width: 100%;
@@ -387,7 +402,7 @@ select {
 }
 iframe {
     width: 100%;
-    height: 100%;
+    height: 350px;
     border: 2px solid #f5f5f5;
 }
 body {
@@ -397,13 +412,11 @@ body {
     background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
     background-size: 100%, cover;
-    background-position: top left, center 0!important;
-    background-attachment: scroll, scroll;
+    background-attachment: fixed;
 }
 body.is-scroll {
-    background-attachment: scroll;
-    background-size: 100%;
 }
+
 body.is-loading * {
     -moz-transition: none !important;
     -webkit-transition: none !important;
@@ -416,15 +429,6 @@ body.is-loading * {
     -ms-animation: none !important;
     animation: none !important;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    color: inherit;
-    text-decoration: none;
-}
 h7 {
     color: #00D5FF!important;
     font-weight: bold!important;
@@ -432,8 +436,8 @@ h7 {
     font-size: 1em;
 }
 h8 {
-    color: #00D5FF!important;
     font-weight: bold!important;
+	border-bottom: 1px dotted rgb(150,150,150);
 }
 strong,
 b {
@@ -514,6 +518,7 @@ article:last-child {
     width: 100%;
     height: 350px;
 }
+.video iframe
 .image.left {
     float: left;
     margin: 0 2em 2em 0;
@@ -731,7 +736,6 @@ input[type="reset"],
     border: 0;
     background: #35b88f;
     color: #2D7988;
-    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
     cursor: pointer;
     text-decoration: none;
     outline: 0;
@@ -771,7 +775,6 @@ input[type="reset"].style2:hover,
 .no-touch .button.style2:hover {
     background: #557489;
     color: #f5f5f5 !important;
-    --text-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25) !important;
 }
 input[type="button"].style3,
 input[type="submit"].style3,
@@ -793,7 +796,7 @@ input[type="reset"].style3:hover,
 
 .box {
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     width: 100%!important;
 	min-height: 300px;
 }
@@ -919,10 +922,10 @@ input[type="reset"].style3:hover,
     position: relative;
     z-index: 1;
     color: #f5f5f5;
-    text-shadow: 2px 2px 1px black;
+	height: 100%;
 }
 .box.style3 {
-    padding: 0em 2em;
+	padding: 0 0 0 2em;
     text-align: justify;
 }
 .box.style3:after {
@@ -979,7 +982,6 @@ input[type="reset"].style3:hover,
     z-index: 1;
     padding: 20px;
     color: #f5f5f5;
-    text-shadow: 2px 2px 1px black;
 }
 .box.style4:before {
     background: none!important;
@@ -999,7 +1001,7 @@ input[type="reset"].style3:hover,
 .icon-text {
     font-size: 0.7em;
     margin-top: 1.3em;
-    color: #2D7988;
+    color: #444;
     font-weight: bolder;
 }
 .no-touch .icon-text:hover {
@@ -1030,8 +1032,10 @@ input[type="reset"].style3:hover,
 /*********************************************************************************/
 
 #header {
-    --position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#header footer{
+    background-color: transparent;
 }
 #header header:before {
     background-color: white;
@@ -1062,44 +1066,10 @@ input[type="reset"].style3:hover,
     border-top: solid 1px rgba(255, 255, 255, 0.5);
     margin: 1% 0 1% 0;
 }
-#header footer {
-    position: absolute;
-    bottom: 20%;
-    margin-top: 1%;
-    width: 100%;
-}
-#header footer:after {
-    --content: '';
-    display: block;
-    position: absolute;
-    bottom: -9.5em;
-    left: 50%;
-    height: 15.5em;
-    border-left: solid 1px #f5f5f5;
-}
-#header footer:before {
-    --content: '';
-    display: block;
-    width: 90px;
-    height: 66px;
-    position: absolute;
-    left: 50%;
-    bottom: -4.5em;
-    margin-left: -45px;
-    margin-bottom: -33px;
-    background: url('images/arrow.svg') no-repeat;
-}
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
 
-#banner {
-    position: relative;
-    text-align: left;
-	padding-left: 15%;
-	padding-right: 15%;
-}
-}
 #banner .button {
     color: #2D7988;
     z-index: 1;
@@ -1109,9 +1079,6 @@ input[type="reset"].style3:hover,
     font-size: 16px;
 	color: #666;
 	display: table-cell;
-}
-#banner footer {
-    --margin: 2em 0 2em 0;
 }
 #banner a {
     color: inherit;
@@ -1127,60 +1094,30 @@ input[type="reset"].style3:hover,
 #contact {
     position: relative;
     color: #f5f5f5;
-    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
     text-align: center;
     --margin-top: 2em;
     background: url('../images/footer.png');
 }
-#contact p {
-    font-size: 0.8em;
-    margin: 0!important;
+#contact h2 {
+    color: #fdfdfd;
+	text-align: center;
 }
-#contact:after {
-    --content: '';
-    display: block;
-    position: absolute;
-    top: -9.5em;
-    left: 50%;
-    height: 9.5em;
-    border-left: solid 1px #f5f5f5;
-}
-#contact:before {
-    --content: '';
-    display: block;
-    width: 90px;
-    height: 66px;
-    position: absolute;
-    left: 50%;
-    bottom: -2.25em;
-    top: -5.5em;
-    margin-left: -45px;
-    margin-bottom: -33px;
-    background: url('images/arrow.svg') no-repeat;
-}
-#contact a {
+#contact .icons a {
     color: #f5f5f5;
-    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
     border-bottom-color: rgba(255, 255, 255, 0.5);
 }
-.no-touch #contact a:hover {
-    color: #00D5FF;
+#contact .icons a:hover {
+    -webkit-transform: scale(1.2);
+	-webkit-transform: scale(1.2);	
 }
 #contact .icons {
     padding: 0.15em 0.15em 0.15em 0.15em;
-    --border-radius: 3em;
-    --border: solid 1px #f5f5f5;
     display: inline-block;
-    --margin: 0 0 3em 0 !important;
     border-bottom: 1px dotted #f5f5f5;
+	margin-bottom: 40px;
 }
-.copyright {
-    position: relative;
-    color: #f5f5f5;
-    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
+.copyright h3 {
     text-align: center;
-    margin-top: 1em;
-    font-size: 0.6em;
     margin-bottom: 2px!important;
 }
 /*********************************************************************************/

@@ -53,31 +53,6 @@
             	if(pageYOffset >= headerHeight){
             		$('.hexes-img').css('opacity', 1);
             	}
-            	
-            	var summaries = document.getElementsByTagName('summary');
-            	var selectedSummary = null;
-            	
-            	for(var i=0; i<summaries.length;i++){
-            		selectedSummary = summaries[i];
-            		
-            		if(selectedSummary.parentElement.open){
-            			if(pageYOffset > selectedSummary.parentElement.offsetTop){
-            				selectedSummary.style.position = 'fixed';
-            				selectedSummary.style.top = 0;
-            				selectedSummary.style.borderTop = '5px solid #557489';
-            				selectedSummary.style.width = $('body').width()+'px';
-            			} else {
-            				selectedSummary.style.position = 'relative';
-            				selectedSummary.style.borderTop = 'none';
-            				selectedSummary.style.width = '100%';
-            			}
-            		}
-            		else{
-            			selectedSummary.style.position = 'relative';
-            			selectedSummary.style.borderTop = 'none';
-            			selectedSummary.style.width = '100%';
-            		}
-            	}
             };
             
 			function summariesOpen(openDetails) {
@@ -93,12 +68,12 @@
 			}
 			
             $(window).load(function() {
-            	headerHeight = $('#header').height();
-            	bannerHeight = $('#banner').height();
-              
-              $(".loadScreen").fadeOut("fast");
+            	$(".loadScreen").fadeOut("fast");
               $(".bodyShow").css("display","block");
             	
+				headerHeight = $('#header').height();
+            	bannerHeight = $('#banner').height();
+              
             						// Append SVG CLip templates
             	$('body').prepend('<svg class="hidden_mask"><clipPath id="hexes_mask"><path d="M99.397,18.761 L168.887,58.88 L168.887,139.12 L99.397,179.239 L29.908,139.12 L29.908,58.88 z"/> </clipPath> </svg>');
             	$('body').prepend('<svg class="hidden_mask"><clipPath id="hexes_mask_bigger"><path d="M129.095,28.183 L233.406,88.451 L233.406,208.989 L129.095,269.257 L24.785,208.989 L24.785,88.451 z"/> </clipPath> </svg>');
@@ -124,6 +99,10 @@
             		}
             	  $(this).remove();
             	});	
+				
+				if($('body').height() > headerHeight){
+					$('.hexes-img').css('opacity', 1);
+				}
               });
             
             
@@ -133,12 +112,12 @@
         <link rel="stylesheet" href="css/ie/v8.css" />
         <![endif]-->
     </head>
-    <body>
+    <body class=".no-touch">
         <div class="loadScreen">
         </div>
         <div class="bodyShow">
             <!-- Header -->
-            <section id="header">
+            <section id="header" class="sectionStyle">
                 <div class="topMenu">
                     <ul>
                         <li><a href="#banner" class="topMenuButton scrolly scrolly-top">ABOUT ME</a></li>
@@ -156,22 +135,20 @@
                         <h7>R</h7>esearcher
                     </p>
                 </header>
-                <footer>
-                    <a href="#idBanner" class="scrolly  buttonInvisible">About Me</a>
-                </footer>
             </section>
             <!-- Banner -->
             <section id="banner" class="sectionStyle">
-                <header class="sectionHeader sectionHeaderDark">
-                    <div class="code">>_whoami
-                    </div>
-                    <h2> 
-                        Masters student at University of Pennsylvania, Fall 2015
-                    </h2>
-                    <h3>
-                        Will be pursuing MSE Robotics at the GRASP Lab
-                    </h3>
-                </header>
+                <div class="sectionSidePadding">
+					<header class="sectionHeader sectionHeaderDark">
+						ABOUT ME
+						<br><i class="fa fa-bullhorn"></i>
+						<h2> 
+							Masters student at University of Pennsylvania, Fall 2015
+						</h2>
+						<h3>
+							Will be pursuing MSE Robotics at the GRASP Lab
+						</h3>
+					</header>
                 <div class="hexes-img">
                     <img class="create-svg" src="images/profile2.jpg" alt="hex" data-clip="#hex_mask">
                 </div>
@@ -182,7 +159,7 @@
                     </h2>
                     <h3>
                         Responsible for definition and delivery of Dashboard features and Enterprise Visualizations 
-                        for SAP Financial Planning and Analysis and SAP Lumira. As a former fellow 
+                        for SAP Cloud for Planning and SAP Lumira. As a former fellow 
                         in the Managing Director's office in India and Frontline Applications team in SAP Labs, Palo Alto, 
                         I have delivered on some of the most strategic projects for the organization.
                         <br><br>A passionate advocate of design thinking, 
@@ -208,12 +185,9 @@
                     <h3>
                         A passionate Basketball player for the past 12 years, I have represented my state, college and organization at national level tournaments.
                     </h3>
-                    <br><br>
+						<br><br>
+					</div>
                 </div>
-                
-                <footer>
-                    <a href="#idFeatured" class="scrolly scrolly-top buttonInvisible">Featured Projects</a>
-                </footer>
             </section>
 				
 			<section id="skills" class="sectionStyle">
@@ -227,7 +201,7 @@
 								<ul class="icons">
 									 <li class="skillsIcon50 icon fa-code skillsIconLable"><br><br>Java, JS, Unix, SQL, SAP HANA</li>
 									 <li class="skillsIcon50 icon fa-magic skillsIconLable"><br><br>Product Management, JIRA</li>
-									 <li class="skillsIcon100 icon fa-line-chart skillsIconLable"><br><br>Data Visualization</li>
+									 <li class="skillsIcon100 icon fa-bar-chart skillsIconLable"><br><br>Data Visualization</li>
 								</ul>
 							</div>
 						</div>
@@ -238,21 +212,21 @@
 							</header>
 							<div class="skillsIconContainer">
 								<ul class="icons">
-									 <li class="skillsIcon100 icon fa-puzzle-piece skillsIconLable"><br><br>Machine Learning</li>
-									 <li class="skillsIcon100 icon fa-gears skillsIconLable"><br><br>Robotics</li>
+									 <li class="mobileSkillsIcon50 skillsIcon100 icon fa-puzzle-piece skillsIconLable"><br><br>Machine Learning</li>
+									 <li class="mobileSkillsIcon50 skillsIcon100 icon fa-gears skillsIconLable"><br><br>Robotics</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
+				
             <!-- Featured Projects -->
 			
                 <section id="projects" class="sectionStyle">
                     <!-- Feature 1 -->
 					<div class="sectionSidePadding">
-						<header class="sectionHeader sectionHeaderDark sectionHeaderCenter">
+						<header class="sectionHeader sectionHeaderDark sectionHeaderNoBorder">
 							PROJECTS
 							<br><i class="fa fa-briefcase"></i>
 						</header>
@@ -307,16 +281,18 @@
                             </a>
                         </div>
                         <div class="inner">
-                                <p>
-                                    <h8>Patent Applications: </h8>
-                                    US 14/098,706; US 14/314,032
-                                </p>
                             <h3>
-							Research project to optimize dictionary compression in SAP 
-                                HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
-                                based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
-                                the research claims. The paper for this research is aimed for submission in SIGMOD 2015 (under corporate track).
-                            </h3>
+								Research project to optimize dictionary compression in SAP 
+									HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
+									based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
+									the research claims. The paper for this research is aimed for submission in SIGMOD 2015 (under corporate track).
+								
+								<br>
+								<br>
+								<h8>Patent Applications:</h8>
+								<br> US 14/098,706; 
+								<br>US 14/314,032</h8>
+							</h3>
                         </div>
                     </article>
 						</details>
@@ -390,15 +366,16 @@
                             <iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
                         </a>
                         <div class="inner">
-                               <p>
-                                    <h8><a target="_blank" href="pdfs/SpeakUp_Whitepaper.pdf">Whitepaper</a></h8>
-                                </p>
+                               
                             <h3>
-                                A sign-language to speech conversion system, SpeakUp is a cost-effective glove-based 
+							    A sign-language to speech conversion system, SpeakUp is a cost-effective glove-based 
                                 system to convert the static subset of a sign language to voice.
                                 To record the different hand gestures, special cost effective gloves were fabricated with self-developed uni-directional flex (bend) 
                                 sensors. 'Statistical Template Matching' technique was employed for processing and then recognizing these gestures. 
-                            </h3>
+                            <br>
+                            <br>
+                            <h8><a target="_blank" href="pdfs/SpeakUp_Whitepaper.pdf">Download Whitepaper</a></h8>
+							</h3>
                         </div>
                     </article>
 						</details>
@@ -449,15 +426,12 @@
 						
 					
 					</div>
-                    <footer>
-                        <a href="#idPortfolio" class="scrolly scrolly-top buttonInvisible">Portfolio</a>
-                    </footer>
                 </section>
             
                   
                 <section id="achievements" class="sectionStyle">
 					<div class="sectionSidePadding">
-						<header class="sectionHeader sectionHeaderDark sectionHeaderCenter">
+						<header class="sectionHeader sectionHeaderDark sectionHeaderNoBorder">
 							ACHIEVEMENTS
 							<br><i class="fa fa-trophy"></i>
 
@@ -469,14 +443,14 @@
                                     <a class="image video">
                                     <iframe width="854" height="250" src="http://www.youtube.com/embed/REKbxkTHH2Y" frameborder="0" allowfullscreen>
                                     </iframe>
-                                    <span class="videoTitleMobile">Employee of the Year, SAP Labs India, 2013</span>
+                                    <span class="videoTitleMobile"><h2>Employee of the Year, SAP Labs India, 2013</h2></span>
                                     </a>
                                 </div>
-                                <div class="3u lastVideoElement">
+                                <div class="3u">
                                     <a class="image video">
                                     <iframe width="854" height="250" src="https://www.youtube.com/embed/78zlums9LU8" frameborder="0" allowfullscreen>
                                     </iframe>
-                                    <span class="videoTitleMobile">Featured in Life @ SAP, 2014</span>
+                                    <span class="videoTitleMobile"><h2>Featured in Life @ SAP, 2014</h2></span>
                                     </a>
                                 </div>
                             </div>
@@ -502,9 +476,6 @@
 						</h3>
                     </article>
 				</div>
-				<footer>
-                        <a href="#idContact" class="scrolly scrolly-top buttonInvisible">Portfolio</a>
-                    </footer>
                 </section>
 				
 				<section id="dummy" class="sectionStyle">
@@ -512,7 +483,7 @@
 			
             <!--Footer-->
             <section id="contact" class="sectionStyle">
-                <p>Fancy a Java?</p>
+                <h2>Fancy a Java?</h2>
                 <ul class="icons">
                     <li><a href="tel:+919632566611" class="icon fa-mobile"><span class="label">Mobile</span></a></li>
                     <li><a href="mailto:mail@vidurbhatnagar.com" class="icon fa-envelope-o"><span class="label">Mail</span></a></li>
@@ -526,13 +497,7 @@
                     </li>
                 </ul>
                 <div class="copyright">
-                    <ul class="menu">
-                        <li>&copy; Vidur S. Bhatnagar. 2012-2015. All rights reserved.</li>
-                        <li>
-                            Design: 
-                            <h8><a target="_blank" href="http://html5up.net">HTML5 UP</a></h8>
-                        </li>
-                    </ul>
+                    <h3>&copy; Vidur S. Bhatnagar. 2012-2015. All rights reserved.</h3>
                 </div>
             </section>
         </div>

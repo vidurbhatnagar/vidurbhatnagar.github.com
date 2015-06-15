@@ -7,325 +7,87 @@
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
-	
-	*, :not header
-	{
-		text-shadow: none !important;
-	}
-	
+h2 {
+	font-size: 16px;
+}
+h3 {
+    font-size: 12px;
+}
+.topMenu {
+  display: none;
+}
+.sectionStyle{
+	padding-top: 1em;
+}
+.sectionSidePadding {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.sectionHeader {
+  font-size: 24px;
+  text-align: center;
+}
+#header header {
+  margin-left: 5%;
+}
+#header header h1 {
+  font-size: 22px;
+  padding-bottom: 15px;
+}
+#header header p {
+  font-size: 12px;
+}
+.hexes-img {
+  margin-top: 25px;
+}
+.hexes-img svg {
+  height: 120px;
+  width: 120px;
+}
+.sectionTint {
+  margin-top: -1em;
+}
+.skillsSection {
+  float: none;
+  width: 100%;
+  padding: 0!important;
+}
+#skills .icon:before {
+  font-size: 40px;
+}
+.skillsIconContainer li {
+  min-height: 150px;
+}			
+.skillsIconLable {
+  font-size: 12px;
+}
+.mobileSkillsIcon50 {
+  width: 50%!important;
+}
+.videoTitleMobile{
+  display: inherit;
+}
+.videoTitleMobile h2{
+	margin-top: 0;
+}
+.imageTitleDesktop {
+  display: none;
+}
+.fa:after {
+	margin-top: -20px;
+}
+iframe {
+    height: 250px;
+}
+summary {
+  font-size: 16px;
+}
 
-	.sectionStyle{
-		padding-top: 1em;
-	}
-	
-	details{
-		line-height: 0!important;
-	}
-	
-	.expandOther{
-	margin-right:5px!important;
-	margin-top: 5px!important;
-	}
-	
-	.box.style1 .image:after
-	{
-    padding-top: 56.25%; // 16:9 ratio
-    display: block;
-    content: '';
-	}
-   
-   ul.icons{
-	font-size: 0.6em;
-   }
-   
-   ul.default {
-		list-style: disc;
-		padding-left: 1em;
-		line-height: 1.5em;
-		font-size: 0.4em;
-	}
 
-	ol.default {
-		list-style: decimal;
-		padding-left: 1em;
-		line-height: 1.5em;
-		font-size: 0.4em;
-	}
-	
-	.box.style3
-		{
-			padding: 0.5em 1em 0.5em 1em;
-			background-size: 270%;
-			--margin: auto!important;
-		}
-			
-		.poptrox-popup .caption
-		{
-			font-size: 0.4em;
-		}
-		.image img{
-	height: auto!important;
-	}
-	
-	.lastVideoElement{
-	margin: 15%;
-	}
-	
-	.noLine:before{
-	border:none!important;
-	}
-	
-	.imageTitleMobile{
-	font-size:0.5em;
-	line-height: normal;
-	color:#f5f5f5;
-	display:inherit;
-	padding: 3px 0 3px 0;
-	}
-	
-	.videoTitleMobile{
-	font-size:0.5em;
-	line-height: normal;
-	color:#f5f5f5;
-	display:inherit;
-	padding: 3px 0 3px 0;
-	margin-top: -12px;
-	}
-	
-	.imageTitleDesktop{
-	display:none;
-	}
-	
-	.videoTitleDesktop{
-	display:none;
-	}
-    
-	a:hover{
-	border-bottom: dotted 1px rgba(53,184,143,0.5);
-	}
-	
-	code {
-		font-family: monospace;
-		font-style: italic;
-		font-weight: none;
-		font-size:0.8em;
-		text-shadow: none;
-	}
-
-	iframe{
-		width: 100%;
-		height: 230px;
-		border: 2px solid white;
-	}
-
-	.image.video{
-		display: block;
-		width: 100%;
-		height: auto !important;
-		margin-bottom: -14px!important;
-	}
-			
-	header p{
-		text-align: center;
-		font-size: 0.4em;
-		margin: auto;
-		margin-top: 0.2em !important;
-		width: 100%;
-	}
-	
-	body,input,textarea,select
-	{
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 18pt;
-		line-height: 1.75em;
-		font-weight: 300;
-		color: #3a3939;
-		text-shadow: 0 0 0.5px rgba(58,57,57,0.25);
-		-webkit-text-stroke: 0.25px;
-	}
-
-	h2, h3, h4, h5, h6
-	{
-		font-size: 1em;
-	}
-	
-	h2
-	{
-		font-size: 0.5em;
-		text-align: center;
-		font-weight: bold;
-		line-height: 1.2em;
-	}
-
-	/* List */
-
-		ul
-		{
-		}
-
-			ul.default
-			{
-			}
-			
-				ul.default li
-				{
-					padding-left: 0.5em;
-				}		
-
-			ul.icons
-			{
-			}	
-			
-				ul.icons li
-				{
-				}
-				
-					ul.icons a
-					{
-						--width: 2em;
-						--height: 2em;
-						--line-height: 2em;
-					}
-
-			ul.menu
-			{
-			}
-			
-				ul.menu li
-				{
-					display: block;
-					padding: 0;
-					border: 0;
-					margin: 1em 0 0 0;
-				}
-				
-				ul.menu li:first-child
-				{
-					margin-top: 0;
-				}
-
-			ul.actions
-			{
-			}
-			
-				ul.actions li
-				{
-					display: block;
-					margin: 1em 0 0 0;
-				}
-				
-				ul.actions li:first-child
-				{
-					margin-top: 0;
-				}
-
-		ol
-		{
-		}
-
-			ol.default
-			{
-			}
-			
-				ol.default li
-				{
-					padding-left: 0.5em;
-				}		
-
-			ol.icons
-			{
-			}	
-			
-				ol.icons li
-				{
-				}
-				
-					ol.icons a
-					{
-						width: 2em;
-						height: 2em;
-						line-height: 2em;
-					}
-
-			ol.menu
-			{
-			}
-			
-				ol.menu li
-				{
-					display: block;
-					padding: 0;
-					border: 0;
-					margin: 1em 0 0 0;
-				}
-				
-				ol.menu li:first-child
-				{
-					margin-top: 0;
-				}
-
-			ol.actions
-			{
-			}
-			
-				ol.actions li
-				{
-					display: block;
-					margin: 1em 0 0 0;
-				}
-				
-				ol.actions li:first-child
-				{
-					margin-top: 0;
-				}
-
-	/* Button */
 		
-		input[type="button"],
-		input[type="submit"],
-		input[type="reset"],
-		.button
-		{
-			color: #3a3939;
-			background: #fff;
-			box-shadow: 2px 2px 10px #000;
-			font-weight: bold;
-			width: auto;
-			margin: auto;
-			--margin-top: 15% !important;
-			--padding: 0 5% !important;
-			font-size: 0.5em !important;
-			padding-bottom: 4%!important;
-			padding-top: 3%!important;
-		}
-
-	/* Box */
-
-		.box
-		{
-			--margin-top: 2.25em;
-		}
-
-			.box:after
-			{
-				top: -3.25em;
-				height: 5.3em;
-			}
-		
-			.box:before
-			{
-				width: 45px;
-				height: 33px;
-				top: -1.125em;
-				margin-left: -22.5px;
-				margin-top: -16.5px;
-				background-size: 45px 33px;
-			}
-
 			.box.style1
 			{
 				padding: 0;
-				text-align: center;
 			}
 			
 				.box.style1 .image
@@ -343,16 +105,10 @@
 						width: 100%;
 					}
 
-				.box.style1 .inner
-				{
-					margin: 0 !important;
-					padding: 1em 0.25em 1em 0.25em !important;
+				.box.style1 .inner {
+				  padding: 10px 0px !important;
 				}
-				.box.style1 .inner > :last-child{
-					margin: 1% 5%;
-					text-align: justify;
-					font-size: 0.4em;
-				}
+				
 
 			.box.style2
 			{
@@ -370,18 +126,13 @@
 						{
 							display: none;
 						}
-
-					.box.style2 .inner .image
-					{
-						padding: 0;
-						width: auto;
-						margin: 0 auto 20px auto;
-						z-index: 100;
-					}
+						.box.style2 .inner .image {
+						  margin-bottom: 20px;
+						}
 
 			.box.style3
-			{
-				--padding: 2em 1.25em 2em 1.25em;
+			{	
+				padding: 0 1em;
 			}
 			
 			.box.style4
@@ -411,88 +162,7 @@
 					background:none!important;
 					}
 
-/*********************************************************************************/
-/* Header                                                                        */
-/*********************************************************************************/
-
-	#header
-	{
-		--padding: 1em 1em 0em 1em !important;
-		padding: 5% 0 10% 5%!important;
-		--margin-bottom: 2% !important;
-	}
-		#header header
-		{
-			margin-right: 50% !important;
-			text-align: left;
-		}
-			#header header p{
-			border-top: solid 3px rgba(255,255,255,0.5);
-			font-size: 0.5em !important;
-			line-height: 1.1em !important;
-			text-align: left;
-			}
-		
-			#header header h1
-			{
-				font-size: 1em !important;
-				letter-spacing: 0.15em !important;
-				line-height: 1.2em !important;
-			}
-			
-			#header footer{
-				display: none;
-			}
-
-/*********************************************************************************/
-/* Banner                                                                        */
-/*********************************************************************************/
-
-	#banner
-	{
-		background-size: auto 150%;
-		width: 100%;
-		margin: auto;
-		padding-left: 2%% !important;
-		padding-right: 2% !important;
-		z-index: 10;
-	}
-
-		#banner header
-		{
-			margin: auto;
-			width: 100%;
-			background: rgba(0, 0, 0, 0.1);
-		}
-		
-			#banner header h2
-			{
-				font-size: 0.5em;
-				line-height: 1.2em !important;
-			}
-		#banner p{
-			margin: auto;
-			margin-top: 1%;
-			text-align: justify;
-			font-size: 0.4em;
-			width: 100%;
-		}
-		
-		#banner footer{
-			margin: auto;
-			width: 100%;
-		}
-		
-		#banner .button{
-			width: 50% !important;
-			margin: auto;
-			margin-bottom: 10% !important;
-			margin-top: 10% !important;
-		}
-
-		#banner br {
-			display: block !important;
-		}
+					
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
