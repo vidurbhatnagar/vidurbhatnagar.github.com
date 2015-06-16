@@ -41,8 +41,15 @@
             var headerTop, bannerTop, skillsTop, projectsTop, achievementsTop;
             var pageScroll;
 			var windowHeight, documentHeight, topMenuHeight;
+			var firstScroll = true;
 			
             window.onscroll = function() {
+				if(firstScroll)
+				{
+					setSectionHeights();
+					firstScroll = false;
+				}
+				
 				pageScroll = pageYOffset + topMenuHeight;
 				
             	if(pageYOffset > 0){
