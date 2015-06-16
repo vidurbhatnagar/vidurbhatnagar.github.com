@@ -14,7 +14,7 @@
         <meta property="og:title" content="Vidur Shailendra Bhatnagar | Porfolio"/>
         <meta property="og:url" content="www.vidurbhatnagar.com"/>
         <meta property="og:site_name" content="Vidur Shailendra Bhatnagar | Porfolio"/>
-        <meta property="og:description" content="Developer | Statistics Enthusiast | Researcher"/>
+        <meta property="og:description" content="Developer | Technology Enthusiast | Researcher"/>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -38,10 +38,13 @@
             ga('send', 'pageview');
         </script>
         <script type='text/javascript'>
-            var startProductBarPos = -1;
-            var headerHeight, bannerHeight;
-            
+            var headerTop, bannerTop, skillsTop, projectsTop, achievementsTop;
+            var pageScroll;
+			var windowHeight, documentHeight, topMenuHeight;
+			
             window.onscroll = function() {
+				pageScroll = pageYOffset + topMenuHeight;
+				
             	if(pageYOffset > 0){
             		$('.topMenu').addClass('topMenuWhite');
             	}
@@ -49,10 +52,34 @@
             		$('.topMenu').removeClass('topMenuWhite');
             	}
             	
-            	if(pageYOffset >= headerHeight){
+            	if(pageYOffset >= bannerTop){
             		$('.hexes-img').css('opacity', 1);
             	}
+				
+				if((pageScroll + windowHeight) >= documentHeight)
+					setTopMenuBorder(3);
+				else if(pageScroll >= achievementsTop)
+					setTopMenuBorder(2);
+				else if(pageScroll >= projectsTop)
+					setTopMenuBorder(1);
+				else if(pageScroll >= bannerTop)
+					setTopMenuBorder(0);
+				else{
+					setTopMenuBorder(-1);
+				}
             };
+			
+			function setTopMenuBorder(index){
+				var topMenuButtons = $('.topMenuButton');
+				
+				for(var i=0; i<topMenuButtons.length;i++){
+					if(i==index){
+						$(topMenuButtons[i]).css('border','1px solid #444');
+					} else{
+						$(topMenuButtons[i]).css('border','1px solid transparent');
+					}
+				}
+			};
             
 			/*function summariesOpen(openDetails) {
 				var details = document.getElementsByTagName("details");
@@ -67,42 +94,35 @@
 			}
 			*/
 			
-            $(window).load(function() {
+			function setSectionHeights(){
+				headerTop = $('#header').offset().top;
+				bannerTop = $('#banner').offset().top;
+				skillsTop = $('#skills').offset().top;
+				projectsTop = $('#projects').offset().top;
+				achievementsTop = $('#achievements').offset().top;
+				
+				topMenuHeight = $(".topMenu").height();
+				windowHeight = $(window).height();
+				documentHeight = $(document).height();
+			};
+			
+            $(window).load(function() {				
             	$(".loadScreen").fadeOut("fast");
 				$(".bodyShow").css("display","block");
-            	
-				headerHeight = $('#header').height();
-            	bannerHeight = $('#banner').height();
-              
-            						// Append SVG CLip templates
+				
+				// Append SVG CLip templates
             	$('body').prepend('<svg class="hidden_mask"><clipPath id="hexes_mask"><path d="M99.397,18.761 L168.887,58.88 L168.887,139.12 L99.397,179.239 L29.908,139.12 L29.908,58.88 z"/> </clipPath> </svg>');
-            	$('body').prepend('<svg class="hidden_mask"><clipPath id="hexes_mask_bigger"><path d="M129.095,28.183 L233.406,88.451 L233.406,208.989 L129.095,269.257 L24.785,208.989 L24.785,88.451 z"/> </clipPath> </svg>');
-            	// Feature shapes circle
-            	$('body').prepend('<svg class="hidden_mask"><clipPath id="cirlce_mask"><path d="M125,25 C180.228,25 225,69.772 225,125 C225,180.228 180.228,225 125,225 C69.772,225 25,180.228 25,125 C25,69.772 69.772,25 125,25 z"/></clipPath></svg>');
-            
+            	
             	// Create SVG Masks
             	$('.create-svg').each(function() {
             		var src = $(this).attr('src');
             		var clip_mask = $(this).data('clip');
-            		if(clip_mask === '#circle_mask') {
-            			var svg_circle = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="220" height="220" viewBox="0, 0, 250, 250"><g>' +
-            				'<image xlink:href="' + src + '" opacity="1" x="25" y="25" width="200" height="200" preserveAspectRatio="xMidYMid" clip-path="url(#cirlce_mask)"/>' +
-            				'<path d="M125,245.734 C58.32,245.734 4.266,191.68 4.266,125 C4.266,58.32 58.32,4.266 125,4.266 C191.68,4.266 245.734,58.32 245.734,125 C245.734,191.68 191.68,245.734 125,245.734 z" fill-opacity="0" stroke="#000" stroke-width="1"/>' +
-            				'</g></svg>';
-            			$(this).after(svg_circle);
-            		}
-            		else if( $(this).data('clip') == '#hex_mask') {
-            			$(this).after('<svg width="235" height="240" viewBox="0, 0, 200, 200"> <g class="feature_hex_svg"> <path d="M186.603,150 L100,200 L13.397,150 L13.397,50 L100,0 L186.603,50 z" fill-opacity="0" fill="#fff" stroke="#ddd" stroke-width="1"/> <image xlink:href="' + src + '" opacity="1" width="100%" height="100%" preserveAspectRatio="xMidYMid" clip-path="url(#hexes_mask)"/> </g> </svg>');
-            		} else if ( $(this).data('clip') == '#hex_mask_bigger' ) {
-            			$(this).after('<svg width="260" height="300"> <g class="feature_hex_svg"> <path d="M258,224.866 L130,298.822 L2,224.866 L2,76.955 L130,3 L258,76.955 z" fill-opacity="0" stroke="#000" stroke-width="1"  x="20"/> <image xlink:href="' + src + '" opacity="1" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid" clip-path="url(#hexes_mask_bigger)"/> </g> </svg>');
-            			$(this).remove();
-            		}
-            	  $(this).remove();
-            	});	
+					
+					$(this).after('<svg width="235" height="240" viewBox="0, 0, 200, 200"> <g class="feature_hex_svg"> <path d="M186.603,150 L100,200 L13.397,150 L13.397,50 L100,0 L186.603,50 z" fill-opacity="0" fill="#fff" stroke="#ddd" stroke-width="1"/> <image xlink:href="' + src + '" opacity="1" width="100%" height="100%" preserveAspectRatio="xMidYMid" clip-path="url(#hexes_mask)"/> </g> </svg>');
+					
+					$(this).remove();
+            	});
 				
-				if($('body').height() > headerHeight){
-					$('.hexes-img').css('opacity', 1);
-				}
 				
 				/*
 				var images = $('.style1 .image');
@@ -129,6 +149,11 @@
 					}
 					
 				}*/
+				
+				setSectionHeights();
+				$(window).resize(function(){
+					setSectionHeights();
+				});
               });
             
             
