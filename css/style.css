@@ -39,8 +39,8 @@
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
-	-webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s;
+	-webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
 	margin-top: 30px;
 	opacity: 0;
   }
