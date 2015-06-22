@@ -43,9 +43,6 @@ body{
 #header header p {
   font-size: 14px;
 }
-.hexes-img {
-  margin-top: 25px;
-}
 .hexes-img svg {
   height: 120px;
   width: 120px;
