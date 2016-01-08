@@ -397,6 +397,7 @@ details[open] > article > .projDetails{
     transition-timing-function: ease-in-out;
     padding-bottom: 4%;
     padding-top: 4%;
+	text-align: center;
 }
 .sectionStyle {
     color: #293742;
