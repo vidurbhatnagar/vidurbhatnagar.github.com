@@ -14,6 +14,9 @@
 #header header {
   margin-left: 5%;
 }
+#header footer{
+  margin-left: 5%;
+}
 .topMenu > ul {
     padding-right: 5%;
 }

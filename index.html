@@ -9,7 +9,9 @@
         <title>Vidur Shailendra Bhatnagar - Portfolio</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="Vidur Shailendra Bhatnagar - Portfolio" />
-        <meta name="keywords" content="Vidur Bhatnagar, vidur bhatnagar, shailendra, sap, visualization, product, management, jiit, IIM, IIMA, JIIT, SAP Labs, SAP, Vidur, 
+        <meta name="keywords" content="penn, upenn, university of pennsylvania, robotics, computer science, masters, fall, 2015, jaypee, 
+		developer, pennapps, Vidur Bhatnagar, vidur bhatnagar, shailendra, sap, 
+		data, visualization, product, management, jiit, IIM, IIMA, JIIT, SAP Labs, SAP, Vidur, 
 		Bhatnagar, award, kkr, vidurbhatnagar, vidursbhatnagar" />
         <meta property="og:image" content="/images/bg.jpg"/>
         <meta property="og:title" content="Vidur Shailendra Bhatnagar | Porfolio"/>
@@ -39,7 +41,7 @@
             ga('send', 'pageview');
         </script>
         <script type='text/javascript'>
-            var headerTop, bannerTop, skillsTop, projectsTop, achievementsTop;
+            var topMenuTop, headerTop, bannerTop, skillsTop, ipTop, projectsTop, certificationsTop, achievementsTop;
             var pageScroll;
 			var windowHeight, documentHeight, topMenuHeight;
 			var firstScroll = true;
@@ -53,22 +55,35 @@
 				
 				pageScroll = pageYOffset + topMenuHeight;
 				
+				//Sticky Top Menu
             	if(pageYOffset > 0){
+            		$('.topMenu').addClass('topMenuFixed');
+            	}
+            	else{
+            		$('.topMenu').removeClass('topMenuFixed');
+            	}
+				
+				/*if(pageYOffset > 0){
             		$('.topMenu').addClass('topMenuWhite');
             	}
             	else{
             		$('.topMenu').removeClass('topMenuWhite');
             	}
-            	
+            	*/
             	if(pageScroll >= bannerTop){
             		$('.hexes-img').css('opacity', 1);
             	}
 				
+				
 				if((pageScroll + windowHeight) >= documentHeight)
-					setTopMenuBorder(3);
+					setTopMenuBorder(5);
 				else if(pageScroll >= achievementsTop)
-					setTopMenuBorder(2);
+					setTopMenuBorder(4);
+				else if(pageScroll >= certificationsTop)
+					setTopMenuBorder(3);
 				else if(pageScroll >= projectsTop)
+					setTopMenuBorder(2);
+				else if(pageScroll >= ipTop)
 					setTopMenuBorder(1);
 				else if(pageScroll >= bannerTop)
 					setTopMenuBorder(0);
@@ -103,10 +118,13 @@
 			*/
 			
 			function setSectionHeights(){
+				topMenuTop = $('.topMenu').offset().top;
 				headerTop = $('#header').offset().top;
 				bannerTop = $('#banner').offset().top;
 				skillsTop = $('#skills').offset().top;
+				ipTop = $('#ip').offset().top;
 				projectsTop = $('#projects').offset().top;
+				certificationsTop = $('#certifications').offset().top;
 				achievementsTop = $('#achievements').offset().top;
 				
 				topMenuHeight = $(".topMenu").height();
@@ -179,19 +197,30 @@
                 <div class="topMenu">
                     <ul>
                         <li><a href="#banner" class="topMenuButton scrolly scrolly-top">ABOUT ME</a></li>
+                        <li><a href="#ip" class="topMenuButton scrolly scrolly-top">IP</a></li>
                         <li><a href="#projects" class="topMenuButton scrolly scrolly-top">PROJECTS</a></li>
+                        <li><a href="#certifications" class="topMenuButton scrolly">CERTIFICATIONS</a></li>
                         <li><a href="#achievements" class="topMenuButton scrolly">ACHIEVEMENTS</a></li>
                         <li><a href="#contact" class="topMenuButton scrolly scrolly-top">CONTACT</a></li>
                     </ul>
+                    
+					<!--
+					<div class="ribbon">
+      					<a href="http://devpost.com/software/gaitorade-jq937f" target="_blank">PennApps</a>
+    				</div>
+					-->
+					
                 </div>
                 <header>
                     <h1>Vidur Shailendra Bhatnagar</h1>
+                </header>
+				<footer>
                     <p>
                         <h7>D</h7>eveloper | 
                         <h7>T</h7>echnology Enthusiast | 
                         <h7>R</h7>esearcher
                     </p>
-                </header>
+                </footer>
             </section>
             <!-- Banner -->
             <section id="banner" class="sectionStyle">
@@ -200,14 +229,18 @@
 						ABOUT ME
 						<br><i class="fa fa-bullhorn"></i>
 						<h2> 
-							Masters student at University of Pennsylvania, Fall 2015
+							Masters student at University of Pennsylvania, Fall 2015-17
 						</h2>
 						<h3>
-							Will be pursuing MSE Robotics at the GRASP Lab
+							Pursuing MSE Robotics at the GRASP Lab 
+							<br> <br>
+							<strong>Courses:</strong> Machine Learning, Computational Linguistics (NLP), Computer Vision & Computational Photography <br>
+							<strong>GPA:</strong> 4.0
+
 						</h3>
 					</header>
                 <div class="hexes-img">
-                    <img class="create-svg" src="images/profile3.jpg" alt="hex" data-clip="#hex_mask">
+                    <img class="create-svg" src="images/profile4.jpg" alt="hex" data-clip="#hex_mask">
                 </div>
                 <!-- End .hexes-img -->
                 <div class="whoamiSections">
@@ -280,6 +313,60 @@
 				</div>
 			</section>
 				
+			<section id="ip" class="sectionStyle">
+				<div class="sectionSidePadding">
+					<header class="sectionHeader sectionHeaderDark sectionHeaderNoBorder">
+						INTELLECTUAL PROPERTY
+						<br><i class="fa fa-briefcase"></i>
+					</header>
+					<article class="container box style3">
+					<div class="skillsSection">
+						<h4>Patent Applications</h4>
+							<h3>
+								<ul class="default">
+									<li> <strong>Visualization of Key Performance Indicator Dependencies </strong> 
+									<br> US14/954,139 (USA)
+									<br> Nov, 2015
+									<li> <strong>Multi-Dimensional Visual Analytics for Industries </strong> 
+									<br> US14/866,562 (USA)
+									<br> 4107/CHE/2015 (India)
+									<br> Sep, 2015
+									<li> <strong> Virtual Split Dictionary for Search Optimization </strong>
+									<br> US14/314,032 (USA)
+									<br> Jun, 2014
+									<li> <strong> Methods, Systems and Apparatus for Optimization Using Statistical Estimation </strong> 
+									<br> US14/098,706 (USA)
+									<br> Dec, 2013
+								</ul>
+							</h3>
+					</div>
+					<div class="skillsSection">
+						<h4>Publications</h4>
+							<h3>
+								<ul class="default">
+									<li>
+									<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7346737" target="blank"> 
+									Bhatnagar, V. S., Magon, R., Srivastava, R., and Thakur, M. K.
+									<br> <strong> "A cost effective Sign Language to voice emulation system" </strong>
+									in Proc. 8th International Conference on Contemporary Computing, (IC3 - 2015), 
+									<br>August 20-22, 2015, pp. 521-525.
+									</a>
+									
+									<li>
+									<a href="http://conferences.computer.org/ccem/program.html" target="blank"> 
+									Bhatnagar, V. S., Verma S.
+									<br><strong> "In-Memory Database Optimization Using Statistical Estimation" </strong>
+									in IEEE International Conference on Cloud Computing for Emerging Markets, 
+									<br>November 25-27, 2015.
+									</a>
+								</ul>
+							</h3>
+					</div>
+					</article>
+					
+				</div>
+			</section>
+			
             <!-- Featured Projects -->
 			
                 <section id="projects" class="sectionStyle">
@@ -287,13 +374,293 @@
 					<div class="sectionSidePadding">
 						<header class="sectionHeader sectionHeaderDark sectionHeaderNoBorder">
 							PROJECTS
-							<br><i class="fa fa-briefcase"></i>
+							<br><i class="fa fa-lightbulb-o"></i>
 						</header>
 						
+						<h4>University of Pennsylvania, Philadelphia, USA</h4>
 						
-						<details open>
+						<h3>
+							<strong>Research Assistant for Prof. Lyle Ungar</strong>
+						</h3>
+						
+						<details>
+						<summary> Live Map for World Well-Being Project</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> September, 2015 - November, 2015
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Javascript, SQL, Google Map APIs
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/proj11.jpg" class="image fit">	
+									<img src="images/proj11.jpg" title="Well-Being (PERMA) map of North America"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>Developed a live map for visualizing various constructs (like Well-Being, Diabetes, etc.) 
+									related to the WWBP project. 
+									<br><br>The live map has several features like comparison of different constructs, animation of a construct over time, 
+									sticky tooltips, etc.
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<h3>
+							<strong>Machine Learning - CIS520</strong>
+						</h3>
+						
+						<details>
+						<summary> Gender Prediction Using Twitter Data</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> November, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab, Python
+									</h3>
+									<h3>
+										<i class="fa fa-download"></i><a href="pdfs/ML520Paper.pdf" target="blank">Whitepaper</a>
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/ML520_1.png" class="image fit">	
+									<img src="images/ML520_1.png" title="Ranked Words used Majorly by Females"/>
+									</a>
+									
+									<a href="images/ML520_2.png" class="image fit">	
+									<img src="images/ML520_2.png" title="Ranked Words used Majorly by Males"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>The goal of this project was to predict the gender
+										of a person using the user’s twitter data which was extracted
+										using Twitter API. The data included tweets of a particular
+										person, profile picture and other derived features namely, age,
+										smile, orientation of face, type of glasses worn, and how much
+										percentage of the picture is occupied by the person’s face.
+										<br><br>Using this data, our team built several models which were
+										finally ensembled to create a model with fairly high accuracy
+										to predict the gender, which helped us in topping the test-set
+										leaderboard. However, we could not replicate our performance
+										on the validation set due to size and time constraints.			
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<h3><strong>Computational Linguistics - CIS530</strong></h3>
+						<details>
+						<summary> Author Attribution for Gina Kolata</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> November, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab, Python
+									</h3>
+									<h3>
+										<i class="fa fa-download"></i><a href="pdfs/CL530Paper.pdf" target="blank">Whitepaper</a>
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CL530_1.png" class="image fit">	
+									<img src="images/CL530_1.png" title="Top Ranked Words by Usage"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>The project focussed on attributing the authorship
+										of excerpts from a set of New York Times articles to author Gina
+										Kolata. The training data included labeled excerpts from New
+										York Times as Gina Kolata vs other authors. 
+										<br><br>We extracted and tried a multitude of features, setting the baseline as an SVM on
+										1000 most frequent words and then moving onto more complex
+										features like Parts-of-Speech, Synsets, etc. We finished 6th on the final leaderboard.
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						
+						<h3><strong>Computer Vision - CIS581</strong></h3>
+						<details>
+						<summary> Face Replacement using HOG and SVM</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> December, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab
+									</h3>
+									<h3>
+										<i class="fa fa-download"></i><a href="pdfs/CV581Paper.pdf" target="blank">Whitepaper</a>
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CV581_1.gif" class="image fit">	
+									<img src="images/CV581_1.gif" title="Face Replaced with Princess Diana's Face"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>This project was an attempt to completely replace
+										faces in video frames using Support Vector Machines (SVM)
+										as classifiers on Histogram of Oriented Gradients (HOG). 
+										<br><br> 
+										We trained an SVM classifier to first identify a face in an image using
+										HOG descriptors and then identify fiducial markers like eyes,
+										nose and mouth in the identified face using Matlab’s Cascade
+										Object Descriptor. Once a convex hull was identified in the
+										target image face, Thin Plate Spline (TPS) morphing, alongwith
+										Gradient Domain Blending, was used to warp features from
+										source image face onto the target frame face.
+										<br><br> We not only completed Option-1 
+										(in-depth analysis of one part of Face Recognition), 
+										but also implemented substantial portions of Option 2 (end-to-end face replacement).
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<details>
+						<summary> Seam Carving for Content-aware Image Resizing</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> November, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CV581_2.gif" class="image fit">	
+									<img src="images/CV581_2.gif" title="Seam Carving for Content-aware Image Resizing"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>The focus of the project was image resizing utilizing the principals supporting
+										minimum-energy seam carving, and dynamic programming. 
+										<br><br>This is an implementation of an approach towards resizing images while
+										attempting to preserve the integrity of important image information as outlined in 
+										Seam Carving for Content-Aware Image Resizing"; Avidan, S. & Shamir, A.; 2007
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<details>
+						<summary>Image Mosaicing</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> November, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CV581_3.jpg" class="image fit">	
+									<img src="images/CV581_3.jpg" title="Mosaic of 3 Images"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>The goal of this project was to create an image mosaic (or stitching) of a collection 
+										of small images which are aligned properly to create one larger image.
+										<br><br>Adaptive Non-Maximal Suppression technique was used to create a 
+										uniformly distributed cornermap of the image. 
+										Once the cornermap was ready, Feature Descriptor for each point was defined by
+										subsampling the image around that point by extracting axis-aligned 8x8 patches. 
+										To match the feature descriptors between two images, 
+										ratio of the 2 best matches was considered.
+										<br><br>RANSAC technique was then employed to remove incorrect matches.
+										Finally, pairwise aligned images were overlayed with imwarp and bilinear interpolation to create
+										the final mosaic image.
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<details>
+						<summary>Image Morphing</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> October, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CV581_4.gif" class="image fit">	
+									<img src="images/CV581_4.gif" title="Morphing my face into Robert Downey Jr.'s face"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>The task of this project was to produce a morph
+									animation of your face into another person's face. 
+									<br><br>2 Morphing algorithms were implemented - Thin Plate Spline and Delaunay Triangulation. 
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<details>
+						<summary>Canny Edge Detector</summary>
+							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> September, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Matlab
+									</h3>
+								</div>
+								<div class="gallery">
+									<a href="images/CV581_5.jpg" class="image fit">	
+									<img src="images/CV581_5.jpg" title="Edge-map of my face"/>
+									</a>
+								</div>
+
+								<div class="inner">
+									<h3>This project is an implementation of the famous Canny Edge Detector. 
+									<br><br> Canny edges are defined as local maxima of the image gradient. 
+									The algorithm is as follows: 
+									compute gradient magnitude and orientation, then seek local maximum in the gradient orientation 
+									and continue search in the direction of edge orientation for detected edge point.
+									</h3>
+								</div>
+						</article>
+						</details>
+						
+						<h4>SAP Labs India, Bangalore, India</h4>
+
+						<h3><strong>Product Owner</strong></h3>
+						<details>
 						<summary> Visualizations for SAP Cloud for Planning & SAP Lumira</summary>
 							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> June, 2014 - July, 2015 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Javascript, Product Management, JIRA
+									</h3>
+								</div>
 								<div class="gallery">
 									<a href="images/FPA.jpg" class="image fit">	
 									<img src="images/FPA.jpg" title="Visualizations for SAP Cloud for Planning & SAP Lumira"/>
@@ -312,12 +679,22 @@
 						</article>
 						</details>
 						
+
+						<h3><strong>Fellow - Managing Director's Office, India</strong></h3>
 						<details>
 						<summary> SAP Sports Analytics for Kolkata Knight Riders (KKR)</summary>
 							<article class="container box style1 left">
+								<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> November, 2013 - May, 2014 
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> SQL, SAP HANA
+									</h3>
+								</div>
 								<div class="gallery">
-									<a href="images/KKR.png" class="image fit">	
-									<img src="images/KKR.png" title="SAP Sports Analytics for Kolkata Knight Riders"/>
+									<a href="images/KKR.jpg" class="image fit">	
+									<img src="images/KKR.jpg" title="SAP Sports Analytics for Kolkata Knight Riders"/>
 									
 									</a>
 								</div>
@@ -332,118 +709,209 @@
 						</article>
 						</details>
 						
-						
-						 <!-- Feature 2 -->
-                    <details >
-						<summary> SAP Social Flex Seating for Stanford University</summary>
-						<article class="container box style1 left">
-                        <div class="gallery">
-                            <a href="images/proj6.jpg" class="image fit">
-                            <img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
-                            
-                            </a>
-                        </div>
-                        <div class="inner">
-                              
-                            <h3>SFS is a ticketing solution to alleviate the pain-points of group ticketing like sitting together, 
-							ease of payment and seamless collaboration between game attendees. 
-							<br><br>As a part of the product management team at SAP Labs, Palo Alto, 
-							I was responsible for furthering fan engagement portfolio, defining the product roadmap and 
-							gaining business acceptance for social flex concept amongst different stakeholders.
-                            </h3>
-                        </div>
-                    </article>
-						</details>
-					
-					<!-- Feature 3 -->
+						<!-- Feature 3 -->
                     <details >
 						<summary> SAP HANA Optimization Using Statistical Estimation</summary>
 						<article class="container box style1 left">
-                        <div class="gallery">
-                            <a href="images/proj2.jpg" class="image fit">
-                            <img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
-                            
-                            </a>
-                        </div>
-                        <div class="inner">
+							<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> July, 2013 - October, 2013
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> SQL, SAP HANA, C++
+								</h3>
+							</div>
+							<div class="gallery">
+								<a href="images/proj2.jpg" class="image fit">
+								<img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
+								</a>
+							</div>
+							<div class="inner">
+								<h3>
+									Research project to optimize dictionary compression in SAP 
+										HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
+										based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
+										the research claims.
+									
+									<br>
+									<br>
+									<h8>Patent Applications:</h8>
+									<br> US 14/098,706; 
+									<br>US 14/314,032</h8>
+								</h3>
+							</div>
+						</article>
+					</details>
+						
+					<details >
+						<summary> Miscellaneous Projects</summary>
+						<article class="container box style3">
                             <h3>
-								Research project to optimize dictionary compression in SAP 
-									HANA (SAP's flagship in-memory platform) through ingenious memory reorganization 
-									based on the statistics of unique strings in the dictionary. Completed comprehensive proof-of-concepts in C++ to corroborate 
-									the research claims.
-								
-								<br>
-								<br>
-								<h8>Patent Applications:</h8>
-								<br> US 14/098,706; 
-								<br>US 14/314,032</h8>
+								<ul class="default">
+									<li>Drove 2 internal projects for SAP Labs India, viz. 
+									'SAP Reva Car Booking Portal' and 'SAP Paperless' in an attempt to reduce the carbon footprint of our organization.
+								</ul>
 							</h3>
-                        </div>
-                    </article>
-						</details>
-                   
-				   
-					<!-- Feature 3 -->
+						</article>
+					</details>
+						
+
+					<h3><strong>Fellow - Design & Frontline Applications, Palo Alto</strong></h3>
+                    <details >
+						<summary> SAP Social Flex Seating for Stanford University</summary>
+						<article class="container box style1 left">
+							<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> November, 2013 - February, 2014
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> Facebook APIs, Product Management, JIRA
+								</h3>
+							</div>
+							<div class="gallery">
+								<a href="images/proj6.jpg" class="image fit">
+								<img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
+								
+								</a>
+							</div>
+							<div class="inner">
+								  
+								<h3>SFS is a ticketing solution to alleviate the pain-points of group ticketing like sitting together, 
+								ease of payment and seamless collaboration between game attendees. 
+								<br><br>As a part of the product management team at SAP Labs, Palo Alto, 
+								I was responsible for furthering fan engagement portfolio, defining the product roadmap and 
+								gaining business acceptance for social flex concept amongst different stakeholders.
+								</h3>
+							</div>
+						</article>
+					</details>
+					
+					
+					<h3><strong>Development Intern</strong></h3>
                     <details >
 						<summary> SAP Third Eye - Augmented Reality Platform for Android</summary>
 						<article class="container box style1 left">
-                        <div class="gallery">
-                            <a href="images/proj7.jpg" class="image fit">
-                            <img src="images/proj7.jpg" alt="Third Eye" title="SAP Third Eye - Augmented Reality Platform"/>
-                            
-                            </a>
-                        </div>
-                        <div class="inner">
-                            <h3>
-							Independently developed SAP Third Eye - a geo-location based Augmented Reality (AR) Android platform in 
-							just under 4 months as an interns at SAP Labs.
-							It can be used as a standalone platform or can be connected to existing SAP 
-							back-end services to render nearby locations as augmented pins on the screen.
-                            </h3>
-                        </div>
-                    </article>
-						</details>
+							<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> February, 2013 - June, 2013
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> Android, Google Map APIs, J2EE, SAP UI5 
+								</h3>
+							</div>
+							<div class="gallery">
+								<a href="images/proj7.jpg" class="image fit">
+								<img src="images/proj7.jpg" alt="Third Eye" title="SAP Third Eye - Augmented Reality Platform"/>
+								
+								</a>
+							</div>
+							<div class="inner">
+								<h3>
+								Independently developed SAP Third Eye - a geo-location based Augmented Reality (AR) Android platform in 
+								just under 4 months as an interns at SAP Labs.
+								It can be used as a standalone platform or can be connected to existing SAP 
+								back-end services to render nearby locations as augmented pins on the screen.
+								</h3>
+							</div>
+						</article>
+					</details>
 					
+					<h4>Freelance</h4>
+					<h3><strong>Contract Developer</strong></h3>
 					<details >
 						<summary> Rohits' Office Automation - ERP Module</summary>
 						<article class="container box style1 left">
-                        <div class="gallery">
-                            <a href="images/proj41.jpg" class="image fit">
-                            <img src="images/proj41.jpg" alt="Rohits' Offie Automation" title="Rohits' Office Automation - ERP Module"/>
-                            
-                            </a>
-                        </div>
-                        <div class="inner">
-                            <h3>
-							Rohits' Office Automation is an ERP module for automation of revenue cycle for SMEs. With features like 
-                                        master data management, printing of various bills on pre-printed stationary and 
-                                        automated report generation viz. sales, sales tax, performance, etc., it aims to ease the manual workload of such tasks.
-                            </h3>
-                        </div>
-                    </article>
-						</details>						
+							<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> July, 2011 - February, 2013
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> Java, Swings, SQL 
+								</h3>
+							</div>
+							<div class="gallery">
+								<a href="images/proj41.jpg" class="image fit">
+								<img src="images/proj41.jpg" alt="Rohits' Offie Automation" title="Rohits' Office Automation - ERP Module"/>
+								
+								</a>
+							</div>
+							<div class="inner">
+								<h3>
+								Rohits' Office Automation is an ERP module for automation of revenue cycle for SMEs. With features like 
+											master data management, printing of various bills on pre-printed stationary and 
+											automated report generation viz. sales, sales tax, performance, etc., it aims to ease the manual workload of such tasks.
+								</h3>
+							</div>
+						</article>
+					</details>						
 					
 					<details >	
-							<summary> Rohits' Data Logger</summary>
+						<summary> Rohits' Data Logger</summary>
 						<article class="container box style1 left">
-                        <div class="gallery">
-                            <a href="images/proj51.jpg" class="image fit">
-                            <img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger"/>
-                            
-                            </a>
-                        </div>
-                        <div class="inner">
-                            <h3>
-							Rohits' Data Logger is a two-way client-side interface for 8-bit 8-channel temperature data logger devices. 
-							It can display real-time values of the 8-channels in real-time and store the same on disk, as well as, lets the user program the devices as per requirements.
-                            </h3>
-                        </div>
-                    </article>
-						</details>	
-<!-- Feature 4 -->
-                    <details >
+							<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> August, 2012 - November, 2012
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Java, Swings, SQL 
+									</h3>
+								</div>
+							<div class="gallery">
+								<a href="images/proj51.jpg" class="image fit">
+								<img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger"/>
+								
+								</a>
+							</div>
+							<div class="inner">
+								<h3>
+								Rohits' Data Logger is a two-way client-side interface for 8-bit 8-channel temperature data logger devices. 
+								It can display real-time values of the 8-channels in real-time and store the same on disk, as well as, lets the user program the devices as per requirements.
+								</h3>
+							</div>
+						</article>
+					</details>	
+
+					<details >	
+						<summary> WebEngage - Email Reader Project</summary>
+						<article class="container box style1 left">
+							<div class="projDetails">
+									<h3>
+										<i class="fa fa-calendar"></i> January, 2012 - February, 2012
+									</h3>
+									<h3>
+										<i class="fa fa-cube"></i> Java, Swings, SQL 
+									</h3>
+								</div>
+							<div class="gallery">
+								<a href="images/proj10.jpg" class="image fit">
+								<img src="images/proj10.jpg" alt="Rohits' Data Logger" title="WebEngage Email Reader Project"/>
+								
+								</a>
+							</div>
+							<div class="inner">
+								<h3>
+								Resolved the infinite e-mail loop issue caused due to 
+								auto-email responders by fixing the IMAP server bug.
+								<br><br> I also modified existing code to prevent hard wiring of certain RegEx definitions.
+								</h3>
+							</div>
+						</article>
+					</details>	
+
+					
+					<h4>JIIT, Noida, India</h4>
+					<h3><strong>Thesis Projects</strong></h3>
+					<details >
 						<summary> SpeakUp - Sign Language to Voice Conversion Gloves</summary>
 						<article class="container box style1 left">
+						<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> Spring, 2012
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> Java, Swings, SQL 
+								</h3>
+							</div>
                         <div class="gallery">
 							<a class="image video">
 								<!--
@@ -471,6 +939,14 @@
                     <details>
 						<summary> Qubo - A Quadruped Robot</summary>
 						<article class="container box style1 left">
+						<div class="projDetails">
+								<h3>
+									<i class="fa fa-calendar"></i> Fall, 2011
+								</h3>
+								<h3>
+									<i class="fa fa-cube"></i> Arduino, Processing 
+								</h3>
+							</div>
                         <div class="gallery">
 							<a class="image video">
 								<!--
@@ -497,10 +973,6 @@
 						<article class="container box style3">
                             <h3>
 								<ul class="default">
-									<li>Drove 2 internal projects for SAP Labs India, viz. 'SAP Reva Car Booking Portal' and 'SAP Paperless' as a fellow in the Managing Director's office
-									<li>WebEngage - Email Reader Project - Working as a freelance developer, I resolved the infinite e-mail loop issue caused due to 
-									auto-email responders by fixing the IMAP Server bug. 
-									I also modified existing code to prevent hard wiring of certain RegEx definitions.
 									<li>'UMessenger' - A LAN messenger for Unix, based on shell scripting and C, which uses sockets as its communication gateway
 									<li>Sun Tracking Solar Cells - Embedded system using MCS51 to optimize power generation by rotating the 
 									shaft containing the photo sensors according to the position of the light rays.
@@ -511,13 +983,34 @@
 									A linear time complexity was achieved through 'Dynamic Programming'.
 								</ul>
 							</h3>
-                    </article>
-						</details>
+						</article>
+					</details>
 						
 					
 					</div>
                 </section>
             
+			<section id="certifications" class="sectionStyle">
+					<div class="sectionSidePadding">
+						<header class="sectionHeader sectionHeaderDark sectionHeaderNoBorder">
+							CERTIFICATIONS
+							<br><i class="fa fa-graduation-cap"></i>
+						</header>
+						
+					<article class="container box style3">
+						<h3>
+							<ul class="default">
+								<li>Workshop on Data Visualization by Dr. Jurgen Faisst at SAP Labs India, 2015
+								<li>Advanced Analytics for Management Program, 2014 at Indian Institute of Management (IIM), Ahmedabad 
+								<li>Introduction to Mobile Solution Development for Enterprise, 2013 - online course on OpenSAP
+								<li>Introduction to Software Development on SAP HANA, 2013 - online course on OpenSAP 
+								<li>Advanced Problem Solving in C course, December 2008 - under the aegis of IEEE at JIIT Noida
+							</ul>
+						</h3>
+                    </article>
+				</div>
+                </section>
+				
                   
                 <section id="achievements" class="sectionStyle">
 					<div class="sectionSidePadding">
@@ -527,8 +1020,8 @@
 
 						</header>
 						<article class="container box style2">
-                        <div class="inner gallery">
-                            <div class="row flush">
+                        <div class="inner gallery">							
+							<div class="row flush">
                                 <div class="3u">
                                     <a class="image video">
                                     <iframe width="854" height="250" src="http://www.youtube.com/embed/REKbxkTHH2Y" frameborder="0" allowfullscreen>
@@ -551,29 +1044,42 @@
                         </div>
                     </article>
 					<article class="container box style3">
-					<h4>At SAP Labs...</h4>
+					<h4>University of Pennsylvania</h4>
 						<h3>
 							<ul class="default">
-								<li>Completed 'Advanced Analytics for Management, 2014' program at Indian Institute of Management (IIM), Ahmedabad 
-								<li>‘Star Employee of the Managing Director's Office’ in 2014
-								<li>'High-Flyer of the Month, May 2014' award for top contributions to SAP Blue - an internal crowd sourcing platform
-								<li>'Peer Award in Q3, 2014' for custom visualizations built for SAP Lumira
+								<li>
+								<a href="https://www.youtube.com/watch?v=TvjwUh9taOA&feature=youtu.be&t=1774" target="blank">
+								<strong>
+								2nd Place, Penn-Apps (World's Largest Student Hackathon), Summer 2015 
+								</strong>
+								</a>
+								<br>Hacked a Myo-band to visualize a person’s gait (foot pressure map) and trigger emergency messages in case of a Parkinson’s attack.
+								<li>Cleared WPE-I (PhD. qualifying exam) for Machine Learning - CIS520
+								
+							</ul>
+						</h3>
+
+					<h4>SAP Labs India</h4>
+						<h3>
+							<ul class="default">
+								<li>Employee of the Year, 2013 in Spirit Of Innovation Category across 4500 employees in India
+								<li>Finalist for Employee of the Year, 2014 in Star of the Year Category
+								<li>Nominated for the global 'Hasso Plattner Founder's Award 2014'
+								<li>Star Employee of the Managing Director's Office in 2014
+								<li>High-Flyer of the Month, May 2014 award for top contributions to SAP Blue - an internal crowd sourcing platform
+								<li>2 Team Awards in 2014 for custom visualizations built for SAP Lumira
 								<li>Finalist at 'SAP What The Hack, 2014’ hackathon with a Smart Retail Shelf solution
-								<li>Finalist for 'Employee of the Year, 2014' award and nominated for the global 'Hasso Plattner Founder's Award 2014'
 								<li>Expert speaker for SAP at 'SAP Developer Kick-off Meeting (DKOM), 2015', 
 								ISEC 2014 at IIT Chennai, Technology Booths at IPL in Dubai and Kolkata, 
 								SAP Open Transformation Through Design (OxD) Conference, 2014 
 								and ‘Product Innovation Day, 2013’ (Meet the ExpertPod)
-								<li>'Employee of the Year, 2013’ in Spirit Of Innovation Category across 4500 employees in India
-								<li>Completed ‘Introduction to Mobile Solution Development for Enterprise’ and ‘Introduction to Software Development on SAP HANA’ courses on openSAP in 2013
 							</ul>
 						</h3>
-					<h4>At JIIT...</h4>						
+					<h4>JIIT</h4>						
 						<h3>
 							<ul class="default">
 								<li>Recipient of Government of India C.B.S.E Scholarship (CSS) for 5 years duration from 2008 – 2013
 								<li>Winner of the 'Franklin Templeton India - Invest for Tomorrow Online Idea Entries', January 2013
-								<li>Completed 'Advanced Problem Solving in C' course under the aegis of IEEE in December, 2008
 							</ul>
 						</h3>
                     </article>
@@ -584,9 +1090,10 @@
             <section id="contact" class="sectionStyle">
                 <h2>Fancy a Java?</h2>
                 <ul class="icons">
-                    <li><a href="tel:+919632566611" class="icon fa-mobile"><span class="label">Mobile</span></a></li>
+                    <li><a href="tel:+12152526186" class="icon fa-mobile"><span class="label">Mobile</span></a></li>
                     <li><a href="mailto:mail@vidurbhatnagar.com" class="icon fa-envelope-o"><span class="label">Mail</span></a></li>
                     <li><a target="_blank" href="http://in.linkedin.com/in/vidurbhatnagar" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a target="_blank" href="https://github.com/vidurbhatnagar" class="icon fa-github"><span class="label">Github</span></a></li>
                     <li>
                         <span class="fa-stack">
                         <a target="_blank" href="pdfs/Vidur_S_Bhatnagar_Resume.pdf" class="icon fa-file">

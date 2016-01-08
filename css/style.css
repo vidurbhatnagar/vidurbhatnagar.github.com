@@ -7,9 +7,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/*======================*/
 .bodyShow {
     display: none;
 }
+
 .loadScreen {
     position: absolute;
     width: 100%;
@@ -25,6 +27,56 @@
     right: 0;
     display: block;
 }
+/*======================*/
+
+@font-face{
+    font-family: "BlenderPro-Bold";
+    src: url('BlenderPro-Bold.ttf');
+    /* url('BlenderPro-Bold.eot'); /* IE */
+}
+
+
+@font-face{
+    font-family: "BlenderPro-Thin";
+    src: url('BlenderPro-Thin.ttf');
+    /* url('BlenderPro-Bold.eot'); /* IE */
+}
+
+@font-face{
+    font-family: "DINRegular";
+    src: url('DINRegular.ttf');
+    /* url('BlenderPro-Bold.eot'); /* IE */
+}
+
+underline{
+	text-decoration: underline !important;
+}
+.ribbon{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 90px;
+    height: 135px;
+    text-indent: -666em;
+    overflow: hidden;
+    z-index: 999;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.ribbon a {
+    background-image: url('../images/ribbonPA.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 90px;
+    height: 135px;
+    background-repeat: no-repeat;
+    background-size: 90px 135px;
+}
+
+
 
 /* ===================================================== */
 /* Hexes 											 	 */
@@ -68,29 +120,30 @@ footer {
     width: 100%;
 	background: #fdfdfd;
 }
-details{
-	margin-bottom: 1em;
-}
 summary::-webkit-details-marker {
   display: none
 }
 summary {
-	font-size: 22px;
-	color: rgb(130, 130, 130);
+	font-size: 16px;
+	color: #293742;
 	border-bottom: 1px solid rgb(230, 230, 230);
-	margin-bottom: 1em;
+	margin-bottom: 10px;
 	cursor: pointer;
 }
+details[open] summary{
+	background-color: #293742;
+	color: #fdfdfd;
+}
 .no-touch summary:hover{
-    --border: 1px solid #444 !important;
-	background-color: #444;
+    --border: 1px solid #293742 !important;
+	background-color: #293742;
 	color: #fdfdfd;
 }
 summary:before {
   content: '\f067';
   font-size: 22px;
   float: left; 
-  width: 40px;
+  width: 30px;
   display: inline-block;
   font: normal normal normal 14px/1.5 FontAwesome;
   font-size: inherit;
@@ -108,22 +161,33 @@ details[open] summary:before {
 h2 {
     font-weight: bold;
 	font-size: 22px;
-	color: rgb(130, 130, 130);
+	color: #293742;
 	margin-top: 20px;
 	text-align: left;
+	font-family: "BlenderPro-Bold";
 }
 h3 {
     font-size: 16px;
-    color: rgb(150, 150, 150);
+    color: #394b59;
 	font-weight: 400;
 	text-align: justify;
+	font-family: "DINRegular";
+}
+#projects h3{
+	margin-left: 10px;
+}
+.inner > h3{
+	margin-left: 0px !important;
 }
 h4{
-    font-weight: bold;
 	font-size: 22px;
-	color: rgb(130, 130, 130);
+	color: #293742;
 	margin-top: 20px;
 	text-align: left;
+	font-family: "BlenderPro-Bold";
+}
+h4:nth-child(1) {
+    margin-top: 0px!important;
 }
 #wrap{
     display:none!important;
@@ -140,11 +204,31 @@ h4{
 }
 .fa:after{
   content: '';
-  background-color: rgb(150, 150, 150);
+  background-color: #394b59;
   width: 100px;
   height: 1px;
   display: block;
   margin-top: -30px;
+}
+details[open] > article > .projDetails{
+}
+.projDetails{
+	display: flex;
+    justify-content: space-around;
+	margin-bottom: 10px;
+}
+.projDetails > h3 {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 0px !important;
+}
+.projDetails > h3 > .fa:before{
+	font-size: small !important;
+	padding-right: 10px !important;
+	padding-left: 0px !important;
+}
+.projDetails > h3  > .fa:after{
+	content: none !important;
 }
 #achievements{
 	padding-bottom: 2em;
@@ -174,7 +258,7 @@ h4{
 }
 .skillsIconLable{
 	color: #d0d0d0;
-	font-size: 16px;
+	font-size: 18px;
 	padding-top: 5px;
 }
 .skillsIcon50{
@@ -192,21 +276,22 @@ h4{
 }
 #skills .icon:before {
 	color: #fdfdfd;
-	font-size: 60px;
+	font-size: 40px;
 }
 .sectionHeader{
-	font-size: 35px;
+	font-size: 40px;
 	font-weight: bold;
 	margin-bottom: 20px;
 	padding-bottom: 5px;
 	text-align: center;
+	font-family: "BlenderPro-Bold";
 }
 .sectionHeaderLight{
 	color: #fdfdfd;	
 	border-bottom: 3px solid rgba(230, 230, 230,0.5);
 }
 .sectionHeaderDark{
-	color: #444;
+	color: #293742;
 	border-bottom: 3px solid rgb(230, 230, 230);
 }
 .sectionHeaderNoBorder{
@@ -241,19 +326,35 @@ h4{
 .whoamiSections{
 	text-align: justify;
 }
+
+.topMenuFixed{
+    position: fixed !important;
+	top: 0 !important;
+	bottom: auto !important;
+	background: rgba(253, 253, 253, 0.97);
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.topMenuFixed > ul > li {
+    padding-top: 2%!important;
+    padding-bottom: 2%!important;
+}
+.topMenuFixed > ul > li > a {
+    color: #293742 !important;
+}
 .topMenuWhite {
     background: #fdfdfd;
-    border-bottom: 3px solid #444;
+    border-bottom: 3px solid #293742;
 }
 .topMenuWhite > ul > li {
-    padding-top: 4%!important;
-    padding-bottom: 4%!important;
+    padding-top: 2%!important;
+    padding-bottom: 2%!important;
 }
 .topMenuWhite > ul > li > a {
-    color: #444 !important;
+    color: #293742 !important;
 }
 .no-touch .topMenuWhite > ul > li > a:hover {
-    border: 1px solid #444 !important;
+    border: 1px solid #293742 !important;
 }
 .topMenuButton {
     padding: 5px;
@@ -263,11 +364,12 @@ h4{
 .no-touch .topMenuButton:hover {
     border: 1px solid #fdfdfd;
 }
+
 .topMenu {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 200;
     color: #fdfdfd;
     -webkit-transition-property: background;
@@ -275,26 +377,29 @@ h4{
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
     z-index: 1000;
+	font-family: "BlenderPro-Bold";
 }
 .topMenu > ul {
-    padding-left: 10%;
+	display: flex;
+	justify-content: space-between;
+    padding-left: 15%;
     padding-right: 15%;
+	width: 75%;
     float: right;
 }
+
 .topMenu > ul > li {
-    float: left;
-    margin-left: 25px;
     -webkit-transition-property: padding-top, padding-bottom;
     transition-property: padding-top, padding-bottom;
     -webkit-transition-duration: .2s;
     transition-duration: .2s;
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 4%;
+    padding-top: 4%;
 }
 .sectionStyle {
-    color: #444;
+    color: #293742;
     height: 100%;
     background: #fdfdfd;
 	padding-top: 2em;
@@ -307,6 +412,7 @@ details summary::-webkit-details-marker {
     color: #f5f5f5;
 }
 details {
+	margin-left: 30px;
     summary {
         @include transition-timing-function(ease-in-out);
     }
@@ -315,7 +421,7 @@ body,
 input,
 textarea,
 select {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'DINRegular', Helvetica, Arial, sans-serif;
     font-size: 18pt;
     font-weight: 300;
     color: #3a3939;
@@ -448,7 +554,7 @@ h8 {
 }
 strong,
 b {
-    font-weight: 400;
+    font-weight: bold;
 }
 em,
 i {
@@ -503,13 +609,10 @@ article:last-child {
     border: 0;
 }
 .image img {
-    display: block;
     width: 100%;
-    height: 250px;
-    --box-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
 }
 .no-touch .image img:hover {
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .image.featured {
     display: block;
@@ -542,7 +645,7 @@ article:last-child {
 
 ul {} ul.default {
     list-style: disc;
-    padding-left: 1em;
+    padding-left: 20px;
 }
 ul.default li {
     padding-left: 1.0em;
@@ -805,7 +908,7 @@ input[type="reset"].style3:hover,
     position: relative;
     margin-bottom: 1em;
     width: 100%!important;
-	min-height: 300px;
+	--min-height: 300px;
 }
 .box.footer {
     position: absolute;
@@ -850,23 +953,14 @@ input[type="reset"].style3:hover,
 	display: table;
 }
 .box.style1 > .gallery{
-	display: table-row;
+	width: 48%;
+	float: right;
 }
 
 .box.style1 .image {
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: #f5f5f5;
-    overflow: hidden;
 }
 .box.style1 .image img {
-    position: absolute;
-    top: 0;
     height: 100%;
-    width: 100%;
 }
 .box.style1.right {} .box.style1.right .image {
     left: 0;
@@ -878,17 +972,16 @@ input[type="reset"].style3:hover,
     padding-left: 53%;
 }
 .box.style1.left {
-    z-index: 1;
+	margin-bottom: 10px;
 }
 .box.style1.left .image {
-    right: 0;
-    z-index: 1;
 }
 .box.style1.left .image img {
-    --left: 0;
+	
 }
 .box.style1.left .inner {
-    padding-right: 53%;
+	width: 48%;
+	float: left
 }
 .box.style2 {
     text-align: center;
@@ -937,8 +1030,10 @@ input[type="reset"].style3:hover,
 	height: 100%;
 }
 .box.style3 {
-	padding: 0 0 0 2em;
+	--padding: 0 0 0 2em;
     text-align: justify;
+	display: inline-block;
+	margin-bottom: 10px;
 }
 .box.style3:after {
     --display: none;
@@ -1013,7 +1108,7 @@ input[type="reset"].style3:hover,
 .icon-text {
     font-size: 0.7em;
     margin-top: 1.3em;
-    color: #444;
+    color: #293742;
     font-weight: bolder;
 }
 .no-touch .icon-text:hover {
@@ -1044,6 +1139,8 @@ input[type="reset"].style3:hover,
 /*********************************************************************************/
 
 #header {
+	height : 100vh;
+	
     background-color: rgba(0, 0, 0, 0.6);
 	background-image: url('../images/bg.jpg');
     background-repeat: no-repeat;
@@ -1063,21 +1160,31 @@ input[type="reset"].style3:hover,
     color: #fff;
     margin-left: 15%;
     padding-left: 1%;
-	width: 50%;
+	width: 45%;
 }
 #header header h1 {
+	font-family: "BlenderPro-Bold";
     font-weight: 600;
-    font-size: 70px;
-    letter-spacing: 0.1em!important;
-    line-height: 1.2em!important;
+    font-size: 75px;
+    --letter-spacing: 0.1em!important;
+    line-height: 1 !important;
     text-transform: uppercase;
 	padding-bottom: 30px;
 }
-#header header p {
-    font-size: 30px;
+
+#header footer {
+    border-left: 1px dotted lightgrey;
+    text-align: left;
+    color: #fff;
+    margin-left: 15%;
+    padding-left: 1%;
+	margin-right: 15%;
+}
+#header footer p {
+    font-size: 25px;
     font-weight: 100;
 }
-#header header p:before {
+#header footer p:before {
     --content: '';
     display: block;
     border-top: solid 1px rgba(255, 255, 255, 0.5);
