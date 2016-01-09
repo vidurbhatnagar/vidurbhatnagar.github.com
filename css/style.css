@@ -609,11 +609,11 @@ article:last-child {
     display: inline-block;
     border: 0;
 }
+
 .image img {
     width: auto;
 	display: table;
 	margin: auto;
-	opacity: 0;
 	transition: opacity .3s ease-in;
 }
 .no-touch .image img:hover {
