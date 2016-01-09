@@ -614,7 +614,6 @@ article:last-child {
     width: auto;
 	display: table;
 	margin: auto;
-	transition: opacity .3s ease-in;
 }
 .no-touch .image img:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);

@@ -105,9 +105,12 @@
 			};
 			
 			function loadImages(openDetail){
-				$(openDetail).find("img").trigger("unveil");
+				setTimeout(dummyScroll,50);
 			}
             
+			function dummyScroll(){
+				$(window).scroll();
+			}
 			/*function summariesOpen(openDetails) {
 				var details = document.getElementsByTagName("details");
 				var summariesContainer = document.getElementsByClassName("style1");
@@ -139,7 +142,6 @@
             $(window).load(function() {
 				$("img").unveil(400,function(){
 					$(this).load(function() {
-						this.style.opacity = 0;
 						this.style.width = "100%";
 						this.style.opacity = 1;
 					});
