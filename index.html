@@ -26,6 +26,7 @@
         <script src="js/jquery.poptrox.min.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/init.js"></script>
+        <script src="js/jquery.unveil.js"></script>
         <script src="js/modernizr.custom.78693.js"></script>
         <noscript>
             <link rel="stylesheet" href="css/skel.css" />
@@ -74,7 +75,6 @@
             		$('.hexes-img').css('opacity', 1);
             	}
 				
-				
 				if((pageScroll + windowHeight) >= documentHeight)
 					setTopMenuBorder(5);
 				else if(pageScroll >= achievementsTop)
@@ -103,6 +103,10 @@
 					}
 				}
 			};
+			
+			function loadImages(openDetail){
+				$(openDetail).find("img").trigger("unveil");
+			}
             
 			/*function summariesOpen(openDetails) {
 				var details = document.getElementsByTagName("details");
@@ -132,8 +136,15 @@
 				documentHeight = $(document).height();
 			};
 			
-            $(window).load(function() {				
-            	$(".loadScreen").fadeOut("fast");
+            $(window).load(function() {
+				$("img").unveil(400,function(){
+					$(this).load(function() {
+						this.style.width = "100%";
+						this.style.opacity = 1;
+					});
+				});
+            	
+				$(".loadScreen").fadeOut("fast");
 				$(".bodyShow").css("display","block");
 				
 				// Append SVG CLip templates
@@ -383,7 +394,7 @@
 							<strong>Research Assistant for Prof. Lyle Ungar</strong>
 						</h3>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Live Map for World Well-Being Project</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -396,7 +407,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/proj11.jpg" class="image fit">	
-									<img src="images/proj11.jpg" title="Well-Being (PERMA) map of North America"/>
+									<img src="images/loader2.gif" data-src="images/proj11.jpg" title="Well-Being (PERMA) map of North America"/>
 									</a>
 								</div>
 
@@ -414,7 +425,7 @@
 							<strong>Machine Learning - CIS520</strong>
 						</h3>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Gender Prediction Using Twitter Data</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -430,11 +441,11 @@
 								</div>
 								<div class="gallery">
 									<a href="images/ML520_1.png" class="image fit">	
-									<img src="images/ML520_1.png" title="Ranked Words used Majorly by Females"/>
+									<img src="images/loader2.gif" data-src="images/ML520_1.png" title="Ranked Words used Majorly by Females"/>
 									</a>
 									
 									<a href="images/ML520_2.png" class="image fit">	
-									<img src="images/ML520_2.png" title="Ranked Words used Majorly by Males"/>
+									<img src="images/loader2.gif" data-src="images/ML520_2.png" title="Ranked Words used Majorly by Males"/>
 									</a>
 								</div>
 
@@ -456,7 +467,7 @@
 						</details>
 						
 						<h3><strong>Computational Linguistics - CIS530</strong></h3>
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Author Attribution for Gina Kolata</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -472,7 +483,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CL530_1.png" class="image fit">	
-									<img src="images/CL530_1.png" title="Top Ranked Words by Usage"/>
+									<img src="images/loader2.gif" data-src="images/CL530_1.png" title="Top Ranked Words by Usage"/>
 									</a>
 								</div>
 
@@ -491,7 +502,7 @@
 						
 						
 						<h3><strong>Computer Vision - CIS581</strong></h3>
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Face Replacement using HOG and SVM</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -507,7 +518,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CV581_1.gif" class="image fit">	
-									<img src="images/CV581_1.gif" title="Face Replaced with Princess Diana's Face"/>
+									<img src="images/loader2.gif" data-src="images/CV581_1.gif" title="Face Replaced with Princess Diana's Face"/>
 									</a>
 								</div>
 
@@ -531,7 +542,7 @@
 						</article>
 						</details>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Seam Carving for Content-aware Image Resizing</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -544,7 +555,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CV581_2.gif" class="image fit">	
-									<img src="images/CV581_2.gif" title="Seam Carving for Content-aware Image Resizing"/>
+									<img src="images/loader2.gif" data-src="images/CV581_2.gif" title="Seam Carving for Content-aware Image Resizing"/>
 									</a>
 								</div>
 
@@ -559,7 +570,7 @@
 						</article>
 						</details>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary>Image Mosaicing</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -572,7 +583,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CV581_3.jpg" class="image fit">	
-									<img src="images/CV581_3.jpg" title="Mosaic of 3 Images"/>
+									<img src="images/loader2.gif" data-src="images/CV581_3.jpg" title="Mosaic of 3 Images"/>
 									</a>
 								</div>
 
@@ -593,7 +604,7 @@
 						</article>
 						</details>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary>Image Morphing</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -606,7 +617,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CV581_4.gif" class="image fit">	
-									<img src="images/CV581_4.gif" title="Morphing my face into Robert Downey Jr.'s face"/>
+									<img src="images/loader2.gif" data-src="images/CV581_4.gif" title="Morphing my face into Robert Downey Jr.'s face"/>
 									</a>
 								</div>
 
@@ -619,7 +630,7 @@
 						</article>
 						</details>
 						
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary>Canny Edge Detector</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -632,7 +643,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/CV581_5.jpg" class="image fit">	
-									<img src="images/CV581_5.jpg" title="Edge-map of my face"/>
+									<img src="images/loader2.gif" data-src="images/CV581_5.jpg" title="Edge-map of my face"/>
 									</a>
 								</div>
 
@@ -650,7 +661,7 @@
 						<h4>SAP Labs India, Bangalore, India</h4>
 
 						<h3><strong>Product Owner</strong></h3>
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> Visualizations for SAP Cloud for Planning & SAP Lumira</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -663,7 +674,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/FPA.jpg" class="image fit">	
-									<img src="images/FPA.jpg" title="Visualizations for SAP Cloud for Planning & SAP Lumira"/>
+									<img src="images/loader2.gif" data-src="images/FPA.jpg" title="Visualizations for SAP Cloud for Planning & SAP Lumira"/>
 									
 									</a>
 								</div>
@@ -681,7 +692,7 @@
 						
 
 						<h3><strong>Fellow - Managing Director's Office, India</strong></h3>
-						<details>
+						<details onclick='loadImages(this)'>
 						<summary> SAP Sports Analytics for Kolkata Knight Riders (KKR)</summary>
 							<article class="container box style1 left">
 								<div class="projDetails">
@@ -694,7 +705,7 @@
 								</div>
 								<div class="gallery">
 									<a href="images/KKR.jpg" class="image fit">	
-									<img src="images/KKR.jpg" title="SAP Sports Analytics for Kolkata Knight Riders"/>
+									<img src="images/loader2.gif" data-src="images/KKR.jpg" title="SAP Sports Analytics for Kolkata Knight Riders"/>
 									
 									</a>
 								</div>
@@ -710,7 +721,7 @@
 						</details>
 						
 						<!-- Feature 3 -->
-                    <details >
+                    <details onclick='loadImages(this)' >
 						<summary> SAP HANA Optimization Using Statistical Estimation</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -723,7 +734,7 @@
 							</div>
 							<div class="gallery">
 								<a href="images/proj2.jpg" class="image fit">
-								<img src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
+								<img src="images/loader2.gif" data-src="images/proj2.jpg" alt="HOUSE" title="SAP HANA Optimization Using Statistical Estimation (HOUSE)"/>
 								</a>
 							</div>
 							<div class="inner">
@@ -743,7 +754,7 @@
 						</article>
 					</details>
 						
-					<details >
+					<details onclick='loadImages(this)' >
 						<summary> Miscellaneous Projects</summary>
 						<article class="container box style3">
                             <h3>
@@ -757,7 +768,7 @@
 						
 
 					<h3><strong>Fellow - Design & Frontline Applications, Palo Alto</strong></h3>
-                    <details >
+                    <details onclick='loadImages(this)' >
 						<summary> SAP Social Flex Seating for Stanford University</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -770,7 +781,7 @@
 							</div>
 							<div class="gallery">
 								<a href="images/proj6.jpg" class="image fit">
-								<img src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
+								<img src="images/loader2.gif" data-src="images/proj6.jpg" alt="SFS" title="SAP Social Flex Seating (SFS) for Stanford University"/>
 								
 								</a>
 							</div>
@@ -788,7 +799,7 @@
 					
 					
 					<h3><strong>Development Intern</strong></h3>
-                    <details >
+                    <details onclick='loadImages(this)' >
 						<summary> SAP Third Eye - Augmented Reality Platform for Android</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -801,7 +812,7 @@
 							</div>
 							<div class="gallery">
 								<a href="images/proj7.jpg" class="image fit">
-								<img src="images/proj7.jpg" alt="Third Eye" title="SAP Third Eye - Augmented Reality Platform"/>
+								<img src="images/loader2.gif" data-src="images/proj7.jpg" alt="Third Eye" title="SAP Third Eye - Augmented Reality Platform"/>
 								
 								</a>
 							</div>
@@ -818,7 +829,7 @@
 					
 					<h4>Freelance</h4>
 					<h3><strong>Contract Developer</strong></h3>
-					<details >
+					<details onclick='loadImages(this)' >
 						<summary> Rohits' Office Automation - ERP Module</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -831,7 +842,7 @@
 							</div>
 							<div class="gallery">
 								<a href="images/proj41.jpg" class="image fit">
-								<img src="images/proj41.jpg" alt="Rohits' Offie Automation" title="Rohits' Office Automation - ERP Module"/>
+								<img src="images/loader2.gif" data-src="images/proj41.jpg" alt="Rohits' Offie Automation" title="Rohits' Office Automation - ERP Module"/>
 								
 								</a>
 							</div>
@@ -845,7 +856,7 @@
 						</article>
 					</details>						
 					
-					<details >	
+					<details onclick='loadImages(this)' >	
 						<summary> Rohits' Data Logger</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -858,7 +869,7 @@
 								</div>
 							<div class="gallery">
 								<a href="images/proj51.jpg" class="image fit">
-								<img src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger"/>
+								<img src="images/loader2.gif" data-src="images/proj51.jpg" alt="Rohits' Data Logger" title="Rohits' Data Logger"/>
 								
 								</a>
 							</div>
@@ -871,7 +882,7 @@
 						</article>
 					</details>	
 
-					<details >	
+					<details onclick='loadImages(this)' >	
 						<summary> WebEngage - Email Reader Project</summary>
 						<article class="container box style1 left">
 							<div class="projDetails">
@@ -884,7 +895,7 @@
 								</div>
 							<div class="gallery">
 								<a href="images/proj10.jpg" class="image fit">
-								<img src="images/proj10.jpg" alt="Rohits' Data Logger" title="WebEngage Email Reader Project"/>
+								<img src="images/loader2.gif" data-src="images/proj10.jpg" alt="Rohits' Data Logger" title="WebEngage Email Reader Project"/>
 								
 								</a>
 							</div>
@@ -901,7 +912,7 @@
 					
 					<h4>JIIT, Noida, India</h4>
 					<h3><strong>Thesis Projects</strong></h3>
-					<details >
+					<details onclick='loadImages(this)' >
 						<summary> SpeakUp - Sign Language to Voice Conversion Gloves</summary>
 						<article class="container box style1 left">
 						<div class="projDetails">
@@ -915,7 +926,7 @@
                         <div class="gallery">
 							<a class="image video">
 								<!--
-									<img src="images/proj3.jpg" alt="SpeakUp" />
+									<img src="images/loader2.gif" data-src="images/proj3.jpg" alt="SpeakUp" />
 									-->
 								<iframe width="900" height="250" src="http://www.youtube.com/embed/DirjzAlafA4" frameborder="0" allowfullscreen></iframe>
 							</a>
@@ -936,7 +947,7 @@
 
 
                     <!-- Feature 5 -->
-                    <details>
+                    <details onclick='loadImages(this)'>
 						<summary> Qubo - A Quadruped Robot</summary>
 						<article class="container box style1 left">
 						<div class="projDetails">
@@ -950,7 +961,7 @@
                         <div class="gallery">
 							<a class="image video">
 								<!--
-									<img src="images/proj3.jpg" alt="SpeakUp" />
+									<img src="images/loader2.gif" data-src="images/proj3.jpg" alt="SpeakUp" />
 									-->
 								<iframe width="900" height="250" src="http://www.youtube.com/embed/dj7jl7zTTZA" frameborder="0" allowfullscreen></iframe>
 							</a>
@@ -968,7 +979,7 @@
 						</details>
 					
 					<!-- Feature 5 -->
-                    <details >
+                    <details onclick='loadImages(this)' >
 						<summary> Miscellaneous Projects</summary>
 						<article class="container box style3">
                             <h3>
