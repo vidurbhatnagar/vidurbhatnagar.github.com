@@ -22,9 +22,30 @@ h3 {
 body{
   background-size: 100%, cover;
 }
+
 .topMenu {
   display: none;
+  font-size: 14px !important;
 }
+.topMenu > ul {
+    padding-right: 0 !important; 
+}
+.topMenu > ul {
+    display: inline-block !important;
+    padding-right: 5% !important;
+}
+.topMenu > ul > li {
+    text-align: right;
+}
+
+.menuIcon{
+	display: block;
+	background: url('http://cdn.flaticon.com/png/256/56763.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
 .sectionStyle{
 	padding-top: 1em;
 }
