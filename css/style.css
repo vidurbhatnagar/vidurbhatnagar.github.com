@@ -106,7 +106,6 @@ underline {
     line-height: 1.5em!important;
     text-decoration: none!important;
     color: inherit;
-    word-break: break-word;
 }
 html {
     overflow-x: hidden;
