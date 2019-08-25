@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
     "use strict";
 
+    $(".loadScreen").fadeOut("slow");
     $(".site-wrap").removeClass("d-none");
-    $(".loadScreen").fadeOut("fast");
 
     AOS.init({
         duration: 800,
