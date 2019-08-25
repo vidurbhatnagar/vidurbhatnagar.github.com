@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
             setTimeout(toggleSectionCloser, 100);
         });
 
-        $('body').on('click', '#section-closer', function() {
+        $('body').on('click', '#section-closer', function(e) {
             e.preventDefault();
 
             var openDetails = findOpenDetails();
