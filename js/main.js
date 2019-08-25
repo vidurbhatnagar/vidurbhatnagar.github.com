@@ -47,6 +47,10 @@ jQuery(document).ready(function($) {
             }, 600, 'easeInOutCirc', function() {
                 window.location.hash = hash;
             });
+
+            if ($('body').hasClass('offcanvas-menu')) {
+                $('body').removeClass('offcanvas-menu');
+            }
         });
     }();
 
