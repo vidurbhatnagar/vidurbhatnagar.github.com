@@ -136,6 +136,8 @@ jQuery(document).ready(function($) {
         });
 
         $('body').on('click', '#section-closer', function() {
+            e.preventDefault();
+
             var openDetails = findOpenDetails();
 
             if (openDetails) {
