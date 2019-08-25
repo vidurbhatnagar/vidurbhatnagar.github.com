@@ -9,9 +9,9 @@ jQuery(document).ready(function($) {
 
     var siteMenuClone = function() {
         $('body').on('click', '.js-menu-toggle', function(e) {
-            var $this = $(this);
-
             e.preventDefault();
+            
+            var $this = $(this);
 
             if ($('body').hasClass('offcanvas-menu')) {
                 $('body').removeClass('offcanvas-menu');
@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
             $(document).scrollTop($(this).offset().top - currentOffset);
 
             // Show/Hide the section closer
-            setTimeout(toggleSectionCloser, 100);
+            setTimeout(toggleSectionCloser, 25);
         });
 
         $('body').on('click', '#section-closer', function(e) {
@@ -150,7 +150,7 @@ jQuery(document).ready(function($) {
 
             $('details').removeAttr("open");
 
-            setTimeout(toggleSectionCloser, 100);
+            setTimeout(toggleSectionCloser, 25);
         });
     }();
 });
