@@ -224,7 +224,7 @@ h5,
 }
 
 .site-footer .border-top {
-    border-top: 1px solid rgba(0,0,0, 0.1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .site-footer p {
@@ -1365,4 +1365,43 @@ iframe {
 .site-mobile-menu-close {
     font-size: 1.5em;
     color: #000;
+}
+
+.h-100vh {
+    height: 100vh !important;
+}
+
+.loadScreen {
+    position: absolute;
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.loading-img {
+    height: 64px !important;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

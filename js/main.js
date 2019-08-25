@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
     "use strict";
 
+    $(".site-wrap").removeClass("d-none");
+    $(".loadScreen").fadeOut("fast");
+
     AOS.init({
         duration: 800,
         easing: 'slide',
@@ -10,7 +13,7 @@ jQuery(document).ready(function($) {
     var siteMenuClone = function() {
         $('body').on('click', '.js-menu-toggle', function(e) {
             e.preventDefault();
-            
+
             var $this = $(this);
 
             if ($('body').hasClass('offcanvas-menu')) {
