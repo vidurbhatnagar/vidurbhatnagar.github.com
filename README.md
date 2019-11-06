@@ -1,5 +1,5 @@
-profile_web
+Web Profile
 ===========
 
-Project portfolio of Vidur Shailendra Bhatnagar
+Online product/engineering/design portfolio of Vidur Shailendra Bhatnagar
 www.vidurbhatnagar.com
