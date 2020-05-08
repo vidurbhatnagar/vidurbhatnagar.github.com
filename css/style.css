@@ -2,8 +2,8 @@
 
 body {
     line-height: 1.7;
-    color: gray;
-    font-weight: 300;
+    color: rgb(100,100,100);
+    /*font-weight: 300;*/
     font-size: 1.1rem;
 }
 
@@ -100,6 +100,8 @@ h5,
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 900;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
 }
 
 .btn:hover,
@@ -134,7 +136,6 @@ h5,
 }
 
 .btn.btn-white {
-    border-width: 2px;
     border-color: #fff;
     background: #fff;
     color: #000;
@@ -145,12 +146,13 @@ h5,
     background-color: transparent;
 }
 
-.btn.btn-white.btn-outline-white {
+.btn.btn-outline-white {
     color: #fff;
+    border-color: #fff;
     background-color: transparent;
 }
 
-.btn.btn-white.btn-outline-white:hover {
+.btn.btn-outline-white:hover {
     border-color: #fff;
     background: #fff;
     color: #000;
@@ -935,7 +937,7 @@ h5,
 }
 
 .accent-card-light p {
-    color: rgba(255, 255, 255, 0.5);
+    color: #e1f0ff;
     font-size: 1.1rem;
 }
 
@@ -945,10 +947,24 @@ h5,
     color: #fff;
 }
 
+.intro-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
 .intro-section p {
-    color: rgba(255, 255, 255, 0.5);
+    color: #e1f0ff;
     font-size: 1.1rem;
     max-width: 400px;
+    font-weight: 400;
+}
+
+.intro-section i {
+    color: #00ffea;
+    font-size: 1.1rem;
+    max-width: 400px;
+    font-weight: 400;
 }
 
 .img-absolute {
@@ -1004,7 +1020,7 @@ h5,
 .section-sub-title {
     color: #007bff;
     text-transform: uppercase;
-    font-size: .7rem;
+    font-size: .8rem;
     font-weight: 600;
     display: block;
     margin-bottom: 1.5rem;
@@ -1100,10 +1116,11 @@ h5,
     font-size: 1.2rem;
     color: #fff;
     margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .image-absolute-box .box p {
-    color: rgba(255, 255, 255, 0.55);
+    color: #e1f0ff;
 }
 
 .section-1 {
@@ -1308,6 +1325,7 @@ h5,
     font-size: 0.9rem;
     font-weight: 700;
     line-height: 36px;
+    letter-spacing: 0.05em;
 }
 
 summary {
