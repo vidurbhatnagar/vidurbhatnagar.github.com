@@ -986,6 +986,14 @@ h5,
     .img-absolute img {
         max-width: 100%;
     }
+    .img-absolute {
+        position: relative;
+        transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        right: 0;
+        top: 0;
+    }
 }
 
 .site-section {
@@ -1404,6 +1412,7 @@ iframe {
     -moz-animation: spin 4s linear infinite;
     animation: spin 4s linear infinite;
 }
+
 
 @-moz-keyframes spin {
     100% {
