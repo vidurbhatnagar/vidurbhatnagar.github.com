@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         var top = target.getBoundingClientRect().top + window.scrollY - 100;
         window.scrollTo({ top: top, behavior: 'smooth' });
-        window.location.hash = hash;
+        history.pushState(null, '', hash);
         document.body.classList.remove('offcanvas-menu');
     });
 
@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(function (r) { return r.text(); })
             .then(function (html) {
                 el.innerHTML = html;
+                // Immediately reveal all AOS elements inside this container —
+                // they're loaded into an open accordion so they're already in view.
+                el.querySelectorAll('[data-aos]').forEach(function (node) {
+                    node.classList.add('aos-animate');
+                });
                 initAOS();
                 if (callback) { callback(); }
             });
