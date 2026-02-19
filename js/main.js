@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 initAOS();
                 if (callback) { callback(); }
+            })
+            .catch(function () {
+                // fetch blocked (e.g. file:// protocol) — serve via HTTP server locally
             });
     }
 
