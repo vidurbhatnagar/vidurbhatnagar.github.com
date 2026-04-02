@@ -346,7 +346,7 @@ h1,h2,h3,h4{color:var(--t1);font-weight:700;line-height:1.1}
 .hero-animate .hero-badge{transition-delay:.4s}
 .hero-animate .hero-p,.hero-animate .hero-btns,.hero-animate .hero-video-section{transition-delay:.5s}
 .hero-badge{display:inline-block;margin-bottom:1.5rem;padding:.45rem 1.2rem;border:1px solid var(--b1);border-radius:100px;color:var(--a)}
-.hero-h{font-size:clamp(3rem,11vw,9rem);font-weight:800;letter-spacing:-.045em;line-height:.9;margin-bottom:2rem;text-transform:uppercase}
+.hero-h{font-size:clamp(3rem,11vw,9rem);font-weight:800;letter-spacing:.03em;line-height:.9;margin-bottom:2rem;text-transform:uppercase}
 .h-line{display:block;overflow:hidden}
 .h-inner{display:flex}
 .h-ch{display:inline-block;transform:translateY(110%);opacity:0}
