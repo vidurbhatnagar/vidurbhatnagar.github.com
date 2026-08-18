@@ -3,7 +3,7 @@
 <head>
     <title>Vidur S. Bhatnagar</title>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
     <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
     <meta content="Vidur Shailendra Bhatnagar — Product & Engineering" name="description"/>
     <meta content="https://www.vidurbhatnagar.com/images/og_highlight.jpg" property="og:image"/>
@@ -301,15 +301,6 @@
                 <div class="dg-thumb" data-i="9"><img loading="lazy" src="images/Design_7.png" alt="Design"/></div>
                 <div class="dg-thumb" data-i="10"><img loading="lazy" src="images/Design_9.png" alt="Design"/></div>
             </div>
-        </div>
-
-        <!-- Lightbox -->
-        <div class="dg-lightbox" id="dg-lightbox">
-            <button class="dg-close" aria-label="Close">&times;</button>
-            <button class="dg-prev" aria-label="Previous">&#8249;</button>
-            <button class="dg-next" aria-label="Next">&#8250;</button>
-            <img class="dg-full" id="dg-full" alt="Design"/>
-            <div class="dg-counter" id="dg-counter"></div>
         </div>
 
     </div>
@@ -616,6 +607,14 @@
     </div>
 </footer>
 
+<!-- Design gallery lightbox (kept at body root so its z-index isn't trapped in a section stacking context) -->
+<div class="dg-lightbox" id="dg-lightbox" role="dialog" aria-modal="true" aria-label="Design gallery">
+    <button class="dg-close" aria-label="Close">&times;</button>
+    <button class="dg-prev" aria-label="Previous">&#8249;</button>
+    <button class="dg-next" aria-label="Next">&#8250;</button>
+    <img class="dg-full" id="dg-full" alt="Design"/>
+    <div class="dg-counter" id="dg-counter"></div>
+</div>
 
 </body>
 </html>

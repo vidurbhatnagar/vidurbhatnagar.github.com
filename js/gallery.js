@@ -14,6 +14,8 @@
     ];
     var current = 0;
     var total = srcs.length;
+    var touchX = null, touchY = null, justSwiped = false;
+    var SWIPE_MIN = 40; // px of horizontal travel to count as a swipe
 
     // ── Lightbox open ───────────────────────────────────────────────
     document.querySelectorAll('.dg-thumb').forEach(function (t) {
@@ -36,6 +38,7 @@
     lightbox.querySelector('.dg-next').addEventListener('click', function () { show(current + 1); });
 
     lightbox.addEventListener('click', function (e) {
+        if (justSwiped) { justSwiped = false; return; }
         if (e.target === lightbox) close();
     });
 
@@ -45,6 +48,22 @@
         if (e.key === 'ArrowLeft') show(current - 1);
         if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    // ── Touch swipe (mobile has no keyboard) ────────────────────────
+    lightbox.addEventListener('touchstart', function (e) {
+        touchX = e.changedTouches[0].clientX;
+        touchY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        var dy = e.changedTouches[0].clientY - touchY;
+        if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy)) {
+            show(current + (dx < 0 ? 1 : -1));
+            justSwiped = true; // suppress the synthesized backdrop click that would close
+        }
+        touchX = touchY = null;
+    }, { passive: true });
 
     function close() {
         lightbox.classList.remove('dg-open');
