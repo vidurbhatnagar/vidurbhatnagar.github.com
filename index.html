@@ -44,10 +44,11 @@
 <nav class="nav">
     <a href="#" class="nav-logo">VSB<span class="accent">.</span></a>
     <div class="nav-center">
-        <a href="#experience">Portfolio</a>
-        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#achievements">Achievements</a>
-        <a href="#academics">Academics</a>
+        <a href="#design">Design</a>
+        <a href="#press">Press</a>
+        <a href="#about">About</a>
     </div>
     <a href="#contact" class="nav-cta">Get in Touch</a>
     <button class="nav-burger js-menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -111,42 +112,51 @@
         <h2 class="sec-h" data-scramble>Professional Journey</h2>
 
         <!-- AMAZON -->
-        <div class="exp-card">
-            <div class="exp-split-inner">
-                <div class="exp-body">
-                    <div class="pcard-badges">
-                        <span class="badge badge-accent">Sr. Mgr, Software Dev (L7)</span>
-                        <span class="badge">May 2020 - Jan 2026</span>
-                    </div>
-                    <h3 class="exp-title">Amazon</h3>
-                    <h4 class="exp-sub exp-sub--first">Compliance Audit System (CASTR)</h4>
-                    <p class="exp-tech mono">AWS Lambda, DocumentDB, ReactJS</p>
-                    <p class="pcard-p">Amazon's Transportation Risk &amp; Compliance (TRC) relied on manual, error-prone audit processes in Excel workbooks — lacking granular data for process improvement. CASTR streamlined the entire audit workflow: initiation, preparation, execution, corrective actions, rules management, QA review, and report generation — with real-time metrics and a foundation for automation.</p>
-                    <p class="pcard-p">I built the team (25 engineers, 96% retention), designed 30+ screens for the product myself, and shipped a rules-engine-based compliance SaaS handling 10K+ global rules across 17 countries.</p>
+        <details class="exp-entry">
+            <summary class="exp-sum">
+                <div class="exp-lead">
+                    <p class="exp-meta mono">01 &nbsp;·&nbsp; May 2020 – Jan 2026</p>
+                    <h3 class="exp-co">Amazon</h3>
+                    <div class="pcard-badges"><span class="badge badge-accent">Sr. Mgr, Software Dev (L7)</span></div>
+                    <p class="exp-lede">Built and led a 25-engineer team to ship CASTR, a rules-engine compliance SaaS handling 10K+ rules across 17 countries.</p>
                     <div class="pcard-stats">
                         <div class="ps"><span class="ps-n">96%</span><span class="ps-l mono">Retention</span></div>
                         <div class="ps"><span class="ps-n">48%</span><span class="ps-l mono">Efficiency Gain</span></div>
                         <div class="ps"><span class="ps-n">80%</span><span class="ps-l mono">CSAT Improvement</span></div>
                     </div>
+                    <span class="exp-cue mono">Read case study <span class="arr">→&#xFE0E;</span></span>
                 </div>
-                <div class="exp-split-inner-img"><img loading="lazy" src="images/Amazon_CASTR_1.png" alt="Amazon CASTR"/></div>
+                <div class="exp-shot"><img loading="lazy" src="images/Amazon_CASTR_1.png" alt="Amazon CASTR"/></div>
+            </summary>
+            <div class="exp-detail">
+                <h4 class="exp-sub exp-sub--first">Compliance Audit System (CASTR)</h4>
+                <p class="exp-tech mono">AWS Lambda, DocumentDB, ReactJS</p>
+                <p class="pcard-p">Amazon's Transportation Risk &amp; Compliance (TRC) relied on manual, error-prone audit processes in Excel workbooks — lacking granular data for process improvement. CASTR streamlined the entire audit workflow: initiation, preparation, execution, corrective actions, rules management, QA review, and report generation — with real-time metrics and a foundation for automation.</p>
+                <p class="pcard-p">I built the team (25 engineers, 96% retention), designed 30+ screens for the product myself, and shipped a rules-engine-based compliance SaaS handling 10K+ global rules across 17 countries.</p>
             </div>
-        </div>
+        </details>
 
         <!-- KERITON -->
-        <div class="exp-card">
-            <div class="exp-body">
-                <div class="exp-float-right"><img loading="lazy" src="images/Profile_Keriton.png" alt="Keriton" style="object-position:top center"/></div>
-                <div class="pcard-badges"><span class="badge badge-filled">Acquired</span><span class="badge badge-patent">1x PATENT</span><span class="badge badge-accent">Founder &amp; CEO/CTO</span><span class="badge">2016 - 2018</span></div>
-                <h3 class="exp-title">Keriton LLC</h3>
+        <details class="exp-entry">
+            <summary class="exp-sum">
+                <div class="exp-lead">
+                    <p class="exp-meta mono">02 &nbsp;·&nbsp; 2016 – 2018</p>
+                    <h3 class="exp-co">Keriton LLC</h3>
+                    <div class="pcard-badges"><span class="badge badge-filled">Acquired</span><span class="badge badge-patent">1x PATENT</span><span class="badge badge-accent">Founder &amp; CEO/CTO</span></div>
+                    <p class="exp-lede">Founded and built the breastmilk management platform used across US children's hospitals. Acquired by Natus Medical (now Integra LifeSciences, NASDAQ: IART).</p>
+                    <div class="pcard-stats">
+                        <div class="ps"><span class="ps-n">$1.6M</span><span class="ps-l mono">Raised</span></div>
+                        <div class="ps"><span class="ps-n">$1.2M</span><span class="ps-l mono">Contracts</span></div>
+                        <div class="ps"><span class="ps-n">14</span><span class="ps-l mono">Awards</span></div>
+                    </div>
+                    <span class="exp-cue mono">Read case study <span class="arr">→&#xFE0E;</span></span>
+                </div>
+                <div class="exp-shot"><img loading="lazy" src="images/Profile_Keriton.png" alt="Keriton"/></div>
+            </summary>
+            <div class="exp-detail">
+                <div class="exp-detail-img"><img loading="lazy" src="images/Keriton_Kare_Nurse_1.png" alt="Keriton Kare Nurse"/></div>
                 <p class="exp-tech mono">AngularJS, Ionic, PostgreSQL, AWS</p>
                 <p class="pcard-p">After winning PennApps in Spring 2016, I launched Keriton while still pursuing a masters at UPenn. Leading a lean team of 10, we launched the world's most advanced breastmilk management platform along with the world's first lactation analytics dashboard. <strong>Keriton was acquired by Natus Medical (now Integra LifeSciences, NASDAQ: IART).</strong></p>
-                <div class="pcard-stats">
-                    <div class="ps"><span class="ps-n">$1.6M</span><span class="ps-l mono">Raised</span></div>
-                    <div class="ps"><span class="ps-n">$1.2M</span><span class="ps-l mono">Contracts</span></div>
-                    <div class="ps"><span class="ps-n">14</span><span class="ps-l mono">Awards</span></div>
-                </div>
-                <div class="exp-float-left"><img loading="lazy" src="images/Keriton_Kare_Nurse_1.png" alt="Keriton Kare Nurse"/></div>
                 <h4 class="exp-sub">Engineering &amp; Product Management</h4>
                 <p class="pcard-p">Architected the entire platform from scratch — 2 apps, 4 products, 40+ workflows, 60+ database tables, 80+ APIs. Wrote the workflow engine, rules engine, and socket-based printer integrations. Hired a 5-person engineering team and code-reviewed every feature before release. Ran regular design sessions on-site with nursing staff to drive product decisions.</p>
                 <h4 class="exp-sub">Sales, Marketing &amp; Design</h4>
@@ -154,43 +164,51 @@
                 <h4 class="exp-sub">Board &amp; Hiring</h4>
                 <p class="pcard-p">Ran the board, managed finances, and hired the entire team of 10+ from executives to entry-level.</p>
             </div>
-        </div>
+        </details>
 
-        <!-- SAP + ROHITS side by side -->
-        <div class="exp-two-col">
-            <!-- SAP -->
-            <div>
-                <div class="exp-two-col-img"><img loading="lazy" src="images/SAP_FPA.jpg" alt="SAP Labs"/></div>
-                <div class="exp-card">
-                    <div class="exp-body">
-                        <div class="pcard-badges"><span class="badge badge-patent">4x PATENTS</span><span class="badge badge-accent">Technical Fellow</span><span class="badge">2013 - 2015</span></div>
-                        <h3 class="exp-title">SAP Labs India</h3>
-                        <p class="exp-tech mono">SAP HANA, SQL, C++, Android, J2EE</p>
-                        <p class="pcard-p">Three months after joining as an intern, I was named Employee of the Year across 4,500+ people. By 22, I was SAP's youngest Product Owner globally — working between the MD's office in India and SAP Labs Palo Alto.</p>
-                        <div class="pcard-stats">
-                            <div class="ps"><span class="ps-n">#1</span><span class="ps-l mono">of 4,500 Employees</span></div>
-                            <div class="ps"><span class="ps-n">6</span><span class="ps-l mono">Products Shipped</span></div>
-                            <div class="ps"><span class="ps-n">4 + 1</span><span class="ps-l mono">Patents + IEEE Paper</span></div>
-                        </div>
-                        <h4 class="exp-sub">SAP Sports Analytics - Moneyball for Cricket</h4>
-                        <p class="exp-tech mono">SAP HANA, SQL, Predictive Analytics</p>
-                        <p class="pcard-p">Used SAP HANA to build predictive cricket analytics over 6 years of IPL and BigBash data. Delivered three products — Auction Analytics, Game Analytics, Game Visualizations. The project generated 30+ press articles and was regularly demoed at SAP's biggest events.</p>
+        <!-- SAP -->
+        <details class="exp-entry">
+            <summary class="exp-sum">
+                <div class="exp-lead">
+                    <p class="exp-meta mono">03 &nbsp;·&nbsp; 2013 – 2015</p>
+                    <h3 class="exp-co">SAP Labs India</h3>
+                    <div class="pcard-badges"><span class="badge badge-patent">4x PATENTS</span><span class="badge badge-accent">Technical Fellow</span></div>
+                    <p class="exp-lede">Employee of the Year across 4,500+ people within three months. By 22, SAP's youngest Product Owner globally.</p>
+                    <div class="pcard-stats">
+                        <div class="ps"><span class="ps-n">#1</span><span class="ps-l mono">of 4,500 Employees</span></div>
+                        <div class="ps"><span class="ps-n">6</span><span class="ps-l mono">Products Shipped</span></div>
+                        <div class="ps"><span class="ps-n">4 + 1</span><span class="ps-l mono">Patents + IEEE Paper</span></div>
                     </div>
+                    <span class="exp-cue mono">Read case study <span class="arr">→&#xFE0E;</span></span>
                 </div>
+                <div class="exp-shot"><img loading="lazy" src="images/SAP_FPA.jpg" alt="SAP Labs"/></div>
+            </summary>
+            <div class="exp-detail">
+                <p class="exp-tech mono">SAP HANA, SQL, C++, Android, J2EE</p>
+                <p class="pcard-p">Three months after joining as an intern, I was named Employee of the Year across 4,500+ people. By 22, I was SAP's youngest Product Owner globally — working between the MD's office in India and SAP Labs Palo Alto.</p>
+                <h4 class="exp-sub">SAP Sports Analytics - Moneyball for Cricket</h4>
+                <p class="exp-tech mono">SAP HANA, SQL, Predictive Analytics</p>
+                <p class="pcard-p">Used SAP HANA to build predictive cricket analytics over 6 years of IPL and BigBash data. Delivered three products — Auction Analytics, Game Analytics, Game Visualizations. The project generated 30+ press articles and was regularly demoed at SAP's biggest events.</p>
             </div>
-            <!-- ROHITS -->
-            <div>
-                <div class="exp-card">
-                    <div class="exp-body">
-                        <div class="pcard-badges"><span class="badge badge-filled">Acquired</span><span class="badge badge-accent">Founder &amp; CEO/CTO</span><span class="badge">2011 - 2013</span></div>
-                        <h3 class="exp-title">Rohits &amp; Co. (India)</h3>
-                        <p class="exp-tech mono">Java, Swings, SQL</p>
-                        <p class="pcard-p">Built a desktop ERP suite that automated 15+ workflows for small businesses in India. Cut process time from 30 days to 15 minutes. Product was acquired by an early customer.</p>
-                    </div>
+        </details>
+
+        <!-- ROHITS -->
+        <details class="exp-entry">
+            <summary class="exp-sum">
+                <div class="exp-lead">
+                    <p class="exp-meta mono">04 &nbsp;·&nbsp; 2011 – 2013</p>
+                    <h3 class="exp-co">Rohits &amp; Co. (India)</h3>
+                    <div class="pcard-badges"><span class="badge badge-filled">Acquired</span><span class="badge badge-accent">Founder &amp; CEO/CTO</span></div>
+                    <p class="exp-lede">Built a desktop ERP suite that cut process time from 30 days to 15 minutes. Acquired by an early customer.</p>
+                    <span class="exp-cue mono">Read case study <span class="arr">→&#xFE0E;</span></span>
                 </div>
-                <div class="exp-two-col-img"><img loading="lazy" src="images/Rohits_COA.jpg" alt="Rohits &amp; Co."/></div>
+                <div class="exp-shot"><img loading="lazy" src="images/Rohits_COA.jpg" alt="Rohits &amp; Co."/></div>
+            </summary>
+            <div class="exp-detail">
+                <p class="exp-tech mono">Java, Swings, SQL</p>
+                <p class="pcard-p">Built a desktop ERP suite that automated 15+ workflows for small businesses in India. Cut process time from 30 days to 15 minutes. Product was acquired by an early customer.</p>
             </div>
-        </div>
+        </details>
 
     </div>
 </section>
@@ -215,7 +233,7 @@
         <h2 class="sec-h" data-scramble>20+ Awards &amp; Accolades</h2>
 
         <!-- Keriton + SAP awards in two-col with images -->
-        <div class="awards-split">
+        <div class="awards-split" id="awards-collapse">
             <div>
                 <h3 class="award-cat">Keriton Awards</h3>
                 <div class="award-grid award-grid--single">
@@ -224,10 +242,10 @@
                     <div class="award"><div><h4>2x Gold Stevie Awards - Startup of the Year</h4><p>2018, Business Products Industries &amp; Software</p></div></div>
                     <div class="award"><div><h4>Top 10 Philly Startups</h4><p>2018, Philly Mag &amp; Technical.ly</p></div></div>
                     <div class="award"><div><h4>Vizient Top Performer to Penn Medicine</h4><p>2018, For use of Keriton</p></div></div>
-                    <div class="award"><div><h4>Stories of Innovation Winners</h4><p>2018, Penn Medicine</p></div></div>
-                    <div class="award"><div><h4>MedCity INVEST Pitch Perfect Winner</h4><p>2018, MedCity News</p></div></div>
-                    <div class="award"><div><h4>Startup of the Year</h4><p>2017, Philly Geek Awards</p></div></div>
-                    <div class="award"><div><h4>Impact Pediatric Pitch at SXSW Winners</h4><p>2017, 8 leading US children's hospitals</p></div></div>
+                    <div class="award more-item"><div><h4>Stories of Innovation Winners</h4><p>2018, Penn Medicine</p></div></div>
+                    <div class="award more-item"><div><h4>MedCity INVEST Pitch Perfect Winner</h4><p>2018, MedCity News</p></div></div>
+                    <div class="award more-item"><div><h4>Startup of the Year</h4><p>2017, Philly Geek Awards</p></div></div>
+                    <div class="award more-item"><div><h4>Impact Pediatric Pitch at SXSW Winners</h4><p>2017, 8 leading US children's hospitals</p></div></div>
                 </div>
                 <div class="award-img"><img loading="lazy" src="images/Stevie_Award.jpg" alt="Stevie Award"/></div>
             </div>
@@ -239,23 +257,24 @@
                     <div class="award"><div><h4>Star Employee - Managing Director's Office</h4><p>2014</p></div></div>
                     <div class="award"><div><h4>High-Flyer of the Month</h4><p>May 2014</p></div></div>
                 </div>
+
+                <h3 class="award-cat more-item">UPenn Awards</h3>
+                <div class="award-grid award-grid--single more-item">
+                    <div class="award more-item"><div><h4>2nd Position PennApps Spring 2016</h4><p>Automation system for breastmilk management</p></div></div>
+                    <div class="award more-item"><div><h4>2nd Position PennApps Fall 2015</h4><p>Hacked Myo-band for gait visualization</p></div></div>
+                    <div class="award more-item"><div><h4>Most Entrepreneurial Hack PennApps Fall 2016</h4><p>Global trading platform for organic products</p></div></div>
+                </div>
+
+                <h3 class="award-cat more-item">Miscellaneous</h3>
+                <div class="award-grid award-grid--single more-item">
+                    <div class="award more-item"><div><h4>O1 Visa for Extraordinary Skills</h4><p>2017, US Government</p></div></div>
+                    <div class="award more-item"><div><h4>EB1 Green Card Approved</h4><p>2019</p></div></div>
+                    <div class="award more-item"><div><h4>Government of India C.B.S.E Scholarship</h4><p>2008-2013, 5 years</p></div></div>
+                </div>
                 <div class="award-img"><img loading="lazy" src="images/SAP_Award.jpg" alt="SAP Award"/></div>
-
-                <h3 class="award-cat">UPenn Awards</h3>
-                <div class="award-grid award-grid--single">
-                    <div class="award"><div><h4>2nd Position PennApps Spring 2016</h4><p>Automation system for breastmilk management</p></div></div>
-                    <div class="award"><div><h4>2nd Position PennApps Fall 2015</h4><p>Hacked Myo-band for gait visualization</p></div></div>
-                    <div class="award"><div><h4>Most Entrepreneurial Hack PennApps Fall 2016</h4><p>Global trading platform for organic products</p></div></div>
-                </div>
-
-                <h3 class="award-cat">Miscellaneous</h3>
-                <div class="award-grid award-grid--single">
-                    <div class="award"><div><h4>O1 Visa for Extraordinary Skills</h4><p>2017, US Government</p></div></div>
-                    <div class="award"><div><h4>EB1 Green Card Approved</h4><p>2019</p></div></div>
-                    <div class="award"><div><h4>Government of India C.B.S.E Scholarship</h4><p>2008-2013, 5 years</p></div></div>
-                </div>
             </div>
         </div>
+        <button class="collapse-toggle mono" type="button" aria-expanded="false" aria-controls="awards-collapse" data-target="awards-collapse" data-more="Show more awards " data-less="Show fewer awards ">Show more awards <span class="arr">↓&#xFE0E;</span></button>
     </div>
 </section>
 
@@ -383,6 +402,7 @@
         </div>
         <h2 class="sec-h" data-scramble>30+ Media Features</h2>
 
+        <div id="press-collapse">
         <!-- Featured article full width -->
         <div class="press-list">
             <a href="https://finance.yahoo.com/news/keriton-announces-acquisition-natus-sensory-141500477.html" target="_blank" class="press-item">
@@ -410,7 +430,7 @@
                     <h3>Pitch Perfect Winner Spotlight: Keriton CEO Highlights Benefits of Conference Room Pilots</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="https://medcitynews.com/2018/05/best-of-invest-which-healthcare-startups-triumphed-at-the-medcity-invest-pitch-perfect-competition/" target="_blank" class="press-item">
+                <a href="https://medcitynews.com/2018/05/best-of-invest-which-healthcare-startups-triumphed-at-the-medcity-invest-pitch-perfect-competition/" target="_blank" class="press-item more-item">
                     <span class="press-src mono">MedCity News &middot; May 2018</span>
                     <h3>Keriton Wins MedCity INVEST Pitch Perfect Competition</h3>
                     <span class="arr">↗&#xFE0E;</span>
@@ -438,17 +458,17 @@
                     <h3>10 Philly Startups to Watch in 2018</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="https://technical.ly/philly/2018/01/22/philadelphia-top-startups-2018/" target="_blank" class="press-item">
+                <a href="https://technical.ly/philly/2018/01/22/philadelphia-top-startups-2018/" target="_blank" class="press-item more-item">
                     <span class="press-src mono">Technical.ly &middot; Jan 2018</span>
                     <h3>Philly's Top 20 Startups: realLIST 2018</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="https://timesofindia.indiatimes.com/city/dehradun/roorkee-boys-tech-start-up-adjudged-most-unique-small-business-in-us/articleshow/62499727.cms" target="_blank" class="press-item">
+                <a href="https://timesofindia.indiatimes.com/city/dehradun/roorkee-boys-tech-start-up-adjudged-most-unique-small-business-in-us/articleshow/62499727.cms" target="_blank" class="press-item more-item">
                     <span class="press-src mono">Times of India &middot; Jan 2018</span>
                     <h3>Roorkee Boy's Tech Start-up Adjudged Most Unique Small Business in US</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="http://www.thephiladelphiacitizen.org/meet-the-disruptor-keriton/" target="_blank" class="press-item">
+                <a href="http://www.thephiladelphiacitizen.org/meet-the-disruptor-keriton/" target="_blank" class="press-item more-item">
                     <span class="press-src mono">Philadelphia Citizen &middot; Aug 2017</span>
                     <h3>Keriton Is Like A Swiss Army Knife Of Breastmilk Tracking</h3>
                     <span class="arr">↗&#xFE0E;</span>
@@ -474,12 +494,12 @@
                     <h3>Digital Health Startup Helps Hospitals, Mothers With Breast Milk Management</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="https://technical.ly/philly/2017/02/16/keriton-raised-1-million/" target="_blank" class="press-item">
+                <a href="https://technical.ly/philly/2017/02/16/keriton-raised-1-million/" target="_blank" class="press-item more-item">
                     <span class="press-src mono">Technical.ly &middot; Feb 2017</span>
                     <h3>Immigrant-Founded Keriton Raised $1M To Help Keep Premature Babies On Breast Milk</h3>
                     <span class="arr">↗&#xFE0E;</span>
                 </a>
-                <a href="https://timesofindia.indiatimes.com/city/dehradun/start-up-providing-breast-milk-management-gets-over-7-cr-funding/articleshow/57798274.cms" target="_blank" class="press-item">
+                <a href="https://timesofindia.indiatimes.com/city/dehradun/start-up-providing-breast-milk-management-gets-over-7-cr-funding/articleshow/57798274.cms" target="_blank" class="press-item more-item">
                     <span class="press-src mono">Times of India &middot; Mar 2017</span>
                     <h3>Start-up Providing Breastmilk Management Gets Over 7-cr Funding</h3>
                     <span class="arr">↗&#xFE0E;</span>
@@ -490,17 +510,19 @@
 
         <!-- Remaining articles without photo -->
         <div class="press-list">
-            <a href="https://techcrunch.com/2016/07/20/dreamit-accelerator-ditches-demo-days-unveils-25-new-health-and-education-startups/" target="_blank" class="press-item">
+            <a href="https://techcrunch.com/2016/07/20/dreamit-accelerator-ditches-demo-days-unveils-25-new-health-and-education-startups/" target="_blank" class="press-item more-item">
                 <span class="press-src mono">TechCrunch &middot; Jul 2016</span>
                 <h3>Dreamit Accelerator Unveils 25 New Health And Education Startups</h3>
                 <span class="arr">↗&#xFE0E;</span>
             </a>
-            <a href="https://economictimes.indiatimes.com/news/company/corporate-trends/best-companies-to-work-for-2014-sap-labs-mantra-is-to-put-employees-first/articleshow/37520130.cms" target="_blank" class="press-item">
+            <a href="https://economictimes.indiatimes.com/news/company/corporate-trends/best-companies-to-work-for-2014-sap-labs-mantra-is-to-put-employees-first/articleshow/37520130.cms" target="_blank" class="press-item more-item">
                 <span class="press-src mono">Economic Times &middot; Jun 2014</span>
                 <h3>Best Companies to Work For 2014: SAP Labs Mantra is to Put Employees First</h3>
                 <span class="arr">↗&#xFE0E;</span>
             </a>
         </div>
+        </div>
+        <button class="collapse-toggle mono" type="button" aria-expanded="false" aria-controls="press-collapse" data-target="press-collapse" data-more="Show more features " data-less="Show fewer features ">Show more features <span class="arr">↓&#xFE0E;</span></button>
     </div>
 </section>
 

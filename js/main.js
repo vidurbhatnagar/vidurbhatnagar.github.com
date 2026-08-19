@@ -40,4 +40,37 @@ document.addEventListener('DOMContentLoaded', function () {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         history.pushState(null, '', h);
     });
+
+    // ── SHOW MORE / LESS (achievements, press lists) ────────────────
+    document.querySelectorAll('.collapse-toggle').forEach(function (btn) {
+        var region = document.getElementById(btn.getAttribute('data-target'));
+        if (!region) return;
+        btn.addEventListener('click', function () {
+            var open = region.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.firstChild.textContent = open ? btn.getAttribute('data-less') : btn.getAttribute('data-more');
+        });
+    });
+
+    // ── SCROLL-SPY NAV ──────────────────────────────────────────────
+    var navLinks = document.querySelectorAll('.nav-center a');
+    if (navLinks.length && 'IntersectionObserver' in window) {
+        var linkFor = {};
+        var targets = [];
+        navLinks.forEach(function (a) {
+            var id = a.getAttribute('href').slice(1);
+            var sec = document.getElementById(id);
+            if (sec) { linkFor[id] = a; targets.push(sec); }
+        });
+        var spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (!en.isIntersecting) return;
+                navLinks.forEach(function (a) { a.classList.remove('nav-active'); });
+                var active = linkFor[en.target.id];
+                if (active) active.classList.add('nav-active');
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        targets.forEach(function (t) { spy.observe(t); });
+    }
+
 });
