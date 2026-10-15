@@ -1186,6 +1186,20 @@ const self = { state: S, closeLb, go, timers: [], rootRef: { current: document.q
             { transform: 'none', offset: 1 }
           ], { duration: L, delay: d, fill: 'backwards' });
         });
+        // Mobile browsers opened from another app (e.g. WhatsApp) can still be resizing the viewport after we measured; follow the real center until the letters settle.
+        const start = performance.now(), cv0 = root.querySelector('[data-grid-bg]'); let lw = vw, lh = vh;
+        const follow = () => {
+          const t = performance.now() - start; if (t >= T) return;
+          const v = window.visualViewport, w = v ? v.width : innerWidth, h = v ? v.height : innerHeight;
+          if (w !== lw || h !== lh) {
+            lw = w; lh = h;
+            const tl = (w / 2 + (v ? v.offsetLeft : 0) - cx) + 'px ' + (h / 2 + (v ? v.offsetTop : 0) - cy) + 'px';
+            if (cv0) cv0.style.translate = tl;
+            cells.forEach(c => { c.getAnimations().forEach(a => { if (a.id === 'rc') a.cancel(); }); const a = c.animate([{ translate: tl }, { translate: tl, offset: M0 / T, easing: 'cubic-bezier(.65,0,.35,1)' }, { translate: '0px 0px' }], { duration: T, id: 'rc' }); a.currentTime = t; });
+          }
+          requestAnimationFrame(follow);
+        };
+        requestAnimationFrame(follow);
       };
       run();
     });
