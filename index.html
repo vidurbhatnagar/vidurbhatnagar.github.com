@@ -66,6 +66,9 @@ summary:hover [data-chev]{border-color:#111111}
 [data-media="1"] a[data-row]:first-child{border-top:0!important;padding-top:0!important}
 [data-after="1"]{border-top:1px solid #EFEFEC;padding-top:10px}
 @media (max-width:600px){[data-sub]{margin-top:0.75em!important}}
+[data-main]{width:-webkit-fill-available;width:-moz-available;width:stretch}
+[data-main] section,details[data-acc],details[data-acc] summary,details[data-acc] div{min-width:0}
+details[data-acc] a[style*="999px"]>span:first-child{min-width:0}details[data-acc] a[style*="999px"]>span:last-child{flex:none}
 @keyframes vb-in{from{opacity:.35}to{opacity:1}}
 @supports not (animation-timeline: view()){[data-lit]{color:#111111!important}[data-fill]{transform:none!important}[data-dot]{display:none}}
 </style>
