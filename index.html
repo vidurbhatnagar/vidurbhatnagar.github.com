@@ -1154,6 +1154,9 @@ const self = { state: S, closeLb, go, timers: [], rootRef: { current: document.q
     };
     const placeBall = () => { const el = root.querySelector('[data-hoop]'); if (!el) return; const W = el.clientWidth, H = el.clientHeight, s = Math.max(W / 1365, H / 2048); const ox = (1365 * s - W) * 0.58, oy = (2048 * s - H) * 0.20; el.style.setProperty('--bx', (713 * s - ox) + 'px'); el.style.setProperty('--by', (216 * s - oy) + 'px'); el.style.setProperty('--br', (64 * s) + 'px'); };
     placeBall(); this.onResize = placeBall; addEventListener('resize', placeBall);
+    // Start each milestone's timeline line just below its number, so wrapped titles don't push the number onto the line.
+    const seatLines = () => root.querySelectorAll('[data-main] section').forEach(sec => { const n = sec.querySelector('[data-lit]'); if (!n) return; const t = Math.round(n.getBoundingClientRect().bottom - sec.getBoundingClientRect().top + 8) + 'px'; sec.querySelectorAll(':scope > span[aria-hidden]').forEach(l => { l.style.top = t; }); });
+    seatLines(); addEventListener('resize', seatLines); addEventListener('load', seatLines); if (document.fonts) document.fonts.ready.then(seatLines);
     const main = root.querySelector('[data-main]');
     const fall = main ? [...main.querySelectorAll(':scope header > div'), ...main.querySelectorAll('[data-fall]'), ...main.querySelectorAll(':scope header > p'), ...main.querySelectorAll(':scope footer')] : [];
     if (!reduced) {
