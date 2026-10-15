@@ -1108,6 +1108,7 @@ const self = { state: S, closeLb, go, timers: [], rootRef: { current: document.q
       const hoop = root.querySelector('[data-hoop]'); if (hoop) { hoop.style.opacity = '0'; this.timers.push(setTimeout(() => { hoop.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1400, easing: 'ease-out', fill: 'backwards' }); hoop.style.opacity = ''; }, 3700)); }
     }
     root.querySelectorAll('[data-fadein]').forEach(el => { el.style.opacity = ''; });
+    if (!location.hash) { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; scrollTo(0, 0); }
     root.querySelectorAll('[data-heap]').forEach(el => {
       const text = el.getAttribute('aria-label'); el.textContent = '';
       const cells = [];
@@ -1117,7 +1118,7 @@ const self = { state: S, closeLb, go, timers: [], rootRef: { current: document.q
       el.style.color = '';
       const run = () => {
         if (reduced) return;
-        const vw = innerWidth, vh = innerHeight, cx = vw / 2, cy = vh * 0.5;
+        const vv = window.visualViewport, vw = vv ? vv.width : innerWidth, vh = vv ? vv.height : innerHeight, cx = vw / 2 + (vv ? vv.offsetLeft : 0), cy = vh * 0.5 + (vv ? vv.offsetTop : 0);
         cells.forEach(c => c.getAnimations().forEach(a => a.cancel()));
         const R = cells.map(c => c.getBoundingClientRect());
         const minX = Math.min(...R.map(r => r.left)), maxX = Math.max(...R.map(r => r.right)), minY = Math.min(...R.map(r => r.top)), maxY = Math.max(...R.map(r => r.bottom));
