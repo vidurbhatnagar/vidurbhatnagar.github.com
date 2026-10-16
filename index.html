@@ -1157,6 +1157,106 @@ const self = { state: S, closeLb, go, timers: [], rootRef: { current: document.q
     };
     const placeBall = () => { const el = root.querySelector('[data-hoop]'); if (!el) return; const W = el.clientWidth, H = el.clientHeight, s = Math.max(W / 1365, H / 2048); const ox = (1365 * s - W) * 0.58, oy = (2048 * s - H) * 0.20; el.style.setProperty('--bx', (713 * s - ox) + 'px'); el.style.setProperty('--by', (216 * s - oy) + 'px'); el.style.setProperty('--br', (64 * s) + 'px'); };
     placeBall(); this.onResize = placeBall; addEventListener('resize', placeBall);
+    // Hoop photo: the pointer (or a finger) drags a stroke of liquid that reveals the full-colour photo in place. The head
+    // squashes and stretches along its path and wobbles when it stops, the tail keeps its momentum and pinches into
+    // droplets, sharp turns fling ink forward, and a tap splats outward before surface tension pulls it back in. Behind
+    // the stroke, ink plates print out of register (lagging the motion, settling when it rests) as a near-black plate and a
+    // basketball-orange plate.
+    if (!reduced) (() => {
+      const hoop = root.querySelector('[data-hoop]'); if (!hoop) return;
+      const cv = document.createElement('canvas'), gl = cv.getContext('webgl', { premultipliedAlpha: true, alpha: true });
+      if (!gl) return;
+      const N = 40, fade = 'radial-gradient(closest-side, #000 62%, rgba(0,0,0,.75) 86%, transparent 100%)';
+      cv.setAttribute('aria-hidden', 'true');
+      cv.style.cssText = 'position:absolute; inset:0; width:100%; height:100%; pointer-events:none; -webkit-mask-image:' + fade + '; mask-image:' + fade + ';';
+      hoop.insertBefore(cv, hoop.children[1]);
+      const vs = 'attribute vec2 a;varying vec2 v;void main(){v=vec2(a.x*.5+.5,.5-a.y*.5);gl_Position=vec4(a,0.,1.);}';
+      const fs = `precision highp float;varying vec2 v;
+uniform sampler2D I;uniform vec2 Z,HP,O1,O2;uniform vec4 C;uniform vec3 B[${N}];uniform float K,HR,HS,D;uniform mat2 HM;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+// The stroke: a stretched ellipse head smoothly unioned with the trail's circles (distance in px).
+float sd(vec2 p){float s=HR>.5?(length(HM*(p-HP))-HR)*HS:1e4;
+  for(int i=0;i<${N};i++){if(B[i].z<.5)continue;float d=length(p-B[i].xy)-B[i].z,k=clamp(.5+.5*(d-s)/K,0.,1.);s=mix(d,s,k)-K*k*(1.-k);}return s;}
+vec3 ink(vec3 base,vec3 col,float a){return base*mix(vec3(1.),col,a);}
+void main(){
+  vec2 p=v*Z;float s0=sd(p),a0=clamp(.5-s0,0.,1.);
+  float s1=sd(p-O1),s2=sd(p-O2);
+  if(min(s0,min(s1,s2))>2.){gl_FragColor=vec4(0.);return;}
+  // Misregistered plates: a near-black ink and a basketball orange, with grainy, uneven coverage.
+  float g=h(floor(p*D)),g2=h(floor(p*D)+17.);
+  float p1=clamp(.5-s1,0.,1.)*(.8+.2*g)*.92,p2=clamp(.5-s2,0.,1.)*(.78+.22*g2);
+  vec3 c=ink(ink(vec3(1.),vec3(.07),p1),vec3(.89,.46,.17),p2);float a=max(p1,p2);
+  vec3 ph=texture2D(I,clamp((p-C.xy)/C.zw,0.,1.)).rgb;
+  float l=dot(ph,vec3(.299,.587,.114));ph=mix(vec3(l),ph,1.1);
+  gl_FragColor=vec4(ph*a0+c*a*(1.-a0),a0+a*(1.-a0));
+}`;
+      const mk = (t, s) => { const x = gl.createShader(t); gl.shaderSource(x, s); gl.compileShader(x); return x; };
+      const pr = gl.createProgram(); gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+      if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { cv.remove(); return; }
+      gl.useProgram(pr);
+      gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer()); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      const al = gl.getAttribLocation(pr, 'a'); gl.enableVertexAttribArray(al); gl.vertexAttribPointer(al, 2, gl.FLOAT, false, 0, 0);
+      const U = {}; ['Z', 'HP', 'O1', 'O2', 'C', 'B', 'K', 'HR', 'HS', 'D', 'HM'].forEach(k => { U[k] = gl.getUniformLocation(pr, k); });
+      gl.uniform1i(gl.getUniformLocation(pr, 'I'), 0);
+      gl.bindTexture(gl.TEXTURE_2D, gl.createTexture());
+      [gl.TEXTURE_WRAP_S, gl.TEXTURE_WRAP_T].forEach(k => gl.texParameteri(gl.TEXTURE_2D, k, gl.CLAMP_TO_EDGE));
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      let ready = false; const img = new Image();
+      img.onload = () => { try { gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img); ready = true; } catch (e) {} };
+      img.src = 'assets/hoop-color.jpg';
+      const buf = new Float32Array(N * 3);
+      let W = 0, H = 0, D = 1, R0 = 60, raf = 0, tx = 0, ty = 0, x = 0, y = 0, vx = 0, vy = 0, pvx = 0, pvy = 0, mvx = 0, mvy = 0, on = false, hr = 0, hv = 0, st = 0, stv = 0, ang = 0, off = 0, trail = [], drops = [];
+      const size = () => { W = hoop.clientWidth; H = hoop.clientHeight; R0 = Math.min(W, H) * 0.1; D = Math.min(devicePixelRatio || 1, 1.5); cv.width = Math.round(W * D); cv.height = Math.round(H * D); };
+      size(); addEventListener('resize', size);
+      const drop = (sx, sy, dvx, dvy, r, home) => drops.push({ x: sx, y: sy, vx: dvx, vy: dvy, r, home, age: 0 });
+      const frame = () => {
+        vx = (vx + (tx - x) * 0.09) * 0.74; vy = (vy + (ty - y) * 0.09) * 0.74; x += vx; y += vy;
+        const sp = Math.hypot(vx, vy);
+        mvx += (vx - mvx) * 0.12; mvy += (vy - mvy) * 0.12;
+        hv = (hv + ((on ? 1 : 0) - hr) * 0.14) * 0.72; hr += hv;
+        stv = (stv + (Math.min(sp * 0.035, 0.85) - st) * 0.2) * 0.78; st += stv;
+        if (sp > 0.8) ang = Math.atan2(vy, vx);
+        const turn = pvx * vy - pvy * vx, psp = Math.hypot(pvx, pvy);
+        if (on && psp > 6 && sp > 3 && Math.abs(turn) / (psp * sp) > 0.35 && drops.length < 14) for (let i = 0; i < 3; i++) drop(x, y, pvx * (1 + Math.random() * 0.8) + (Math.random() - 0.5) * 4, pvy * (1 + Math.random() * 0.8) + (Math.random() - 0.5) * 4, R0 * (0.12 + Math.random() * 0.16));
+        pvx = vx; pvy = vy;
+        if (on && sp > 0.5) trail.push({ x, y, vx: vx * 0.35, vy: vy * 0.35, r: R0 * (0.78 - Math.min(sp * 0.01, 0.25)) * Math.max(hr, 0) });
+        trail.forEach(t => { t.x += t.vx; t.y += t.vy; t.vx *= 0.93; t.vy *= 0.93; t.r *= 0.952; }); trail = trail.filter(t => t.r > 1.5).slice(-(N - 15));
+        drops.forEach(d => { d.age++; if (d.home && d.age > 14) { d.vx += (d.home[0] - d.x) * 0.045; d.vy += (d.home[1] - d.y) * 0.045; d.r *= 0.985; } else d.r *= 0.968; d.x += d.vx; d.y += d.vy; d.vx *= 0.86; d.vy *= 0.86; });
+        drops = drops.filter(d => d.r > 1.2 && d.age < 160).slice(-14);
+        buf.fill(0); let k = 0;
+        const s = 1 + st, hR = R0 * Math.max(hr, 0), ext = hR * s;
+        let x0 = x - ext, y0 = y - ext, x1 = x + ext, y1 = y + ext;
+        const put = (bx, by, br) => { buf[k++] = bx; buf[k++] = by; buf[k++] = Math.max(br, 0); if (br > 0.5) { x0 = Math.min(x0, bx - br); y0 = Math.min(y0, by - br); x1 = Math.max(x1, bx + br); y1 = Math.max(y1, by + br); } };
+        trail.forEach(t => put(t.x, t.y, t.r)); drops.forEach(d => put(d.x, d.y, d.r));
+        const ux = Math.cos(ang), uy = Math.sin(ang), a2 = 1 / s, b2 = Math.sqrt(s), m00 = a2 * ux * ux + b2 * uy * uy, m01 = (a2 - b2) * ux * uy, m11 = a2 * uy * uy + b2 * ux * ux;
+        // Misregistration: each plate sits a few px off and lags the motion by a different amount, clamped.
+        const lag = (q, bx, by) => { const ox = bx - mvx * q, oy = by - mvy * q, m = Math.hypot(ox, oy), c = Math.min(1, 30 / (m || 1)); return [ox * c, oy * c]; };
+        const o1 = lag(2.4, -6, -5), o2 = lag(1.3, 6, 5);
+        const sc = Math.max(W / 1365, H / 2048), iw = 1365 * sc, ih = 2048 * sc;
+        gl.viewport(0, 0, cv.width, cv.height); gl.disable(gl.SCISSOR_TEST); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+        const pad = R0 * 0.45 + 36, sx0 = Math.max(0, Math.floor((x0 - pad) * D)), sy0 = Math.max(0, Math.floor((y0 - pad) * D)), sx1 = Math.min(cv.width, Math.ceil((x1 + pad) * D)), sy1 = Math.min(cv.height, Math.ceil((y1 + pad) * D));
+        if (ready && sx1 > sx0 && sy1 > sy0) {
+          gl.enable(gl.SCISSOR_TEST); gl.scissor(sx0, cv.height - sy1, sx1 - sx0, sy1 - sy0);
+          gl.uniform1f(U.K, R0 * 0.45); gl.uniform1f(U.D, D);
+          gl.uniform2f(U.O1, o1[0], o1[1]); gl.uniform2f(U.O2, o2[0], o2[1]);
+          gl.uniform2f(U.HP, x, y); gl.uniform1f(U.HR, hR); gl.uniform1f(U.HS, Math.min(s, 1 / Math.sqrt(s))); gl.uniformMatrix2fv(U.HM, false, [m00, m01, m01, m11]);
+          gl.uniform2f(U.Z, W, H); gl.uniform4f(U.C, (W - iw) * 0.58, (H - ih) * 0.2, iw, ih); gl.uniform3fv(U.B, buf); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        }
+        if (on || hr > 0.01 || Math.abs(hv) > 0.002 || trail.length || drops.length) raf = requestAnimationFrame(frame); else raf = 0;
+      };
+      const local = (cx, cy) => { const r = hoop.getBoundingClientRect(), qx = cx - r.left, qy = cy - r.top; return qx < 0 || qy < 0 || qx > r.width || qy > r.height ? null : [qx, qy]; };
+      const show = (cx, cy, touch) => {
+        const q = local(cx, cy); if (!q) { on = false; return; }
+        if (!on && hr < 0.05) { x = q[0]; y = q[1]; vx = vy = pvx = pvy = mvx = mvy = 0; }
+        tx = q[0]; ty = q[1]; on = true; clearTimeout(off); if (touch) off = setTimeout(() => { on = false; }, 1200);
+        if (!raf) raf = requestAnimationFrame(frame);
+      };
+      const splat = q => { hv += 0.35; for (let i = 0, n = 9; i < n; i++) { const a = i / n * 6.2832 + Math.random() * 0.4, f = 7 + Math.random() * 7; drop(q[0], q[1], Math.cos(a) * f, Math.sin(a) * f, R0 * (0.13 + Math.random() * 0.2), q); } };
+      addEventListener('pointermove', e => show(e.clientX, e.clientY, e.pointerType !== 'mouse'), { passive: true });
+      addEventListener('pointerdown', e => { show(e.clientX, e.clientY, e.pointerType !== 'mouse'); const q = local(e.clientX, e.clientY); if (q) splat(q); }, { passive: true });
+      addEventListener('touchmove', e => { const t = e.touches[0]; if (t) show(t.clientX, t.clientY, true); }, { passive: true });
+      document.documentElement.addEventListener('mouseleave', () => { on = false; });
+    })();
     // Start each milestone's timeline line just below its number, so wrapped titles don't push the number onto the line.
     const seatLines = () => root.querySelectorAll('[data-main] section').forEach(sec => { const n = sec.querySelector('[data-lit]'); if (!n) return; const t = Math.round(n.getBoundingClientRect().bottom - sec.getBoundingClientRect().top + 8) + 'px'; sec.querySelectorAll(':scope > span[aria-hidden]').forEach(l => { l.style.top = t; }); });
     seatLines(); addEventListener('resize', seatLines); addEventListener('load', seatLines); if (document.fonts) document.fonts.ready.then(seatLines);
